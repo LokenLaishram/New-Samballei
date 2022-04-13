@@ -1,0 +1,35 @@
+.panel{
+	border: 1px solid #DDD;
+	border-radius: 0;
+	display: block;
+    width: 100%;
+	padding: 2px 12px;
+}
+.mainbox{
+    background: #FFFFFF;
+    border-radius: 4px;
+    padding: 32px 22px 22px 22px;
+}
+legend{
+    font-weight: lighter;
+    font-family: calibri;
+    width: 92%;
+    border-bottom: 1px solid #DDD;
+    margin: 0px 24px;
+    padding-bottom: 3px;
+}
+.col-md-3{
+    width: 24.4%;
+    margin: 2px auto;
+    display: inline-flex;
+}
+.col-md-4{
+    width: 33.3333%;
+    margin: 2px auto;
+    display: inline-flex;
+}
+.col-md-6{
+    width: 49.4%;
+    margin: 2px auto;
+    display: inline-flex;
+}

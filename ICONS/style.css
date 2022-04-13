@@ -1,0 +1,237 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?oa3clj');
+  src:  url('fonts/icomoon.eot?oa3clj#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?oa3clj') format('truetype'),
+    url('fonts/icomoon.woff?oa3clj') format('woff'),
+    url('fonts/icomoon.svg?oa3clj#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-accounting:before {
+  content: "\e900";
+}
+.icon-add-employees:before {
+  content: "\e901";
+}
+.icon-add-students:before {
+  content: "\e902";
+}
+.icon-admin:before {
+  content: "\e903";
+}
+.icon-admission-with-fees:before {
+  content: "\e904";
+}
+.icon-assign-subject:before {
+  content: "\e905";
+}
+.icon-attendance:before {
+  content: "\e906";
+}
+.icon-backup:before {
+  content: "\e907";
+}
+.icon-certificate-maker:before {
+  content: "\e908";
+}
+.icon-change-password:before {
+  content: "\e909";
+}
+.icon-dashboard:before {
+  content: "\e90a";
+}
+.icon-department:before {
+  content: "\e90b";
+}
+.icon-designation:before {
+  content: "\e90c";
+}
+.icon-due-details:before {
+  content: "\e90d";
+}
+.icon-employee-id-card-maker:before {
+  content: "\e90e";
+}
+.icon-employee-leave-approval:before {
+  content: "\e90f";
+}
+.icon-employee-leave-requisition:before {
+  content: "\e910";
+}
+.icon-employees:before {
+  content: "\e911";
+}
+.icon-employee-salary-generator:before {
+  content: "\e912";
+}
+.icon-employees-attendance:before {
+  content: "\e913";
+}
+.icon-employee-type:before {
+  content: "\e914";
+}
+.icon-exam:before {
+  content: "\e915";
+}
+.icon-exam-mark:before {
+  content: "\e916";
+}
+.icon-exam-name:before {
+  content: "\e917";
+}
+.icon-exam-student-list-collector:before {
+  content: "\e918";
+}
+.icon-exam-timetable:before {
+  content: "\e919";
+}
+.icon-export:before {
+  content: "\e91a";
+}
+.icon-fee-counter:before {
+  content: "\e91b";
+}
+.icon-fee-details:before {
+  content: "\e91c";
+}
+.icon-fees:before {
+  content: "\e91d";
+}
+.icon-fee-status:before {
+  content: "\e91e";
+}
+.icon-fee-type:before {
+  content: "\e91f";
+}
+.icon-gender:before {
+  content: "\e920";
+}
+.icon-hostel:before {
+  content: "\e921";
+}
+.icon-hostel-deposit:before {
+  content: "\e922";
+}
+.icon-hostel-registration:before {
+  content: "\e923";
+}
+.icon-hr:before {
+  content: "\e924";
+}
+.icon-import:before {
+  content: "\e925";
+}
+.icon-inventory:before {
+  content: "\e926";
+}
+.icon-library:before {
+  content: "\e927";
+}
+.icon-medical-expenditure:before {
+  content: "\e928";
+}
+.icon-monthly-fee-statement:before {
+  content: "\e929";
+}
+.icon-page-manager:before {
+  content: "\e92a";
+}
+.icon-payment-mode:before {
+  content: "\e92b";
+}
+.icon-photo-uploader:before {
+  content: "\e92c";
+}
+.icon-print-admitcard:before {
+  content: "\e92d";
+}
+.icon-print-id-card:before {
+  content: "\e92e";
+}
+.icon-print-result:before {
+  content: "\e92f";
+}
+.icon-profile:before {
+  content: "\e930";
+}
+.icon-progress-report-delivery:before {
+  content: "\e931";
+}
+.icon-promote-student:before {
+  content: "\e932";
+}
+.icon-purchase-record:before {
+  content: "\e933";
+}
+.icon-settings:before {
+  content: "\e934";
+}
+.icon-state:before {
+  content: "\e935";
+}
+.icon-statistical-report:before {
+  content: "\e936";
+}
+.icon-student:before {
+  content: "\e937";
+}
+.icon-student-details-editor:before {
+  content: "\e938";
+}
+.icon-student-type:before {
+  content: "\e939";
+}
+.icon-subject:before {
+  content: "\e93a";
+}
+.icon-subject-manager:before {
+  content: "\e93b";
+}
+.icon-subjectwise-mark-entry:before {
+  content: "\e93c";
+}
+.icon-topper:before {
+  content: "\e93d";
+}
+.icon-transport:before {
+  content: "\e93e";
+}
+.icon-transport-fee:before {
+  content: "\e93f";
+}
+.icon-transport-fee-details:before {
+  content: "\e940";
+}
+.icon-transport-registration:before {
+  content: "\e941";
+}
+.icon-user-manager:before {
+  content: "\e942";
+}
+.icon-user-tracker:before {
+  content: "\e943";
+}
+.icon-vehical-manager:before {
+  content: "\e944";
+}
+.icon-visitor:before {
+  content: "\e945";
+}

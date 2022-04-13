@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{30B3A5D2-B3F0-40C2-8DA9-769231135731}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Mobimp.Campusoft.DataAccess</RootNamespace>
+    <AssemblyName>Mobimp.Campusoft.DataAccess</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Owin, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.4.0.0\lib\net451\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseData.cs" />
+    <Compile Include="BusinessObjectBase.cs" />
+    <Compile Include="Common\MasterLookupDA.cs" />
+    <Compile Include="Common\PageControlDA.cs" />
+    <Compile Include="DataAccessObjectBase.cs" />
+    <Compile Include="DatabaseConstants.cs" />
+    <Compile Include="EduAccount\AccountGroupDA.cs" />
+    <Compile Include="EduAccount\AccountLedgerDA.cs" />
+    <Compile Include="EduAccount\StatementDA.cs" />
+    <Compile Include="EduAccount\TransactionDA.cs" />
+    <Compile Include="EduAdmin\AddRolesDA.cs" />
+    <Compile Include="EduAdmin\AddUsersDA.cs" />
+    <Compile Include="EduAdmin\CommonDataDA.cs" />
+    <Compile Include="EduAdmin\CreateUserDA.cs" />
+    <Compile Include="EduAdmin\UserAdminDA.cs" />
+    <Compile Include="EduEmployee\AssignSubjectDA.cs" />
+    <Compile Include="EduEmployee\EmployeeDA.cs" />
+    <Compile Include="EduExam\ExamDivisionRuleDA.cs" />
+    <Compile Include="EduExam\ExamGradeDA.cs" />
+    <Compile Include="EduExam\ExamRankTieDA.cs" />
+    <Compile Include="EduExam\ExamRemarkRuleDA.cs" />
+    <Compile Include="EduExam\ExtraCuricularDA.cs" />
+    <Compile Include="EduExam\SubjectMarkRangeDA.cs" />
+    <Compile Include="EduFees\MonthlyFeeStatementDA.cs" />
+    <Compile Include="EduFees\FeeDA.cs" />
+    <Compile Include="EduFees\FeeCollectionDA.cs" />
+    <Compile Include="EduFeeUtility\InclusiveRuleDA.cs" />
+    <Compile Include="EduFeeUtility\ExemptionRuleDA.cs" />
+    <Compile Include="EduFeeUtility\EMIPaymentDA.cs" />
+    <Compile Include="EduFeeUtility\MonthlyPaymentDA.cs" />
+    <Compile Include="EduFeeUtility\ExtraFeeRuleDA.cs" />
+    <Compile Include="EduFeeUtility\OneTimePaymentDA.cs" />
+    <Compile Include="EduFeeUtility\FeeDetailRulesDA.cs" />
+    <Compile Include="EduFeeUtility\FeesTypeMasterDA.cs" />
+    <Compile Include="EduFeeUtility\PaymentTypeDA.cs" />
+    <Compile Include="EduHostel\AjustedDA.cs" />
+    <Compile Include="EduHostel\DepositFeeDA.cs" />
+    <Compile Include="EduHostel\GetAutoItemNameDA.cs" />
+    <Compile Include="EduHostel\HostelRegistrationDA.cs" />
+    <Compile Include="EduHostel\HostelVisitorDA.cs" />
+    <Compile Include="EduInventory\IndentGenerationDA.cs" />
+    <Compile Include="EduInventory\IndentSaleDA.cs" />
+    <Compile Include="EduInventory\ItemCondemnationDA.cs" />
+    <Compile Include="EduInventory\ItemReturnDA.cs" />
+    <Compile Include="EduInventory\StockEntryWithOrderDA.cs" />
+    <Compile Include="EduInventory\StockEntryWithoutPODA.cs" />
+    <Compile Include="EduInventory\StockIssueDA.cs" />
+    <Compile Include="EduInventory\StockReleasedDA.cs" />
+    <Compile Include="EduInventory\StockStatusDA.cs" />
+    <Compile Include="EduInventory\VendorDueDA.cs" />
+    <Compile Include="EduInventory\WorkOrderDA.cs" />
+    <Compile Include="EduInvUtilityDA\GroupDA.cs" />
+    <Compile Include="EduInvUtilityDA\ItemDA.cs" />
+    <Compile Include="EduInvUtilityDA\OrderTypeDA.cs" />
+    <Compile Include="EduInvUtilityDA\SubgroupDA.cs" />
+    <Compile Include="EduInvUtilityDA\SupplierDA.cs" />
+    <Compile Include="EduInvUtilityDA\UnitDA.cs" />
+    <Compile Include="EduInvUtilityDA\VendorDA.cs" />
+    <Compile Include="EduInvUtilityDA\VendortypeDA.cs" />
+    <Compile Include="EduLibrary\AddBookToRackDA.cs" />
+    <Compile Include="EduLibrary\IssueBookDA.cs" />
+    <Compile Include="EduLibrary\RackGroupDA.cs" />
+    <Compile Include="EduLibrary\RackSubGroupDA.cs" />
+    <Compile Include="EduLibrary\ReturnBookDA.cs" />
+    <Compile Include="EduSMS\SmsDA.cs" />
+    <Compile Include="EduStudent\AddstudentDA.cs" />
+    <Compile Include="EduStudent\AdmissionWithFeeDA.cs" />
+    <Compile Include="EduTransport\TransportfeeDA.cs" />
+    <Compile Include="EduTransport\TransportRegistrationDA.cs" />
+    <Compile Include="EduTransport\VehicleDA.cs" />
+    <Compile Include="EduUtility\AcademicSessionDA.cs" />
+    <Compile Include="EduUtility\CampusDA.cs" />
+    <Compile Include="EduUtility\CastDA.cs" />
+    <Compile Include="EduUtility\ClassDA.cs" />
+    <Compile Include="EduUtility\ClasswiseSubjectDA.cs" />
+    <Compile Include="EduUtility\CountryDA.cs" />
+    <Compile Include="EduUtility\DepartmentDA.cs" />
+    <Compile Include="EduUtility\DesignationDA.cs" />
+    <Compile Include="EduUtility\DistrictDA.cs" />
+    <Compile Include="EduUtility\EmployeeTypeDA.cs" />
+    <Compile Include="EduUtility\ExamTimeTableDA.cs" />
+    <Compile Include="EduUtility\ExamTypeDA.cs" />
+    <Compile Include="EduUtility\FeeDetailDA.cs" />
+    <Compile Include="EduUtility\FeesTypesDA.cs" />
+    <Compile Include="EduUtility\HouseTypeDA.cs" />
+    <Compile Include="EduFeeUtility\PaymentModeDA.cs" />
+    <Compile Include="EduUtility\RelationshipDA.cs" />
+    <Compile Include="EduUtility\ReligionDA.cs" />
+    <Compile Include="EduUtility\RouteDA.cs" />
+    <Compile Include="EduUtility\SalutationDA.cs" />
+    <Compile Include="EduUtility\SchoolDetailDA.cs" />
+    <Compile Include="EduUtility\SectionDA.cs" />
+    <Compile Include="EduUtility\SexDA.cs" />
+    <Compile Include="EduUtility\StateDA.cs" />
+    <Compile Include="EduUtility\StudentTypeDA.cs" />
+    <Compile Include="EduUtility\SubjectDA.cs" />
+    <Compile Include="EduUtility\SubRouteDA.cs" />
+    <Compile Include="EduUtility\VehicleTypeDA.cs" />
+    <Compile Include="EduUtility\WingDA.cs" />
+    <Compile Include="ELearning\ELearningDA.cs" />
+    <Compile Include="HRAndPayroll\HR\LeaveRequestDA.cs" />
+    <Compile Include="HRAndPayroll\HR\LoanPaymentDA.cs" />
+    <Compile Include="HRAndPayroll\HR\ManualAttendanceDA.cs" />
+    <Compile Include="HRAndPayroll\Payroll\DailyProxyManagerDA.cs" />
+    <Compile Include="HRAndPayroll\Payroll\OutsideDutyManagerDA.cs" />
+    <Compile Include="HRAndPayroll\Payroll\SalaryGeneratorDA.cs" />
+    <Compile Include="HRAndPayroll\Payroll\SalaryStructureDA.cs" />
+    <Compile Include="HRAndPayroll\Utility\HolidayListDA.cs" />
+    <Compile Include="HRAndPayroll\Utility\LeaveTypeDA.cs" />
+    <Compile Include="HRAndPayroll\Utility\LoanTypeDA.cs" />
+    <Compile Include="HRAndPayroll\Utility\RosterDA.cs" />
+    <Compile Include="HRAndPayroll\Utility\ShiftTypeDA.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reports\DefaulterListDA.cs" />
+    <Compile Include="SqlHelper.cs" />
+    <Compile Include="SqlParameterHelper.cs" />
+    <Compile Include="StudentPortalDA\OnlinepaymentDA.cs" />
+    <Compile Include="TimeTable\ClassallocationDA.cs" />
+    <Compile Include="TimeTable\PeriodplannerDA.cs" />
+    <Compile Include="WebPortal\DataSincDA.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Mobimp.Edusoft.Common\Mobimp.Edusoft.Common.csproj">
+      <Project>{C047DEC3-74D3-4E84-8F3B-5970C712422D}</Project>
+      <Name>Mobimp.Edusoft.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mobimp.Edusoft.Data\Mobimp.Edusoft.Data.csproj">
+      <Project>{8D94B18B-131E-4AFC-81D1-80D64FCEA341}</Project>
+      <Name>Mobimp.Edusoft.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

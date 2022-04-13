@@ -1,0 +1,374 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Campusoft.Master" EnableEventValidation="false" AutoEventWireup="true" CodeBehind="ClasswiseSubSubjectMst.aspx.cs" Inherits="Mobimp.Campusoft.Web.EduUtility.ClasswiseSubSubjectMst" %>
+
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="CampusoftPlaceholder" runat="server">
+    <div class="container-fluid" id="page_wrapper">
+        <ol class="breadcrumb">
+            <li><a href="../HomeDashboard.aspx">Dashboard&nbsp;&nbsp;<i class="fa fa-chevron-right" style="font-size: xx-small;" aria-hidden="true"></i></a></li>
+            <li>Time Table&nbsp;&nbsp;<i class="fa fa-chevron-right" style="font-size: xx-small;" aria-hidden="true"></i></li>
+            <li><a runat="server" id="a5" href="../EduUtility/ClassMST.aspx">Add class </a>&nbsp;<i class="fa fa-chevron-right" style="font-size: xx-small;" aria-hidden="true"></i></li>
+            <li><a runat="server" id="a6" href="../EduUtility/SectionMST.aspx">Add section </a>&nbsp;<i class="fa fa-chevron-right" style="font-size: xx-small;" aria-hidden="true"></i></li>
+            <li><a runat="server" id="a1" href="../EduUtility/SubjectMST.aspx">Add subject </a>&nbsp;<i class="fa fa-chevron-right" style="font-size: xx-small;" aria-hidden="true"></i></li>
+            <li><a class="active" runat="server" id="a10" href="../EduUtility/ClasswiseSubjectMst.aspx">Add classwise subject </a>&nbsp;<i class="fa fa-chevron-right" style="font-size: xx-small;" aria-hidden="true"></i></li>
+            <li><a runat="server" id="activepage" href="../TimeTable/TeacherwiseClassAllocation.aspx">Class | Subject  allocation </a>&nbsp;&nbsp;<i class="fa fa-chevron-right" style="font-size: xx-small;" aria-hidden="true"></i></li>
+            <li><a runat="server" id="a11" href="../TimeTable/TimeTableRules.aspx">Rules</a>&nbsp;&nbsp;<i class="fa fa-chevron-right" style="font-size: xx-small;" aria-hidden="true"></i></li>
+            <li><a runat="server" id="a2" href="../TimeTable/PeriodSubjectPlanner.aspx">Period planner </a>&nbsp;<i class="fa fa-chevron-right" style="font-size: xx-small;" aria-hidden="true"></i></li>
+            <li><a runat="server" id="a3" href="../TimeTable/TimeTable.aspx">Generator </a></li>
+        </ol>
+        <asp:UpdatePanel ID="upMains" runat="server" UpdateMode="Conditional">
+            <ContentTemplate>
+                <div class="card_wrapper">
+                    <div class="row mt10">
+                        <div class="col-md-3 customRow">
+                            <div class="form-group">
+                                <asp:Label ID="lbl_session" runat="server" Text="Academic Session"></asp:Label>
+                                <span class="mandatory_field">*</span><span style="color: #ff0000"></span>
+                                <asp:DropDownList ID="ddlSessionID" runat="server" class="form-control custextbox">
+                                </asp:DropDownList>
+                            </div>
+                        </div>
+                        <div class="col-md-3 customRow">
+                            <div class="form-group">
+                                <asp:Label runat="server" ID="lblexamtype" Text="Exam Type">   </asp:Label>
+                                <span class="mandatory_field">*</span><span style="color: #ff0000"></span>
+                                <asp:DropDownList ID="ddlexamtype" runat="server" class="form-control custextbox">
+                                </asp:DropDownList>
+                            </div>
+                        </div>
+                        <div class="col-md-3 customRow">
+                            <div class="form-group">
+                                <asp:Label ID="lblclass" runat="server" Text="Class"></asp:Label>
+                                <span class="mandatory_field">*</span><span style="color: #ff0000"></span>
+                                <asp:DropDownList ID="ddlclass" runat="server" class="form-control custextbox"
+                                    AutoPostBack="true" OnSelectedIndexChanged="ddlclass_OnSelectedIndexChanged">
+                                </asp:DropDownList>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 customRow">
+                            <div class="form-group">
+                                <asp:Label ID="Label3" runat="server" Text="Subject"></asp:Label>
+                                <span class="mandatory_field">*</span><span style="color: #ff0000"></span>
+                                <asp:DropDownList ID="ddlSubjectID" OnSelectedIndexChanged="ddlSubjectID_SelectedIndexChanged" AutoPostBack="true" runat="server" class="form-control custextbox">
+                                </asp:DropDownList>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="row mt10">
+                        <div class="col-md-3 customRow">
+                            <div class="form-group">
+                                <asp:Label ID="Label1" runat="server" Text="Sub Subject"></asp:Label>
+                                <span class="mandatory_field">*</span><span style="color: #ff0000"></span>
+                                <asp:DropDownList ID="ddlSubSubjectID" OnSelectedIndexChanged="ddlSubjectID_SelectedIndexChanged" AutoPostBack="true" runat="server" class="form-control custextbox">
+                                </asp:DropDownList>
+                            </div>
+                        </div>
+                        <div class="col-md-3 customRow">
+                            <div class="form-group">
+                                <asp:Label ID="Label2" runat="server" Text="Status"></asp:Label>
+                                <asp:DropDownList ID="ddlStatus" runat="server" class="form-control custextbox">
+                                    <asp:ListItem Value="1" Text="Active"></asp:ListItem>
+                                    <asp:ListItem Value="0" Text="InActive"></asp:ListItem>
+                                </asp:DropDownList>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <div class="row mt10">
+                        <div class="col-md-9 customRow">
+                        </div>
+                        <div class="col-md-3 customRow">
+                            <div class="form-group pull-right" style="margin-top: 1.8em;">
+                                <asp:Button ID="btnsave" runat="server" class="btn btn-sm btn-green button" Text="Add" OnClick="btnsave_Click" />
+                                <asp:Button ID="btnsearch" Visible="false" class="btn btn-sm btn-info button" runat="server" OnClientClick="return  Validate1();" Text="Search" OnClick="btnsearch_Click" />
+                                <asp:Button ID="btncancel" class="btn btn-sm btn-danger button" runat="server" Text="Reset" OnClick="btncancel_Click" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card_wrapper" id="divsearch" runat="server">
+                    <div class="row pad15">
+                        <div class="col-md-4 customRow" style="margin-top: 13px;">
+                            <asp:Label ID="lblresult" runat="server"></asp:Label>
+                            <asp:Label ID="lbl_totalrecords" Visible="false" runat="server"></asp:Label>
+                        </div>
+                        <div class="col-md-2 customRow" style="text-align: right; margin-top: -5px;">
+                            <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                                <ContentTemplate>
+                                    <asp:LinkButton ID="btn_export" OnClick="btn_export_Click" runat="server"><i class="ficon icon-export" style="font-size:48px;"></i></asp:LinkButton>
+                                </ContentTemplate>
+                                <Triggers>
+                                    <asp:PostBackTrigger ControlID="btn_export" />
+                                </Triggers>
+                            </asp:UpdatePanel>
+                        </div>
+                        <div class="col-md-1 customRow" style="text-align: right; margin-top: 1em;">
+                            <asp:Label ID="lbl_show" runat="server"></asp:Label>
+                        </div>
+                        <div class="col-md-1 customRow">
+                            <div class="form-group">
+                                <asp:DropDownList ID="ddl_show" Visible="true" AutoPostBack="true" OnSelectedIndexChanged="ddl_show_SelectedIndexChanged" runat="server" class="form-control custextbox">
+                                    <asp:ListItem Value="10">10</asp:ListItem>
+                                    <asp:ListItem Value="20"> 20 </asp:ListItem>
+                                    <asp:ListItem Value="50"> 50 </asp:ListItem>
+                                    <asp:ListItem Value="100"> 100 </asp:ListItem>
+                                    <asp:ListItem Value="10000"> all</asp:ListItem>
+                                </asp:DropDownList>
+                            </div>
+                        </div>
+                        <div class="col-md-4 customRow">
+                            <input type="text" class="searchs form-control custextbox" placeholder="search..">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div>
+                            <asp:UpdateProgress ID="updateProgress1" runat="server">
+                                <ProgressTemplate>
+                                    <div id="DIVloading" runat="server" class="Pageloader">
+                                        <asp:Image ID="imgUpdateProgress" ImageUrl="~/app-assets/images/loader.gif" runat="server"
+                                            AlternateText="Loading ..." ToolTip="Loading ..." />
+                                    </div>
+                                </ProgressTemplate>
+                            </asp:UpdateProgress>
+                        </div>
+                        <div id="Subjectdetails" class="col-md-12 customRow ">
+                            <asp:GridView ID="GvSubjectdetails" EmptyDataText="No record found..." OnPageIndexChanging="GvSubjectdetails_PageIndexChanging"
+                                CssClass="footable table-striped" AllowSorting="true" OnSorting="GvSubjectdetails_Sorting" OnRowCommand="GvSubjectdetails_RowCommand" runat="server" AutoGenerateColumns="false"
+                                Style="width: 100%">
+                                <Columns>
+                                    <asp:BoundField DataField="SubjectID" ItemStyle-Width="1%" SortExpression="SubjectID" HeaderText="ID" />
+                                    <asp:BoundField DataField="ClassName" ItemStyle-Width="2%" SortExpression="ClassName" HeaderText="Class" />
+                                    <asp:BoundField DataField="CODE" ItemStyle-Width="2%" SortExpression="CODE" HeaderText="Code" />
+                                    <asp:BoundField DataField="Descriptions" ItemStyle-Width="8%" SortExpression="Descriptions" HeaderText="Subject" />
+                                    <asp:BoundField DataField="AddedBy" ItemStyle-Width="1%" SortExpression="AddedBy" HeaderText="Added By" />
+                                    <asp:BoundField DataField="AddedDate" ItemStyle-Width="2%" SortExpression="AddedDate" HeaderText="Added Date" DataFormatString="{0:dd/MM/yyyy}" />
+                                    <asp:TemplateField>
+                                        <HeaderTemplate>
+                                            Remark
+                                        </HeaderTemplate>
+                                        <ItemTemplate>
+                                            <asp:TextBox ID="txtremarks" Height="20px" Width="70px" class="form-control gridtextbox" runat="server" Text='<%# Eval("Remarks")%>'></asp:TextBox>
+                                        </ItemTemplate>
+                                        <ItemStyle HorizontalAlign="Left" Width="1%" />
+                                    </asp:TemplateField>
+                                    <asp:TemplateField>
+                                        <HeaderTemplate>
+                                            Edit
+                                        </HeaderTemplate>
+                                        <ItemTemplate>
+                                            <asp:Label ID="lblID" Visible="false" runat="server" Text='<%# Eval("ID")%>'></asp:Label>
+                                            <asp:Label ID="lblSubjectID" Visible="false" runat="server" Text='<%# Eval("SubjectID")%>'></asp:Label>
+                                            <asp:Button ID="lnkEdit" Text="Edit" class="cus-btn btn-sm btn-blue-grey button" runat="server" CommandArgument="<%# ((GridViewRow) Container).RowIndex  %>"
+                                                CommandName="Edits" />
+                                        </ItemTemplate>
+                                        <ItemStyle HorizontalAlign="Left" Width="1%" />
+                                    </asp:TemplateField>
+                                    <asp:TemplateField>
+                                        <HeaderTemplate>
+                                            Delete
+                                        </HeaderTemplate>
+                                        <ItemTemplate>
+                                            <asp:Button ID="lnkDelete" class="cus-btn btn-sm btn-deep-orange button" Text="Delete" runat="server" CommandArgument="<%# ((GridViewRow) Container).RowIndex  %>"
+                                                CommandName="Deletes" ValidationGroup="none" OnClientClick="functionConfirm(this); return false;" />
+                                        </ItemTemplate>
+                                        <ItemStyle HorizontalAlign="Left" Width="1%" />
+                                    </asp:TemplateField>
+                                </Columns>
+                                <PagerSettings Mode="NumericFirstLast" PageButtonCount="5" FirstPageText="<" LastPageText=">" />
+                                <PagerStyle CssClass="gridpager" HorizontalAlign="left" Height="1em" Width="2%" />
+                            </asp:GridView>
+
+                        </div>
+                    </div>
+                    <asp:ModalPopupExtender ID="ModalPopupExtender2" BehaviorID="modalbehavior2" runat="server" TargetControlID="btnopen2" PopupControlID="Popupwindow2"
+                        BackgroundCssClass="modalBackground" Enabled="True">
+                    </asp:ModalPopupExtender>
+                    <asp:Panel runat="server" ID="Popupwindow2" BackColor="White" Style="display: none;">
+                        <div class="row">
+                            <div class="col-sm-11">
+                                <h5>Assign Subject</h5>
+                            </div>
+                            <div class="col-sm-1" style="padding: 0px 9px; font-size: large;">
+                                <asp:LinkButton ID="LinkButton1" runat="server"><i class="fa fa-close" style="color: #ff011c;" ></i></asp:LinkButton>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="col-sm-12">
+                                    <div class="" id="div1" runat="server" style="text-align: center; color: red;">
+                                        <asp:Label ID="lbl_subjectmeassge" runat="server"></asp:Label>
+                                        <asp:Label ID="lbl_aasignteacherID" Visible="false" runat="server"></asp:Label>
+                                        <asp:Label ID="lbl_class" Visible="false" runat="server" Text="Section"></asp:Label>
+                                        <asp:DropDownList ID="ddl_selectclass" Visible="false" AutoPostBack="true" OnSelectedIndexChanged="ddl_selectclass_SelectedIndexChanged" runat="server" class="form-control">
+                                        </asp:DropDownList>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <asp:GridView ID="gv_subsubject" EmptyDataText="No record found..."
+                                            CssClass="table-striped table-hover" runat="server" OnRowDataBound="gv_subject_RowDataBound" AutoGenerateColumns="false"
+                                            Style="width: 100%" GridLines="None">
+                                            <Columns>
+                                                <asp:BoundField DataField="ID" ItemStyle-Width="1%" SortExpression="ID" HeaderText="ID" />
+                                                <asp:BoundField DataField="SubjectName" SortExpression="SubjectName" HeaderText="Sub Subject" ItemStyle-Width="3%" />
+                                                <asp:TemplateField Visible="false">
+                                                    <HeaderTemplate>
+                                                    </HeaderTemplate>
+                                                    <ItemTemplate>
+                                                        <asp:Label ID="lbl_subjectID" Visible="false" runat="server" Text='<%# Eval("ID")%>'></asp:Label>
+                                                        <asp:Label ID="lbl_classID" Visible="false" runat="server" Text='<%# Eval("ClassID")%>'></asp:Label>
+                                                        <asp:Label ID="lbl_sectionID" Visible="false" runat="server" Text='<%# Eval("SectionID")%>'></asp:Label>
+                                                        <asp:Label ID="lbl_allocated_subjectID" Visible="false" runat="server" Text='<%# Eval("AllocatedSubjectID")%>'></asp:Label>
+                                                        <asp:CheckBox ID="checksubject" runat="server" onclick="Check_Click(this);" />
+                                                    </ItemTemplate>
+                                                    <ItemStyle HorizontalAlign="Left" Width="1%" />
+                                                </asp:TemplateField>
+                                            </Columns>
+                                            <PagerSettings Mode="NumericFirstLast" PageButtonCount="5" FirstPageText="<" LastPageText=">" />
+                                            <PagerStyle CssClass="gridpager" HorizontalAlign="left" Height="1em" Width="2%" />
+                                        </asp:GridView>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-sm-12" align="right" style="text-align: right;">
+                                        <br>
+                                        <div class="form-group input-group cuspanelbtngrp center">
+                                            <asp:Button ID="btn_save" runat="server" class="btn btn-sm btn-info button" OnClientClick="javascript: return confirm('Are you sure to save ?');" Text="Save" OnClick="btn_savesubject_Click" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </asp:Panel>
+                </div>
+            </ContentTemplate>
+        </asp:UpdatePanel>
+    </div>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            $('.searchs').on('keyup', function () {
+                var searchTerm = $(this).val().toLowerCase();
+                $('#Subjectdetails table tbody tr').each(function () {
+                    var lineStr = $(this).text().toLowerCase();
+                    if (lineStr.indexOf(searchTerm) === -1) {
+                        $(this).hide();
+                    } else {
+                        $(this).show();
+                    }
+                });
+            });
+        });
+
+        function Validate() {
+            var str = "";
+            var i = 0;
+            if (document.getElementById("<%=ddlSessionID.ClientID%>").selectedIndex == "0") {
+                str = str + "\n Please select academic session.";
+                document.getElementById("<%=ddlSessionID.ClientID %>").focus();
+                i++;
+
+            }
+            if (document.getElementById("<%=ddlclass.ClientID%>").selectedIndex == "0") {
+                str = str + "\n Please select class.";
+                document.getElementById("<%=ddlclass.ClientID %>").focus();
+                i++;
+
+            }
+            if (document.getElementById("<%=ddlSubjectID.ClientID%>").selectedIndex == "0") {
+                str = str + "\n Please select subject.";
+                document.getElementById("<%=ddlSubjectID.ClientID %>").focus();
+                i++;
+
+            }
+
+            if (str.length > 0) {
+                alert("Check Following Required Fields : " + str);
+                return false;
+            }
+            else
+                return true;
+        }
+        function Validate1() {
+            var str = "";
+            var i = 0;
+            if (document.getElementById("<%=ddlclass.ClientID%>").selectedIndex == "0") {
+                str = str + "\n Please select class.";
+                document.getElementById("<%=ddlclass.ClientID %>").focus();
+                i++;
+
+            }
+
+            if (str.length > 0) {
+                alert("Check Following Required Fields : " + str);
+                return false;
+            }
+            else
+                return true;
+        }
+
+        function successalert(str) {
+            swal({
+                title: "",
+                text: str,
+                icon: "success",
+            });
+        }
+        function failalert(str) {
+            swal({
+                title: "",
+                text: str,
+                icon: "warning",
+            });
+        }
+
+        function functionConfirm(event) {
+            var row = event.parentNode.parentNode;
+            var paramID = row.rowIndex - 1;
+            swal({
+                title: "Are you sure?",
+                text: "Once deleted, you will not be able to recover this imaginary file!",
+
+                buttons: true,
+                dangerMode: true,
+            })
+                .then((willDelete) => {
+                    if (willDelete) {
+                        __doPostBack('<%=GvSubjectdetails.UniqueID%>', 'Deletes$' + paramID);
+                        //alert(paramID);
+                    } else {
+                        swal("Your data is safe!");
+                    }
+                });
+
+        }
+
+
+        $(function () {
+            $('[id*=GvSubjectdetails]').footable();
+        });
+        var prm = Sys.WebForms.PageRequestManager.getInstance();
+        prm.add_endRequest(function () {
+
+            $('[id*=GvSubjectdetails]').footable();
+
+            $('.searchs').on('keyup', function () {
+                var searchTerm = $(this).val().toLowerCase();
+                $('#Subjectdetails table tbody tr').each(function () {
+                    var lineStr = $(this).text().toLowerCase();
+                    if (lineStr.indexOf(searchTerm) === -1) {
+                        $(this).hide();
+                    } else {
+                        $(this).show();
+                    }
+                });
+            });
+        });
+    </script>
+</asp:Content>

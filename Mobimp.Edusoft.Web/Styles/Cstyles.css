@@ -1,0 +1,951 @@
+﻿   
+   /*------------Popup Style-----------------*/
+   .lblMsg
+   {
+       height:8px;
+   }
+    .modalBackground
+    {
+        background-color: Black;
+        filter: alpha(opacity=90);
+        opacity: 0.8;
+    }
+    .modalPopup
+    {
+        background-color: #FFFFFF;
+        border-width: 3px;
+        border-style: solid;
+        border-color: black;
+        padding-top: 10px;
+        padding-left: 10px;
+        width: 600px;
+        height: 300px;
+    }
+        .modalPopupheader
+    {
+        background-color: #42ad83;
+        height: 30px;
+        color: White;
+        line-height: 30px;
+        text-align: center;
+        font-weight: bold;
+        margin-left: -10px;
+        margin-top: -10px;
+    }
+    .modalPopupbody
+    {
+        min-height: 50px;
+        line-height: 30px;
+        text-align: center;
+        padding:5px
+    }
+    .modalPopupfooter
+    {
+        padding: 3px;
+    }
+    .modalPopupbutton
+    {
+         background-color: #42ad83;
+        -moz-border-radius: 4px;
+        -webkit-border-radius: 4px;
+        border-radius: 4px;
+        display: inline-block;
+        cursor: pointer;
+        color: #ffffff;
+        font-family: Arial;
+        font-size: 14px;
+        padding: 1px 21px;
+        text-decoration: none;
+        text-shadow: 0px 0px 0px #ffee66;
+        
+    }
+    .modalPopuptd
+    {
+        text-align:left;
+    }
+    .modalDueCollection
+    {
+        background-color: #c4d3ee;
+        height: 50px;
+        text-align: center;
+        font-weight: bold;
+        margin-left: -10px;
+        margin-top: 19px;
+        padding-top: 12px;
+    }
+    
+    /*------------ End Popup Style-----------------*/
+    
+
+ .loading
+{
+    text-align: center;
+    left: 50%;
+    top: 40%;
+    right: 40%;
+    vertical-align: middle;
+    z-index: 9999999;
+    position: fixed;
+}
+.loadingText
+{
+    font-size: 15px;
+    color: #000 !important;
+    text-align: center;
+}
+
+.logo
+{
+    height: 93px;
+    width: 286px;
+    margin-top: 25px;
+    z-index: 1000;
+    float: left;
+}
+
+.loadbackup
+{
+    text-align: center;
+    left: 50%;
+    top: 60%;
+    right: 40%;
+    vertical-align: middle;
+    z-index: 9999999;
+    position: fixed;
+}
+
+.Message
+{
+    margin: auto;
+    width: 100%;
+    text-align: center;
+    background-color: #FFCCFF;
+    color: Red;
+}
+.MsgSuccess
+{
+    margin: auto;
+    width: 100%;
+    text-align: center;
+    background-color: #dddddd;
+    color: Green;
+}
+.footer
+{
+    position: fixed;
+bottom: 0;
+padding: 5px 0px;
+width: 100%;
+font-size: 13px;
+color: white;
+background: rgb(66, 173, 131);
+}
+.footer a
+{
+    color: rgb(240, 245, 38) !important;
+text-decoration: none;
+}
+.footer a:hover
+{
+    color: rgb(0, 184, 255);
+    text-decoration: none;
+}
+/* Style sheet amenu.css. Defaults for 12px font. */
+
+.amenu
+{
+    position: relative;
+    height: 20em;
+    width: 30px;
+    margin: 0;
+    font-size: 13px;
+    font-family: Arial;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+.amenu ul
+{
+    width: 200px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: left;
+    white-space: nowrap;
+    background-color: #42ad83;
+    border: none;
+}
+
+.amenu ul ul
+{
+    position: absolute;
+    left: -5000px;
+}
+
+.amenu ul.top
+{
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+
+.amenu a
+{
+    display: inherit;
+margin: 0;
+padding: 0;
+color: #ffffff;
+line-height: 2em;
+text-decoration: none;
+cursor: pointer;
+padding: 2px 55px 2px 10px;
+}
+
+.amenu ul.top a
+{
+    margin: 0;
+    padding: 0;
+    margin-left: 2px;
+    margin-right: 2px;
+    padding-left: 30px;
+    width: 200px; /* 190-42 */
+}
+
+.amenu ul.top ul.sub a, .amenu ul.top ul.sub ul.sub a
+{
+    margin: 0;
+    padding: 0;
+    margin-left: 2px;
+    margin-right: 2px;
+    padding-left: 20px;
+    width: 200px; /* 190-20 */
+}
+
+/* For icons */
+.amenu li a
+{
+    background-repeat: no-repeat;
+    background-position: 20px center;
+    background-image: none;
+}
+
+/* Hover */
+
+.amenu a:hover ul, .amenu a:hover a:hover ul, .amenu a:hover a:hover a:hover ul
+{
+    left: 100%;
+}
+
+.amenu a:hover ul ul, .amenu a:hover a:hover ul ul
+{
+    left: -5000px;
+}
+
+/* For non-IE6 browsers. Font 12px. */
+
+.amenu ul li:hover > ul
+{
+    left: 100%;
+    margin-top: -27px;
+    margin-left: -10px;
+}
+.amenu ul li > img
+{
+    top: -17px;
+    left: -10px;
+}
+
+/* For IE6 browser. Font 12px.*/
+
+.amenu table
+{
+    position: absolute;
+    left: 99%;
+    height: 0;
+    width: 0;
+    margin-top: 19px;
+    margin-left: -20px;
+    border-collapse: collapse;
+    border: none;
+}
+.amenu table img
+{
+    top: -17px;
+    left: 0;
+}
+.amenu table td
+{
+    margin: 0;
+    padding: 0;
+}
+
+/* For IE6 */
+
+.amenu li a:hover
+{
+    color: #0489B1;
+    background-color: #dae0e4;
+    visibility: visible;
+}
+
+/* For non-IE6 browsers */
+
+.amenu li:hover > a
+{
+    color: #0000ff;
+    background-color: #81BEF7;
+    visibility: visible;
+}
+
+/* Top,bottom borders */
+
+.amenu ul.top li.vpadding_top, .amenu ul.top ul.sub li.vpadding_top, .amenu ul.top ul.sub ul.sub li.vpadding_top, .amenu ul.top li.vpadding_bottom, .amenu ul.top ul.sub li.vpadding_bottom, .amenu ul.top ul.sub ul.sub li.vpadding_bottom
+{
+    height: 4px;
+    line-height: 0;
+    border: solid 1px #C6C6CC;
+}
+
+.amenu ul.top li.vpadding_top, .amenu ul.top ul.sub li.vpadding_top, .amenu ul.top ul.sub ul.sub li.vpadding_top
+{
+    border-bottom: none;
+}
+.amenu ul.top li.vpadding_bottom, .amenu ul.top ul.sub li.vpadding_bottom, .amenu ul.top ul.sub ul.sub li.vpadding_bottom
+{
+    border-top: none;
+}
+
+/* Misc */
+
+.amenu :focus
+{
+    outline: 0;
+}
+
+.amenu .arrow
+{
+    float: right;
+    height: 8px;
+    width: 300px;
+    position: relative;
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+
+/******START for Grid View ************************************/
+.gridViewHeader
+{
+    font-size: 15px;
+    color: #063867;
+    font-family: Calibri;
+    background-color: White;
+    background-image: url(../EduImages/topmsgbg.png)no-repeat bottom right;
+    margin-left: 0px;
+}
+.gridViewHeader A:Link
+{
+    font-size: 17px;
+    font-weight: bold;
+    /*color: #FFFFFF;*/
+    color:#301D1D;
+}
+.gridViewHeader A:Visited
+{
+    font-weight: bold;
+    color: #FFFFFF;
+}
+.gridViewRow
+{
+    font-size: 17px;
+    font-weight: normal;
+    color: Black;
+    height: auto;
+    background-color: white;
+}
+.gridViewHeader td, .gridViewHeader th
+{
+    text-align: center;
+}
+
+.gridViewAltRow
+{
+    font-size: 17px;
+    font-weight: normal;
+    color: black;
+    height: auto;
+    background-color: #F1F1F1;
+}
+
+.gridViewHeader td, .gridViewHeader th, .gridViewRow td, .gridViewAltRow td
+{
+    padding: 0px 0px;
+    border: solid 1px #c4d3ee;
+}
+
+
+.BorderMe
+{
+    border: 1px solid #cccccc;
+}
+
+/******END for Grid View ************************************/
+
+
+
+.paging
+{
+}
+
+.paging a
+{
+    background-color: transparent;
+    padding: 5px 7px;
+    text-decoration: none;
+    border: 1px solid #ffffff;
+}
+
+.paging a:hover
+{
+    background-color: #E1FFEF;
+    color: #00C157;
+    border: 1px solid #ffffff;
+}
+
+.paging span
+{
+    background-color: #E1FFEF;
+    padding: 5px 7px;
+    color: #00C157;
+    border: 1px solid #ffffff;
+}
+
+tr.paging
+{
+    background: none !important;
+}
+
+tr.paging tr
+{
+    background: none !important;
+}
+tr.paging td
+{
+    border: none;
+}
+.cusTextBox
+{
+    border: 1px solid #7F9DB9;
+    padding: 1px 3px;
+    font-family: Calibri;
+    font-size: 15px;
+    font-weight: lighter;
+    width: 265px;
+}
+.cusDropDown
+{
+    border: 1px solid #7F9DB9;
+    padding: 1px 3px;
+    font-family: Calibri;
+    font-size: 15px;
+    font-weight: lighter;
+    width: 274px;
+    text-align: center;
+    top: 0px;
+    left: 0px;
+    margin-top: 0px;
+}
+.cusddlchkbox
+{
+ 
+    width: 398px;
+    height:25px !important;  
+    border: 1px solid #7F9DB9; 
+}
+
+.cusddlchkbox div#caption
+{
+ text-align:center!important;
+ line-height:22px;
+ font-size:15px;
+ font-weight:lighter;
+ padding: 1px 3px  0px 0px;
+ font-family: Calibri;
+}
+.cusddlchkbox div.dd_chk_drop
+{
+    top: 25px!important;
+}
+.GridTextBox
+{
+    border: 1px solid #7F9DB9;
+    padding: 1px 3px;
+    font-family: Calibri;
+    font-size: 14px;
+    height: 15px;
+    font-weight: lighter;
+    width: 50px;
+}
+.cuslabel
+{
+    border: 1px solid #7F9DB9;
+    padding: 1px 3px;
+    font-family: Calibri;
+    font-size: 15px;
+    font-weight: lighter;
+    width: 200px;
+    height: 20px;
+}
+.Label
+{
+    padding: 1px 3px;
+    color: Black;
+    width: 200px;
+    font-size: 12px;
+}
+.Label4
+{
+    padding: 1px 3px;
+    color: Black;
+    width: 200px;
+    font-size: 15px;
+}
+.Label3
+{
+    padding: 1px 3px;
+    color: Teal;
+    width: 120px;
+    font-size: 12px;
+}
+.indicator
+{
+    padding: 1px 3px;
+    color: Green;
+}
+.indicator2
+{
+    padding: 1px 3px;
+    color: Red;
+}
+.indicator3
+{
+    padding: 1px 3px;
+    color: Purple;
+}
+.indicator4
+{
+    padding: 1px 3px;
+    color: Maroon;
+}
+.indicator5
+{
+    padding: 1px 3px;
+    color: Black;
+}
+.css3gradient
+{
+    width: 100%;
+    height: 3px;
+    background-color: #91ceeb;
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#91ceeb, endColorstr=#edf4f7);
+    background-image: -moz-linear-gradient(top, #91ceeb 1%, #edf4f7 4%,#ffffff 97%);
+    background-image: linear-gradient(top, #91ceeb 1%, #edf4f7 4%,#ffffff 97%);
+    background-image: -webkit-linear-gradient(top, #91ceeb 1%, #edf4f7 4%,#ffffff 97%);
+    background-image: -o-linear-gradient(top, #91ceeb 1%, #edf4f7 4%,#ffffff 97%);
+    background-image: -ms-linear-gradient(top, #91ceeb 1%, #edf4f7 4%,#ffffff 97%);
+    background-image: -webkit-gradient(linear, right top, right bottom, color-stop(1%,#91ceeb), color-stop(4%,#edf4f7),color-stop(97%,#ffffff));
+}
+
+
+.css4gradient
+{
+}
+.RButton
+{
+    background-color: #e4685d;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 14px;
+    padding: 1px 21px;
+    text-decoration: none;
+    text-shadow: 0px 0px 0px #ffee66;
+}
+.RButton:hover
+{
+    background-color: #eb675e;
+}
+.RButton:active
+{
+    position: relative;
+    top: 1px;
+}
+
+.YButton
+{
+    background-color: #ffec64;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    display: inline-block;
+    cursor: pointer;
+    color: #333333;
+    font-family: Arial;
+    font-size: 14px;
+    padding: 1px 21px;
+    text-decoration: none;
+    text-shadow: 0px 0px 0px #ffee66;
+}
+.YButton:hover
+{
+    background-color: #ffab23;
+}
+.YButton:active
+{
+    position: relative;
+    top: 1px;
+}
+
+
+.button
+{
+    background-color: #42ad83;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 14px;
+    padding: 1px 21px;
+    text-decoration: none;
+    text-shadow: 0px 0px 0px #ffee66;
+}
+.button:hover
+{
+    background-color: #408c99;
+}
+.button:active
+{
+    position: relative;
+    top: 1px;
+}
+.myCalendar
+{
+    background-color: #f2f2f2;
+    width: 250px;
+    height: 200px;
+    border: 10px solid #4CCAEF !important;
+    border-top: 0px !important;
+}
+.myCalendar a
+{
+    text-decoration: none;
+}
+.myCalendar .myCalendarTitle
+{
+    font-weight: bold;
+    height: 40px;
+    line-height: 40px;
+    background-color: #4CCAEF;
+    color: #ffffff;
+}
+.myCalendar th.myCalendarDayHeader
+{
+    height: 25px;
+    border-bottom: outset 2px #fbfbfb;
+    border-right: outset 2px #fbfbfb;
+}
+.myCalendar td.myCalendarDay
+{
+    border: outset 2px #fbfbfb;
+}
+.myCalendar td.myCalendarDay:nth-child(7) a
+{
+    color: #c52e2e !important;
+}
+.myCalendar .myCalendarNextPrev
+{
+    text-align: center;
+}
+
+.myCalendar .myCalendarNextPrev a
+{
+    font-size: 1px;
+}
+.myCalendar .myCalendarNextPrev:nth-child(1) a
+{
+    color: #4CCAEF !important;
+    background: url("prevMonth.png") no-repeat center center;
+}
+.myCalendar .myCalendarNextPrev:nth-child(1) a:hover, .myCalendar .myCalendarNextPrev:nth-child(3) a:hover
+{
+    background-color: transparent;
+}
+.myCalendar .myCalendarNextPrev:nth-child(3) a
+{
+    color: #4CCAEF !important;
+    background: url("nextMonth.png") no-repeat center center;
+}
+.myCalendar td.myCalendarSelector a
+{
+    background-color: #25bae5;
+}
+
+.myCalendar .myCalendarDayHeader a, .myCalendar .myCalendarDay a, .myCalendar .myCalendarSelector a, .myCalendar .myCalendarNextPrev a
+{
+    display: block;
+    line-height: 20px;
+}
+.myCalendar .myCalendarToday
+{
+    background-color: #f2f2f2;
+    -webkit-box-shadow: 0 0 7px 3px #e5e5e5;
+    box-shadow: 0 0 7px 3px #e5e5e5;
+}
+.myCalendar .myCalendarToday a
+{
+    color: #25bae5 !important;
+}
+.myCalendar .myCalendarDay a:hover, .myCalendar .myCalendarSelector a:hover
+{
+    background-color: #25bae5;
+}
+
+
+.css5gradient
+{
+    width: 100%;
+    height: 100px;
+    background-color: #FFFFFF;
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#FFFFFF, endColorstr=#c2e1f0);
+    background-image: -moz-linear-gradient(top, #FFFFFF 0%, #c2e1f0 0%,#FFFFFF 100%);
+    background-image: linear-gradient(top, #FFFFFF 0%, #c2e1f0 0%,#FFFFFF 100%);
+    background-image: -webkit-linear-gradient(top, #FFFFFF 0%, #c2e1f0 0%,#FFFFFF 100%);
+    background-image: -o-linear-gradient(top, #FFFFFF 0%, #c2e1f0 0%,#FFFFFF 100%);
+    background-image: -ms-linear-gradient(top, #FFFFFF 0%, #c2e1f0 0%,#FFFFFF 100%);
+    background-image: -webkit-gradient(linear, right top, right bottom, color-stop(0%,#FFFFFF), color-stop(0%,#c2e1f0),color-stop(100%,#FFFFFF));
+}
+.logoutbox
+{
+    top: 0;
+background: #42ad83;
+font-size: 15px;
+height: 30px;
+right: 10px;
+border-bottom-right-radius: 4px;
+border-bottom-left-radius: 4px;
+line-height: 1.2;
+text-decoration: none;
+overflow: hidden;
+padding-top: 15px;
+padding-right: 20px;
+position: absolute;
+transition: 1s;
+}
+
+.logoutbox:hover
+{
+    height: 80px;
+    transition: 1s;
+}
+.logoutbox ul
+{
+    margin: 0 !important;
+}
+.logoutbox li
+{
+    list-style: none;
+}
+.logoutbox li a, .logoutbox li span, .logoutbox
+{
+    color: #ffffff !important;
+    text-decoration: none;
+}
+#lnkLogout:hover, #lnkchangepassword:hover
+{
+    color: #62A2E0 !important;
+}
+.flat-icon
+{
+   padding: 0px 5px;
+text-shadow: 0px 0px 0px #A8A8A8, 0 0 0 #000, 0px 0px 2px #323232;
+font-size: 25px;
+box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.35);
+right: 10px;
+top: 0;
+z-index: 2;
+position: absolute;
+color: #FFFFFF;
+border-radius: 25px;
+border: 6px solid #768d87;
+background: #FFFFFF;
+}
+.navigation-bar
+{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    z-index: 2;
+    left: 0;
+}
+
+
+
+/*Header*/
+.Tab .ajax__tab_header
+{
+    color: #088A68;
+    font-family: Calibri;
+    font-size: 18x;
+    font-weight: lighter;
+    background-color: #ffffff;
+    margin-left: 0px;
+}
+/*Body*/
+.Tab .ajax__tab_body
+{
+    padding-top: 0px;
+}
+/*Tab Active*/
+.Tab .ajax__tab_active .ajax__tab_tab
+{
+    color: #ffffff;
+    background: url("../EduImages/tab_active.gif") repeat-x;
+    height: 20px;
+}
+.Tab .ajax__tab_active .ajax__tab_inner
+{
+    color: #ffffff;
+    background: url("../EduImages/tab_left_active.gif") no-repeat left;
+    padding-left: 10px;
+}
+.Tab .ajax__tab_active .ajax__tab_outer
+{
+    color: #ffffff;
+    background: url("../EduImages/tab_right_active.gif") no-repeat right;
+    padding-right: 6px;
+}
+
+/*Tab Inactive*/
+.Tab .ajax__tab_tab
+{
+    color: #666666;
+    background: url("../EduImages/tab_Inactive.gif") repeat-x;
+    height: 20px;
+}
+.Tab .ajax__tab_inner
+{
+    color: #666666;
+    background: url("../EduImages/tab_left_inactive.gif") no-repeat left;
+    padding-left: 10px;
+}
+.Tab .ajax__tab_outer
+{
+    color: #666666;
+    background: url("../EduImages/tab_right_inactive.gif") no-repeat right;
+    padding-right: 6px;
+    margin-right: 2px;
+}
+
+.css6gradient
+{
+    width: 100%;
+    height: 23px;
+    background-color: #d8e8f0;
+}
+
+.css7gradient
+{
+    width: 100%;
+    height: 50px;
+    background-color: #FFFFFF;
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#FFFFFF, endColorstr=#dfe7eb);
+    background-image: -moz-linear-gradient(bottom, #FFFFFF 0%, #dfe7eb 0%,#FFFFFF 95%);
+    background-image: linear-gradient(bottom, #FFFFFF 0%, #dfe7eb 0%,#FFFFFF 95%);
+    background-image: -webkit-linear-gradient(bottom, #FFFFFF 0%, #dfe7eb 0%,#FFFFFF 95%);
+    background-image: -o-linear-gradient(bottom, #FFFFFF 0%, #dfe7eb 0%,#FFFFFF 95%);
+    background-image: -ms-linear-gradient(bottom, #FFFFFF 0%, #dfe7eb 0%,#FFFFFF 95%);
+    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0%,#FFFFFF), color-stop(0%,#dfe7eb),color-stop(95%,#FFFFFF));
+}
+
+
+.fontstyle
+{
+    font-family: Calibri;
+    font-size: 16px;
+    font-weight: lighter;
+    background-color: #ffffff;
+    margin-left: 0px;
+    
+}
+
+.logoutstyle
+{
+font-family: inherit;
+font-size: 13px;
+font-weight: lighter;
+margin-left: 0px;
+font-family: Arial;
+}
+.Checkboxstyel
+{
+    border: 0px solid #7F9DB9;
+    color: Black;
+}
+
+.RtextAlign
+{
+    text-align: right;
+}
+.LtextAlign
+{
+    text-align: left;
+}
+.MtextAlign
+{
+    text-align: center;
+}
+.completionList
+{
+    border: solid 1px #7F9DB9;
+    margin: 0px;
+    padding-left: 1px;
+    overflow: auto;
+    background-color: #FFFFFF;
+}
+
+.listItem
+{
+    color: #191919;
+    width: 123px;
+}
+
+.itemHighlighted
+{
+    background-color: #ADD6FF;
+    width: 123px;
+}
+
+.ajax__calendar_container {
+z-index:20;
+background-color:#e8fbe6;
+}
+body {
+margin:0 !important;
+font-size: 13px;
+font-family:Arial;
+}
+table {
+    border-collapse: collapse;
+}
+
+
+
+

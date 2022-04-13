@@ -1,0 +1,262 @@
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+a {
+  font-size: 12px;
+}
+a:focus, a:hover {
+    color: red;
+    text-decoration: none;
+}
+.logoclient {
+    width: 121px;
+    /*margin-top: -7em;*/
+}
+h3.name {
+  color: #fff;
+  margin-top: 11px;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+p.address {
+  color: #fff;
+  margin-top: -6px;
+}
+
+.mtrl-cus {
+  margin-top: 8%;
+  margin-right: 4%;
+  margin-left: 4%;
+}
+
+.mt15 {
+  margin-top: 15px;
+}
+.mt20 {
+  margin-top: 20px;
+}
+
+@media only screen and (max-width: 768px) {
+  h3.name {
+    color: #fff;
+    margin-top: 11px;
+    font-weight: bold;
+    font-size: 16px;
+  }
+  p.address {
+    color: #fff;
+    margin-top: -6px;
+    font-size: 12px;
+  }
+  .logoclient {
+    width: 80px;
+    margin-top: 0;
+    text-align: center;
+  }
+  .textcenter {
+    text-align: center;
+  }
+  .mtrl-cus {
+    margin-top: 15px;
+    margin-right: 4%;
+    margin-left: 4%;
+  }
+  .mt20 {
+    margin-top: 0px;
+  }
+}
+
+.textcentermob {
+  float: right;
+}
+
+@media only screen and (max-width: 768px) {
+  .displaymobile {
+    display: none;
+  }
+  .textcentermob {
+    text-align: center;
+  }
+}
+
+.login2background {
+  background-image: url("assets/img/bg.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.loginbox {
+    background: #f47b20;
+    color: black;
+    left: 0;
+    padding: 20px;
+    height: 360px;
+}
+
+.logo {
+  width: 55px;
+  height: 55px;
+  margin-left: 10%;
+}
+
+@media (max-width:767px) {
+  .loginbox {
+    margin-top: 20px;
+  }
+  .loginbox {
+    background: #eda01c;
+    color: black;
+    left: 0;
+    padding: 20px;
+    height: auto;
+  }
+}
+
+.loginbox_content {
+    padding: 25px 30px 5px 30px;
+}
+
+@media only screen and (max-width: 768px) {
+  .loginbox_content {
+    padding: 25px 31px;
+  }
+}
+
+.singtext {
+  font-family: "Open Sans", sans-serif;
+  font-size: 21px;
+  color: #82C226;
+  float: right;
+  padding-right: 25%;
+  color: white;
+  margin-top: 21px;
+}
+
+.submit-btn {
+  float: right;
+  margin-right: 26%;
+}
+
+.support {
+  padding-left: 10%;
+}
+
+.forgotpassword {
+  padding-left: 10%;
+  margin-top: 10px;
+}
+
+@media only screen and (max-width: 768px) {
+  .forgotpassword {
+    padding-left: 10%;
+    margin-top: 0px;
+  }
+  .singtext {
+    font-family: "Open Sans", sans-serif;
+    font-size: 21px;
+    color: #82C226;
+    float: right;
+    padding-right: 15%;
+    color: white;
+    margin-top: 21px;
+  }
+}
+@media (max-width:800px) {
+  .submit-btn {
+    margin-right: 18%;
+  }
+}
+.graphics {
+  margin-top: -14em;
+  padding: 0;
+  z-index: -1;
+}
+@media only screen and (max-width: 768px) {
+  .graphics {
+    margin-top: -40px;
+    padding: 0;
+    z-index: -1;
+  }
+}
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
+#content-wrap {
+  padding-bottom: 2.5rem;
+  /* Footer height */
+}
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  vertical-align: middle;
+  /* Footer height */
+}
+.pfont {
+  color: #FFFFFF;
+  font-size: 12px;
+}
+.mobimplogo {
+  width: 120px;
+  float: right;
+}
+@media only screen and (max-width: 768px) {
+  #footer {
+    position: absolute;
+    width: 100%;
+    margin-top: 2em;
+    font-size: 10px;
+    /* Footer height */
+  }
+  .pfont {
+    color: #FFFFFF;
+    text-align: center;
+  }
+  .mobimplogo {
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 768px) {
+  #first {
+    order: 2;
+  }
+  #second {
+    order: 1;
+  }
+}
+/* Makes images fully responsive */
+.img-responsive, .thumbnail > img, .item > a > img {
+    margin-top: 15px;
+    display: block;
+    width: 100%;
+    height: 203px;
+}
+.input-group {
+  margin-bottom: 15px;
+}
+@media only screen and (max-width: 768px) {
+  .input-group {
+    margin-bottom: 5px;
+  }
+}
+.input-group-addon {
+  padding: 6px 12px;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1;
+  color: #555;
+  text-align: center;
+  background-color: #009688;
+  border: 0px solid #ccc;
+  border-radius: 4px;
+}
+.btn-default {
+  color: #009688;
+  background-color: #fff;
+  border-color: #ccc;
+}

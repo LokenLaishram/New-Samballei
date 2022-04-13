@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BC86F545-0CC9-4864-BB99-548D351B2B20}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Mobimp.Campusoft.BussinessProcess</RootNamespace>
+    <AssemblyName>Mobimp.Campusoft.BussinessProcess</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\MasterLookupBO.cs" />
+    <Compile Include="Common\PageControlBO.cs" />
+    <Compile Include="EduAccount\AccountGroupBO.cs" />
+    <Compile Include="EduAccount\AccountLedgerBO.cs" />
+    <Compile Include="EduAccount\StatementBO.cs" />
+    <Compile Include="EduAccount\TransactionBO.cs" />
+    <Compile Include="EduAdmin\AddRolesBO.cs" />
+    <Compile Include="EduAdmin\AddUsersBO.cs" />
+    <Compile Include="EduAdmin\CommonDataBO.cs" />
+    <Compile Include="EduAdmin\CreateUserBO.cs" />
+    <Compile Include="EduAdmin\UserAdminBO.cs" />
+    <Compile Include="EduEmployee\AssignSubjectBO.cs" />
+    <Compile Include="EduEmployee\EmployeeBO.cs" />
+    <Compile Include="EduExam\ExamDivisionRuleBO.cs" />
+    <Compile Include="EduExam\ExamGradeBO.cs" />
+    <Compile Include="EduExam\ExamRankTieRuleBO.cs" />
+    <Compile Include="EduExam\ExamRemarkRuleBO.cs" />
+    <Compile Include="EduExam\ExtraCuricularGradeBO.cs" />
+    <Compile Include="EduExam\SubjectMarkRangeBO.cs" />
+    <Compile Include="EduFees\MonthlyFeeStatementBO.cs" />
+    <Compile Include="EduFees\FeeBO.cs" />
+    <Compile Include="EduFees\FeeCollectionBO.cs" />
+    <Compile Include="EduFeeUtility\ExemptionRuleBO.cs" />
+    <Compile Include="EduFeeUtility\InclusiveRuleBO.cs" />
+    <Compile Include="EduFeeUtility\EMIPaymentBO.cs" />
+    <Compile Include="EduFeeUtility\MonthlyPaymentBO.cs" />
+    <Compile Include="EduFeeUtility\ExtraFeeRuleBO.cs" />
+    <Compile Include="EduFeeUtility\OneTimePaymentBO.cs" />
+    <Compile Include="EduFeeUtility\FeeDetailRulesBO.cs" />
+    <Compile Include="EduFeeUtility\FeesTypeMasterBO.cs" />
+    <Compile Include="EduFeeUtility\PaymentTypeBO.cs" />
+    <Compile Include="EduHostel\DepositFeeBO.cs" />
+    <Compile Include="EduHostel\GetAjustedBO.cs" />
+    <Compile Include="EduHostel\GetAutoItemNameBO.cs" />
+    <Compile Include="EduHostel\HostelRegistrationBO.cs" />
+    <Compile Include="EduHostel\HostelVisitorBO.cs" />
+    <Compile Include="EduInventory\IndentGenerationBO.cs" />
+    <Compile Include="EduInventory\IndentSaleBO.cs" />
+    <Compile Include="EduInventory\ItemCondemnationBO.cs" />
+    <Compile Include="EduInventory\ItemReturnBO.cs" />
+    <Compile Include="EduInventory\StockEntryWithOrderBO.cs" />
+    <Compile Include="EduInventory\StockEntryWithoutPOBO.cs" />
+    <Compile Include="EduInventory\StockIssueBO.cs" />
+    <Compile Include="EduInventory\StockReleasedBO.cs" />
+    <Compile Include="EduInventory\StockStatusBO.cs" />
+    <Compile Include="EduInventory\VendorDueBO.cs" />
+    <Compile Include="EduInventory\WorkOrderBO.cs" />
+    <Compile Include="EduInvUtilityBO\GroupBO.cs" />
+    <Compile Include="EduInvUtilityBO\ItemBO.cs" />
+    <Compile Include="EduInvUtilityBO\OrderTypeBO.cs" />
+    <Compile Include="EduInvUtilityBO\SubgroupBO.cs" />
+    <Compile Include="EduInvUtilityBO\SupplierBO.cs" />
+    <Compile Include="EduInvUtilityBO\UnitBO.cs" />
+    <Compile Include="EduInvUtilityBO\VendorBO.cs" />
+    <Compile Include="EduInvUtilityBO\VendortypeBO.cs" />
+    <Compile Include="EduLibrary\AddBookToRackBO.cs" />
+    <Compile Include="EduLibrary\IssueBookBO.cs" />
+    <Compile Include="EduLibrary\RackGroupBO.cs" />
+    <Compile Include="EduLibrary\RackSubGroupBO.cs" />
+    <Compile Include="EduLibrary\ReturnBookBO.cs" />
+    <Compile Include="EduStudent\AddstudentBO.cs" />
+    <Compile Include="EduStudent\AdmissionWithFeeBO.cs" />
+    <Compile Include="EduTransport\TransportfeeBO.cs" />
+    <Compile Include="EduTransport\TransportRegistrationBO.cs" />
+    <Compile Include="EduTransport\VehicleBO.cs" />
+    <Compile Include="EduUtility\AcademicSessionBO.cs" />
+    <Compile Include="EduUtility\CampusBO.cs" />
+    <Compile Include="EduUtility\CastBO.cs" />
+    <Compile Include="EduUtility\ClassBO.cs" />
+    <Compile Include="EduUtility\ClasswiseSubjectBO.cs" />
+    <Compile Include="EduUtility\CountryBO.cs" />
+    <Compile Include="EduUtility\DepartmentBO.cs" />
+    <Compile Include="EduUtility\DesignationBO.cs" />
+    <Compile Include="EduUtility\DistrictBO.cs" />
+    <Compile Include="EduUtility\EmployeeTypeBO.cs" />
+    <Compile Include="EduUtility\ExamSchedulerDataBO.cs" />
+    <Compile Include="EduUtility\ExamTimeTableBO.cs" />
+    <Compile Include="EduUtility\ExamTypeBO.cs" />
+    <Compile Include="EduUtility\FeeDetailBO.cs" />
+    <Compile Include="EduUtility\FeesTypesBO.cs" />
+    <Compile Include="EduUtility\HouseTypeBO.cs" />
+    <Compile Include="EduFeeUtility\PaymentModeBO.cs" />
+    <Compile Include="EduUtility\RelationshipBO.cs" />
+    <Compile Include="EduUtility\ReligionBO.cs" />
+    <Compile Include="EduUtility\RouteBO.cs" />
+    <Compile Include="EduUtility\SalutationBO.cs" />
+    <Compile Include="EduUtility\SchoolDetailBO.cs" />
+    <Compile Include="EduUtility\SectionBO.cs" />
+    <Compile Include="EduUtility\SexBO.cs" />
+    <Compile Include="EduUtility\StateBO.cs" />
+    <Compile Include="EduUtility\StudentTypeBO.cs" />
+    <Compile Include="EduUtility\SubjectBO.cs" />
+    <Compile Include="EduUtility\SubRouteBO.cs" />
+    <Compile Include="EduUtility\VehicleTypeBO.cs" />
+    <Compile Include="EduUtility\WingBO.cs" />
+    <Compile Include="ELearning\ELearningBO.cs" />
+    <Compile Include="HRAndPayroll\HR\LeaveRequestBO.cs" />
+    <Compile Include="HRAndPayroll\HR\LoanPaymentBO.cs" />
+    <Compile Include="HRAndPayroll\HR\ManualAttendanceBO.cs" />
+    <Compile Include="HRAndPayroll\Payroll\DailyProxyManagerBO.cs" />
+    <Compile Include="HRAndPayroll\Payroll\OutsideDutyManagerBO.cs" />
+    <Compile Include="HRAndPayroll\Payroll\SalaryGeneratorBO.cs" />
+    <Compile Include="HRAndPayroll\Payroll\SalaryStructureBO.cs" />
+    <Compile Include="HRAndPayroll\Utility\HolidayListBO.cs" />
+    <Compile Include="HRAndPayroll\Utility\LeaveTypeBO.cs" />
+    <Compile Include="HRAndPayroll\Utility\LoanTypeBO.cs" />
+    <Compile Include="HRAndPayroll\Utility\RosterBO.cs" />
+    <Compile Include="HRAndPayroll\Utility\ShiftTypeBO.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reports\DefaulterListBO.cs" />
+    <Compile Include="EduSMS\SmsBO.cs" />
+    <Compile Include="StudentPortalBO\OnlinepaymentBO.cs" />
+    <Compile Include="TimeTable\ClassallocationBO.cs" />
+    <Compile Include="TimeTable\PeriodplannerBO.cs" />
+    <Compile Include="WebPortal\DataSincBO.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Mobimp.Edusoft.Common\Mobimp.Edusoft.Common.csproj">
+      <Project>{C047DEC3-74D3-4E84-8F3B-5970C712422D}</Project>
+      <Name>Mobimp.Edusoft.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mobimp.Edusoft.DataAccess\Mobimp.Edusoft.DataAccess.csproj">
+      <Project>{30B3A5D2-B3F0-40C2-8DA9-769231135731}</Project>
+      <Name>Mobimp.Edusoft.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mobimp.Edusoft.Data\Mobimp.Edusoft.Data.csproj">
+      <Project>{8D94B18B-131E-4AFC-81D1-80D64FCEA341}</Project>
+      <Name>Mobimp.Edusoft.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

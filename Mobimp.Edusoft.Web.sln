@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30413.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mobimp.Edusoft.Web", "Mobimp.Edusoft.Web\Mobimp.Edusoft.Web.csproj", "{092C0AB0-5198-49E8-8263-3D1D42392768}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mobimp.Edusoft.Data", "Mobimp.Edusoft.Data\Mobimp.Edusoft.Data.csproj", "{8D94B18B-131E-4AFC-81D1-80D64FCEA341}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mobimp.Edusoft.Common", "Mobimp.Edusoft.Common\Mobimp.Edusoft.Common.csproj", "{C047DEC3-74D3-4E84-8F3B-5970C712422D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mobimp.Edusoft.BussinessProcess", "Mobimp.Edusoft.BussinessProcess\Mobimp.Edusoft.BussinessProcess.csproj", "{BC86F545-0CC9-4864-BB99-548D351B2B20}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mobimp.Edusoft.DataAccess", "Mobimp.Edusoft.DataAccess\Mobimp.Edusoft.DataAccess.csproj", "{30B3A5D2-B3F0-40C2-8DA9-769231135731}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{092C0AB0-5198-49E8-8263-3D1D42392768}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{092C0AB0-5198-49E8-8263-3D1D42392768}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{092C0AB0-5198-49E8-8263-3D1D42392768}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{092C0AB0-5198-49E8-8263-3D1D42392768}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D94B18B-131E-4AFC-81D1-80D64FCEA341}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D94B18B-131E-4AFC-81D1-80D64FCEA341}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C047DEC3-74D3-4E84-8F3B-5970C712422D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C047DEC3-74D3-4E84-8F3B-5970C712422D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC86F545-0CC9-4864-BB99-548D351B2B20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC86F545-0CC9-4864-BB99-548D351B2B20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30B3A5D2-B3F0-40C2-8DA9-769231135731}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30B3A5D2-B3F0-40C2-8DA9-769231135731}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {343AD0C5-3561-41D2-997E-7CEFD63A244D}
+	EndGlobalSection
+EndGlobal
