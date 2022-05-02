@@ -282,25 +282,41 @@ namespace Mobimp.Edusoft.Web.EduReports.Reports
 
                         Year = Request["Year"].ToString();
 
-                        if (Request["ClassID"].ToString() == "1" || Request["ClassID"].ToString() == "2")
+                        if (Request["ClassID"].ToString() == "1")
                         {
-                            reportDocument.Load(Server.MapPath("~/EduReports/Reports/" + Year + "/BroadsheetResult_Pre_Nry_" + Year + ".rpt"));
+                            reportDocument.Load(Server.MapPath("~/EduReports/Reports/" + Year + "/BroadsheetResult_LowerNursery_" + Year + ".rpt"));
+                        }
+                        if (Request["ClassID"].ToString() == "2")
+                        {
+                            reportDocument.Load(Server.MapPath("~/EduReports/Reports/" + Year + "/BroadsheetResult_UpperNursery_" + Year + ".rpt"));
                         }
                         if (Request["ClassID"].ToString() == "3")
                         {
-                            reportDocument.Load(Server.MapPath("~/EduReports/Reports/" + Year + "/BroadsheetResult_KG_" + Year + ".rpt"));
+                            reportDocument.Load(Server.MapPath("~/EduReports/Reports/" + Year + "/BroadsheetResult_Primary_" + Year + ".rpt"));
                         }
-                        if (Request["ClassID"].ToString() == "4" || Request["ClassID"].ToString() == "5")
+                        if (Request["ClassID"].ToString() == "4")
                         {
-                            reportDocument.Load(Server.MapPath("~/EduReports/Reports/" + Year + "/BroadsheetResult_I_II_" + Year + ".rpt"));
+                            reportDocument.Load(Server.MapPath("~/EduReports/Reports/" + Year + "/BroadsheetResult_I_" + Year + ".rpt"));
                         }
-                        if (Request["ClassID"].ToString() == "6" || Request["ClassID"].ToString() == "7" || Request["ClassID"].ToString() == "8")
+                        if (Request["ClassID"].ToString() == "5" || Request["ClassID"].ToString() == "6")
                         {
-                            reportDocument.Load(Server.MapPath("~/EduReports/Reports/" + Year + "/BroadsheetResult_III_V_" + Year + ".rpt"));
+                            reportDocument.Load(Server.MapPath("~/EduReports/Reports/" + Year + "/BroadsheetResult_II_III_" + Year + ".rpt"));
                         }
-                        if (Request["ClassID"].ToString() == "9" || Request["ClassID"].ToString() == "10" || Request["ClassID"].ToString() == "11")
+                        if (Request["ClassID"].ToString() == "7")
                         {
-                            reportDocument.Load(Server.MapPath("~/EduReports/Reports/" + Year + "/BroadsheetResult_VI_VIII_" + Year + ".rpt"));
+                            reportDocument.Load(Server.MapPath("~/EduReports/Reports/" + Year + "/BroadsheetResult_IV_" + Year + ".rpt"));
+                        }
+                        if (Request["ClassID"].ToString() == "8")
+                        {
+                            reportDocument.Load(Server.MapPath("~/EduReports/Reports/" + Year + "/BroadsheetResult_V_" + Year + ".rpt"));
+                        }
+                        if (Request["ClassID"].ToString() == "9" || Request["ClassID"].ToString() == "10")
+                        {
+                            reportDocument.Load(Server.MapPath("~/EduReports/Reports/" + Year + "/BroadsheetResult_VI_VII_" + Year + ".rpt"));
+                        }
+                        if (Request["ClassID"].ToString() == "11")
+                        {
+                            reportDocument.Load(Server.MapPath("~/EduReports/Reports/" + Year + "/BroadsheetResult_VIII_" + Year + ".rpt"));
                         }
                         if (Request["ClassID"].ToString() == "12" || Request["ClassID"].ToString() == "13")
                         {
@@ -328,6 +344,77 @@ namespace Mobimp.Edusoft.Web.EduReports.Reports
                             }
                         }
                         reportDocument.SetDataSource(dt9);
+                        CrystalReportViewer1.ReportSource = reportDocument;
+                        reportDocument.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, false, "BroadSheet");
+                        break;
+
+                    case "PrintMarksheet":
+                        DataTable dt13 = new DataTable();
+
+                        Year = Request["Year"].ToString();
+
+                        if (Request["ClassID"].ToString() == "1")
+                        {
+                            reportDocument.Load(Server.MapPath("~/EduReports/Reports/" + Year + "/Marksheet_LowerNursery_" + Year + ".rpt"));
+                        }
+                        if (Request["ClassID"].ToString() == "2")
+                        {
+                            reportDocument.Load(Server.MapPath("~/EduReports/Reports/" + Year + "/Marksheet_UpperNursery_" + Year + ".rpt"));
+                        }
+                        if (Request["ClassID"].ToString() == "3")
+                        {
+                            reportDocument.Load(Server.MapPath("~/EduReports/Reports/" + Year + "/Marksheet_Primary_" + Year + ".rpt"));
+                        }
+                        if (Request["ClassID"].ToString() == "4")
+                        {
+                            reportDocument.Load(Server.MapPath("~/EduReports/Reports/" + Year + "/Marksheet_I_" + Year + ".rpt"));
+                        }
+                        if (Request["ClassID"].ToString() == "5" || Request["ClassID"].ToString() == "6")
+                        {
+                            reportDocument.Load(Server.MapPath("~/EduReports/Reports/" + Year + "/Marksheet_II_III_" + Year + ".rpt"));
+                        }
+                        if (Request["ClassID"].ToString() == "7")
+                        {
+                            reportDocument.Load(Server.MapPath("~/EduReports/Reports/" + Year + "/Marksheet_IV_" + Year + ".rpt"));
+                        }
+                        if (Request["ClassID"].ToString() == "8")
+                        {
+                            reportDocument.Load(Server.MapPath("~/EduReports/Reports/" + Year + "/Marksheet_V_" + Year + ".rpt"));
+                        }
+                        if (Request["ClassID"].ToString() == "9" || Request["ClassID"].ToString() == "10")
+                        {
+                            reportDocument.Load(Server.MapPath("~/EduReports/Reports/" + Year + "/Marksheet_VI_VII_" + Year + ".rpt"));
+                        }
+                        if (Request["ClassID"].ToString() == "11")
+                        {
+                            reportDocument.Load(Server.MapPath("~/EduReports/Reports/" + Year + "/Marksheet_VIII_" + Year + ".rpt"));
+                        }
+                        if (Request["ClassID"].ToString() == "12" || Request["ClassID"].ToString() == "13")
+                        {
+                            reportDocument.Load(Server.MapPath("~/EduReports/Reports/" + Year + "/Marksheet_IX_X_" + Year + ".rpt"));
+                        }
+                        using (SqlConnection con = new SqlConnection(constr))
+                        {
+                            using (SqlCommand cmd = new SqlCommand())
+                            {
+                                using (SqlDataAdapter sda = new SqlDataAdapter())
+                                {
+                                    cmd.CommandType = CommandType.StoredProcedure;
+                                    cmd.CommandText = "usp_CMS_Exam_PrintMarkSheet";
+                                    cmd.Parameters.Add("@ClassID", SqlDbType.Int).Value = Convert.ToInt32(Request["ClassID"].ToString() == "" ? "0" : Request["ClassID"].ToString());
+                                    cmd.Parameters.Add("@SectionID", SqlDbType.Int).Value = Convert.ToInt32(Request["SectionID"].ToString() == "" ? "0" : Request["SectionID"].ToString());
+                                    cmd.Parameters.Add("@ExamID", SqlDbType.Int).Value = Convert.ToInt32(Request["ExamID"].ToString() == "" ? "0" : Request["ExamID"].ToString());
+                                    cmd.Parameters.Add("@AcademicSessionID", SqlDbType.Int).Value = Convert.ToInt32(Request["Session"].ToString() == "" ? "0" : Request["Session"].ToString());
+                                    cmd.Parameters.Add("@RollNo", SqlDbType.Int).Value = Convert.ToInt32(Request["Roll"].ToString() == "" ? "0" : Request["Roll"].ToString());
+                                    cmd.Parameters.Add("@Rankshow", SqlDbType.Int).Value = Convert.ToInt32(Request["Rankshow"].ToString() == "" ? "0" : Request["Rankshow"].ToString());
+                                    cmd.Parameters.Add("@FeeStatus", SqlDbType.Int).Value = Convert.ToInt32(Request["FeeStatus"].ToString() == "" ? "0" : Request["FeeStatus"].ToString());
+                                    cmd.Connection = con;
+                                    sda.SelectCommand = cmd;
+                                    sda.Fill(dt13);
+                                }
+                            }
+                        }
+                        reportDocument.SetDataSource(dt13);
                         CrystalReportViewer1.ReportSource = reportDocument;
                         reportDocument.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, false, "Marksheet");
                         break;

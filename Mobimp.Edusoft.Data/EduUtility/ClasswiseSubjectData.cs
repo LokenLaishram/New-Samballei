@@ -28,6 +28,8 @@ namespace Mobimp.Campusoft.Data.EduUtility
         [DataMember]
         public int SubjectCategoryID { get; set; }
         [DataMember]
+        public string SubjectCategory { get; set; }
+        [DataMember]
         public string SubjectlistXML { get; set; }
         [DataMember]
         public int IsGrade { get; set; }

@@ -17,7 +17,7 @@
                                 <div class="form-group">
                                     <asp:Label runat="server" ID="lblcode" Text="Code"></asp:Label>
                                     <span class="mandatory_field">*</span><span style="color: #ff0000"></span>
-                                    <asp:TextBox ID="txtfeecode" runat="server" class="form-control" MaxLength="10"></asp:TextBox>
+                                    <asp:TextBox ID="txtfeecode" runat="server" class="form-control" MaxLength="20"></asp:TextBox>
                                 </div>
                             </div>
                             <div class="col-md-2 customRow">

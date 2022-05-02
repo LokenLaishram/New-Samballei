@@ -492,24 +492,6 @@ namespace Mobimp.Edusoft.Web.EduFeeUtility
         protected global::System.Web.UI.WebControls.Label lblfeetypespop12;
 
         /// <summary>
-        /// btnOneTimepayment control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnOneTimepayment;
-
-        /// <summary>
-        /// btnaddrowpop1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnaddrowpop1;
-
-        /// <summary>
         /// chkOneTimeLabel control.
         /// </summary>
         /// <remarks>
@@ -526,6 +508,24 @@ namespace Mobimp.Edusoft.Web.EduFeeUtility
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lvlOneTimeLabel;
+
+        /// <summary>
+        /// btnaddrowpop1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnaddrowpop1;
+
+        /// <summary>
+        /// btnOneTimepayment control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnOneTimepayment;
 
         /// <summary>
         /// GvOneTimeFee control.
@@ -1041,6 +1041,33 @@ namespace Mobimp.Edusoft.Web.EduFeeUtility
         protected global::System.Web.UI.WebControls.DropDownList ddlprepaidpop3;
 
         /// <summary>
+        /// lblfinepop3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblfinepop3;
+
+        /// <summary>
+        /// txtfinepop3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtfinepop3;
+
+        /// <summary>
+        /// FilteredTextBoxExtendertxtoldfeeamount28 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.FilteredTextBoxExtender FilteredTextBoxExtendertxtoldfeeamount28;
+
+        /// <summary>
         /// lblpostpaidpop3 control.
         /// </summary>
         /// <remarks>
@@ -1077,31 +1104,13 @@ namespace Mobimp.Edusoft.Web.EduFeeUtility
         protected global::System.Web.UI.WebControls.DropDownList ddlpostpaidpop3;
 
         /// <summary>
-        /// lblfinepop3 control.
+        /// btnsavepop3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblfinepop3;
-
-        /// <summary>
-        /// txtfinepop3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtfinepop3;
-
-        /// <summary>
-        /// FilteredTextBoxExtendertxtoldfeeamount28 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::AjaxControlToolkit.FilteredTextBoxExtender FilteredTextBoxExtendertxtoldfeeamount28;
+        protected global::System.Web.UI.WebControls.Button btnsavepop3;
 
         /// <summary>
         /// lblonetimepaymentpop3 control.
@@ -1201,15 +1210,6 @@ namespace Mobimp.Edusoft.Web.EduFeeUtility
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton lblextrarulepop3;
-
-        /// <summary>
-        /// btnsavepop3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnsavepop3;
 
         /// <summary>
         /// ModalPopupExtender4 control.
@@ -1788,15 +1788,6 @@ namespace Mobimp.Edusoft.Web.EduFeeUtility
         protected global::System.Web.UI.WebControls.Label lblfeetypeIDpop62;
 
         /// <summary>
-        /// lblInclusiveOtherFeeTypes control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblInclusiveOtherFeeTypes;
-
-        /// <summary>
         /// chkInclusiveOtherFeeTypes control.
         /// </summary>
         /// <remarks>
@@ -1804,6 +1795,15 @@ namespace Mobimp.Edusoft.Web.EduFeeUtility
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox chkInclusiveOtherFeeTypes;
+
+        /// <summary>
+        /// lblInclusiveOtherFeeTypes control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblInclusiveOtherFeeTypes;
 
         /// <summary>
         /// Gv_InclusiveOtherFeeTypes control.
@@ -1840,6 +1840,15 @@ namespace Mobimp.Edusoft.Web.EduFeeUtility
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton lnbclosedpop63;
+
+        /// <summary>
+        /// Label1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label1;
 
         /// <summary>
         /// btnInclusiveMonth control.

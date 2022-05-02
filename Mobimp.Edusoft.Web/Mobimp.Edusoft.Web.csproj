@@ -1853,7 +1853,6 @@
     <Content Include="EduReports\Defaulterlist.aspx" />
     <Content Include="EduReports\LowerClassPTcertificates.aspx" />
     <Content Include="EduReports\MedicalExpenditure.aspx" />
-    <Content Include="EduReports\Reports\2021\ReportViewer.aspx" />
     <Content Include="EduReports\Reports\ReportViewer.aspx" />
     <Content Include="EduReports\StudentIDCardMaker.aspx" />
     <Content Include="EduSMS\EduSMSmanager.aspx" />
@@ -2764,13 +2763,6 @@
     </Compile>
     <Compile Include="EduReports\MedicalExpenditure.aspx.designer.cs">
       <DependentUpon>MedicalExpenditure.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="EduReports\Reports\2021\ReportViewer.aspx.cs">
-      <DependentUpon>ReportViewer.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="EduReports\Reports\2021\ReportViewer.aspx.designer.cs">
-      <DependentUpon>ReportViewer.aspx</DependentUpon>
     </Compile>
     <Compile Include="EduReports\Reports\ReportViewer.aspx.cs">
       <DependentUpon>ReportViewer.aspx</DependentUpon>
@@ -3708,25 +3700,26 @@
     <EmbeddedResource Include="EduLibrary\Reports\BookIssueReceipt.rpt" />
     <Content Include="EduLibrary\Reports\BookReturnReceipt.rpt" />
     <Content Include="EduReports\Reports\Certificates\SchoolDetail.rpt" />
-    <Content Include="EduReports\Reports\2021\FT_MarkSheet_III_V_2021.rpt" />
-    <Content Include="EduReports\Reports\2021\FT_MarkSheet_IX_2021.rpt" />
-    <Content Include="EduReports\Reports\2021\FT_MarkSheet_I_II_2021.rpt" />
-    <Content Include="EduReports\Reports\2021\OB_III_V_2021.rpt" />
-    <Content Include="EduReports\Reports\2021\OB_IX_2021.rpt" />
-    <Content Include="EduReports\Reports\2021\OB_I_II_2021.rpt" />
-    <Content Include="EduReports\Reports\2021\OB_VI_VIII_2021.rpt" />
-    <Content Include="EduReports\Reports\2021\OverallResult_IX_X.rpt" />
-    <Content Include="EduReports\Reports\2021\O_III_V_2021.rpt" />
-    <Content Include="EduReports\Reports\2021\O_IX_2021.rpt" />
-    <Content Include="EduReports\Reports\2021\O_I_II_2021.rpt" />
-    <Content Include="EduReports\Reports\2021\O_VI_VIII_2021.rpt" />
-    <Content Include="EduReports\Reports\2021\Result_III_V_2021.rpt" />
-    <AdditionalFiles Include="EduReports\Reports\2021\Result_I_II_2021.rpt" />
-    <Content Include="EduReports\Reports\2021\Result_VI_VIII_2021.rpt" />
-    <EmbeddedResource Include="EduReports\Reports\2021\FT_MarkSheet_VI_VIII_2021.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>FT_MarkSheet_VI_VIII_2021.cs</LastGenOutput>
-    </EmbeddedResource>
+    <Content Include="EduReports\Reports\2022\Marksheet_I_2022.rpt" />
+    <Content Include="EduReports\Reports\2022\Marksheet_II_III_2022.rpt" />
+    <Content Include="EduReports\Reports\2022\Marksheet_IV_2022.rpt" />
+    <Content Include="EduReports\Reports\2022\Marksheet_IX_X_2022.rpt" />
+    <Content Include="EduReports\Reports\2022\Marksheet_V_2022.rpt" />
+    <Content Include="EduReports\Reports\2022\Marksheet_VIII_2022.rpt" />
+    <Content Include="EduReports\Reports\2022\Marksheet_VI_VII_2022.rpt" />
+    <Content Include="EduReports\Reports\2022\Marksheet_LowerNursery_2022.rpt" />
+    <Content Include="EduReports\Reports\2022\Marksheet_Primary_2022.rpt" />
+    <Content Include="EduReports\Reports\2022\Marksheet_UpperNursery_2022.rpt" />
+    <Content Include="EduReports\Reports\2022\BroadsheetResult_I_2022.rpt" />
+    <Content Include="EduReports\Reports\2022\BroadsheetResult_II_III_2022.rpt" />
+    <Content Include="EduReports\Reports\2022\BroadsheetResult_IV_2022.rpt" />
+    <Content Include="EduReports\Reports\2022\BroadsheetResult_IX_X_.rpt" />
+    <Content Include="EduReports\Reports\2022\BroadsheetResult_LowerNursery_2022.rpt" />
+    <Content Include="EduReports\Reports\2022\BroadsheetResult_Primary_2022.rpt" />
+    <Content Include="EduReports\Reports\2022\BroadsheetResult_UpperNursery_2022.rpt" />
+    <Content Include="EduReports\Reports\2022\BroadsheetResult_V_2022.rpt" />
+    <Content Include="EduReports\Reports\2022\BroadsheetResult_VIII_2022.rpt" />
+    <Content Include="EduReports\Reports\2022\BroadsheetResult_VI_VII_2022.rpt" />
     <EmbeddedResource Include="EduReports\Reports\Certificates\AdmitCard.rpt" />
     <EmbeddedResource Include="EduReports\Reports\Certificates\Old_CharacterCertificate.rpt" />
     <EmbeddedResource Include="EduReports\Reports\Certificates\IDcard.rpt" />

@@ -95,7 +95,7 @@
                                                 <asp:Label ID="lblClass" runat="server" Text='<%# Eval("ClassName")%>'></asp:Label>
                                                 <asp:Label ID="lbl_classnames" runat="server" Visible="false" Text='<%# Eval("ClassName")%>'></asp:Label>
                                             </ItemTemplate>
-                                            <ItemStyle HorizontalAlign="Left" Width="5%" />
+                                            <ItemStyle HorizontalAlign="Left" Width="3%" />
                                         </asp:TemplateField>
                                         <asp:TemplateField HeaderText="Subject">
                                             <ItemTemplate>
@@ -103,57 +103,57 @@
                                                 <asp:Label ID="lbl_subjectID" Visible="false" runat="server" Text='<%# Eval("SubjectID")%>'></asp:Label>
                                                 <asp:Label ID="lblsubject" runat="server" Text='<%# Eval("SubjectName")%>'></asp:Label>
                                             </ItemTemplate>
-                                            <ItemStyle HorizontalAlign="Left" Width="10%" />
+                                            <ItemStyle HorizontalAlign="Left" Width="5%" />
                                         </asp:TemplateField>
                                         <asp:TemplateField HeaderText="Total Student">
                                             <ItemTemplate>
                                                 <asp:Label ID="lbl_nostudent" runat="server" Text='<%# Eval("Nostudent")%>'></asp:Label>
                                             </ItemTemplate>
-                                            <ItemStyle HorizontalAlign="Left" Width="1%" />
+                                            <ItemStyle HorizontalAlign="Left" Width="2%" />
                                         </asp:TemplateField>
-                                        <asp:TemplateField HeaderText="No.WA Entered">
+                                        <asp:TemplateField HeaderText="No. of Marks Entered">
                                             <ItemTemplate>
                                                 <asp:Label ID="lbl_noWA" runat="server" Text='<%# Eval("UTEntryCount")%>'></asp:Label>
                                             </ItemTemplate>
-                                            <ItemStyle HorizontalAlign="Left" Width="1%" />
+                                            <ItemStyle HorizontalAlign="Left" Width="2%" />
                                         </asp:TemplateField>
-                                        <asp:TemplateField HeaderText="No.CA Entered">
+                                        <asp:TemplateField HeaderText="No.CA Entered" Visible="false">
                                             <ItemTemplate>
                                                 <asp:Label ID="lbl_noCA" runat="server" Text='<%# Eval("PWEntryCount")%>'></asp:Label>
                                             </ItemTemplate>
-                                            <ItemStyle HorizontalAlign="Left" Width="1%" />
+                                            <ItemStyle HorizontalAlign="Left" Width="2%" />
                                         </asp:TemplateField>
-                                        <asp:TemplateField HeaderText="No.GRADE Entered">
+                                        <asp:TemplateField HeaderText="No.GRADE Entered" Visible="false">
                                             <ItemTemplate>
                                                 <asp:Label ID="lbl_noGRADE" runat="server" Text='<%# Eval("GRADEEntryCount")%>'></asp:Label>
                                             </ItemTemplate>
-                                            <ItemStyle HorizontalAlign="Left" Width="1%" />
+                                            <ItemStyle HorizontalAlign="Left" Width="2%" />
                                         </asp:TemplateField>
-                                        <asp:TemplateField HeaderText="CA FM">
+                                        <asp:TemplateField HeaderText="CA FM" Visible="false">
                                             <ItemTemplate>
                                                 <asp:Label ID="lbl_CAFM" runat="server" Text='<%# Eval("PW_FM")%>'></asp:Label>
                                             </ItemTemplate>
-                                            <ItemStyle HorizontalAlign="Left" Width="1%" />
+                                            <ItemStyle HorizontalAlign="Left" Width="2%" />
                                         </asp:TemplateField>
-                                        <asp:TemplateField HeaderText="CA PM">
+                                        <asp:TemplateField HeaderText="CA PM" Visible="false">
                                             <ItemTemplate>
                                                 <asp:Label ID="lbl_CAPM" runat="server" Text='<%# Eval("PW_PM")%>'></asp:Label>
                                             </ItemTemplate>
-                                            <ItemStyle HorizontalAlign="Left" Width="1%" />
+                                            <ItemStyle HorizontalAlign="Left" Width="2%" />
                                         </asp:TemplateField>
-                                        <asp:TemplateField HeaderText="WA FM">
+                                        <asp:TemplateField HeaderText="Full Mark">
                                             <ItemTemplate>
                                                 <asp:Label ID="lbl_WAFM" runat="server" Text='<%# Eval("UT_FM")%>'></asp:Label>
                                             </ItemTemplate>
-                                            <ItemStyle HorizontalAlign="Left" Width="1%" />
+                                            <ItemStyle HorizontalAlign="Left" Width="2%" />
                                         </asp:TemplateField>
-                                        <asp:TemplateField HeaderText="WA PM">
+                                        <asp:TemplateField HeaderText="Pass Mark">
                                             <ItemTemplate>
                                                 <asp:Label ID="lbl_WAPM" runat="server" Text='<%# Eval("UT_PM")%>'></asp:Label>
                                             </ItemTemplate>
-                                            <ItemStyle HorizontalAlign="Left" Width="1%" />
+                                            <ItemStyle HorizontalAlign="Left" Width="2%" />
                                         </asp:TemplateField>
-                                        <asp:TemplateField HeaderText="CA MARK">
+                                        <asp:TemplateField HeaderText="CA MARK" Visible="false">
                                             <ItemTemplate>
                                                 <asp:Label ID="lbl_castatus" Visible="false" runat="server" Text='<%# Eval("PW_entry_status")%>'></asp:Label>
                                                 <asp:Label ID="lblTWD" Visible="false" runat="server" Text='<%# Eval("TWD")%>'></asp:Label>
@@ -161,9 +161,9 @@
                                                 <asp:LinkButton ID="lnl_CA" CssClass=" small_btn cus_btn" Height="25px" runat="server" CommandArgument="<%# ((GridViewRow) Container).RowIndex  %>"
                                                     CommandName="CA" ValidationGroup="none" />
                                             </ItemTemplate>
-                                            <ItemStyle HorizontalAlign="Left" Width="1%" />
+                                            <ItemStyle HorizontalAlign="Left" Width="2%" />
                                         </asp:TemplateField>
-                                        <asp:TemplateField HeaderText="WA MARK">
+                                        <asp:TemplateField HeaderText="Mark Entry">
                                             <ItemTemplate>
                                                 <asp:Label ID="lbl_wastatus" Visible="false" runat="server" Text='<%# Eval("UT_entry_status")%>'></asp:Label>
                                                 <asp:LinkButton ID="lnl_WA" CssClass=" small_btn cus_btn" Height="25px" runat="server" CommandArgument="<%# ((GridViewRow) Container).RowIndex  %>"
@@ -178,7 +178,7 @@
                                                 <asp:LinkButton ID="lnl_Grade" CssClass=" small_btn cus_btn" Height="25px" runat="server" CommandArgument="<%# ((GridViewRow) Container).RowIndex  %>"
                                                     CommandName="GRADE" ValidationGroup="none" />
                                             </ItemTemplate>
-                                            <ItemStyle HorizontalAlign="Left" Width="1%" />
+                                            <ItemStyle HorizontalAlign="Left" Width="2%" />
                                         </asp:TemplateField>
                                         <asp:TemplateField>
                                             <ItemTemplate>
@@ -217,17 +217,17 @@
                                 </div>
                                 <div class="col-sm-2">
                                     <div class="form-group">
-                                        <asp:TextBox ID="txt_PW" ReadOnly="true" runat="server" ForeColor="Black" class="form-control">
-                                        </asp:TextBox>
-                                    </div>
-                                </div>
-                                <div class="col-sm-2">
-                                    <div class="form-group">
                                         <asp:TextBox ID="txt_UT" ReadOnly="true" runat="server" ForeColor="Black" class="form-control">
                                         </asp:TextBox>
                                     </div>
                                 </div>
-                                <div class="col-sm-2">
+                                <div class="col-sm-2" style="visibility:hidden">
+                                    <div class="form-group">
+                                        <asp:TextBox ID="txt_PW" ReadOnly="true" runat="server" ForeColor="Black" class="form-control">
+                                        </asp:TextBox>
+                                    </div>
+                                </div>
+                                <div class="col-sm-2" style="visibility:hidden">
                                     <div class="form-group">
                                         <asp:TextBox ID="txt_grade" ReadOnly="true" runat="server" ForeColor="Black" class="form-control">
                                         </asp:TextBox>
@@ -305,7 +305,7 @@
                                             <asp:BoundField DataField="ClassName" SortExpression="ClassName" HeaderText="Class" ItemStyle-Width="1%" />
                                             <asp:BoundField DataField="SectionName" SortExpression="SectionName" HeaderText="Section" ItemStyle-Width="1%" />
                                             <asp:BoundField DataField="Roll" SortExpression="Roll" HeaderText="Roll" ItemStyle-Width="1%" />
-                                            <asp:TemplateField>
+                                            <asp:TemplateField Visible="false">
                                                 <HeaderTemplate>
                                                     CA
                                                 </HeaderTemplate>
@@ -324,7 +324,7 @@
                                             </asp:TemplateField>
                                             <asp:TemplateField>
                                                 <HeaderTemplate>
-                                                    WA
+                                                    Marks
                                                 </HeaderTemplate>
                                                 <ItemTemplate>
                                                     <asp:Label runat="server" ID="lbl_studentID" Visible="false" Text='<%# Eval("StudentID")%>'></asp:Label>

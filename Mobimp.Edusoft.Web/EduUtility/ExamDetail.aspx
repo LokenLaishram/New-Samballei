@@ -6,7 +6,8 @@
     <div class="container-fluid" id="page_wrapper">
         <ol class="breadcrumb">
             <li>Exam Utility&nbsp;&nbsp;<i class="fa fa-chevron-right" style="font-size: xx-small;" aria-hidden="true"></i></li>
-            <li><a class="active" runat="server" id="activepage" href="../EduUtility/ExamDetail.aspx">Mark Detail&nbsp;</a></li>
+            <li><a runat="server" id="a1" href="../EduExamination/ExamName.aspx">Exam Name </a></li>&nbsp;<i class="fa fa-chevron-right" style="font-size: xx-small;" aria-hidden="true"></i>
+            <li><a class="active" runat="server" id="a2" href="../EduUtility/ExamDetail.aspx">Exam Mark Detail</a></li>
         </ol>
         <asp:UpdatePanel ID="upMains" runat="server" UpdateMode="Conditional">
             <ContentTemplate>
@@ -82,7 +83,7 @@
                                 Style="width: 100%">
                                 <Columns>
                                     <asp:BoundField DataField="ID" SortExpression="ID" HeaderText="ID" HeaderStyle-Width="1%" />
-                                    <asp:BoundField DataField="SubjectName" SortExpression="SubjectName" HeaderText="Subject Name" HeaderStyle-Width="10%" />
+                                    <asp:BoundField DataField="SubjectName" SortExpression="SubjectName" HeaderText="Subject Name" HeaderStyle-Width="5%" />
                                     <asp:TemplateField Visible="false">
                                         <ItemTemplate>
                                             <%--<asp:Label ID="ID" Visible="false" runat="server" Text='<%# Eval("ID")%>'></asp:Label>--%>
@@ -97,82 +98,92 @@
                                             Alternative Subject?
                                         </HeaderTemplate>
                                         <ItemTemplate>
-                                            <asp:Label ID="lbl_altsubject" Visible="false" runat="server" Text='<%# Eval("AltSubjectID")%>'></asp:Label>
-                                            <asp:CheckBox runat="server" ID="chk_altsubject" />
+                                            <asp:Label ID="lbl_altsubject" Font-Bold="true" Visible="false" runat="server" Text='<%# Eval("AltSubjectID")%>'></asp:Label>
+                                            <asp:CheckBox runat="server" ID="chk_altsubject"/>
                                         </ItemTemplate>
-                                        <ItemStyle HorizontalAlign="Left" Width="1%" />
+                                        <ItemStyle HorizontalAlign="Left" Width="2%" />
                                     </asp:TemplateField>
                                     <asp:TemplateField>
                                         <HeaderTemplate>
                                             Optional Subject?
                                         </HeaderTemplate>
                                         <ItemTemplate>
-                                            <asp:Label ID="lbl_optional" Visible="false" runat="server" Text='<%# Eval("OptSubjectID")%>'></asp:Label>
-                                            <asp:CheckBox runat="server" ID="Chk_optional" />
+                                            <asp:Label ID="lbl_optional" Font-Bold="true" Visible="false" runat="server" Text='<%# Eval("OptSubjectID")%>'></asp:Label>
+                                            <asp:CheckBox runat="server" ID="Chk_optional"/>
                                         </ItemTemplate>
-                                        <ItemStyle HorizontalAlign="Left" Width="1%" />
+                                        <ItemStyle HorizontalAlign="Left" Width="2%" />
                                     </asp:TemplateField>
                                     <asp:TemplateField>
                                         <HeaderTemplate>
                                             Science Comb?
                                         </HeaderTemplate>
                                         <ItemTemplate>
-                                            <asp:Label ID="lblIsScience" Visible="false" runat="server" Text='<%# Eval("IsScience")%>'></asp:Label>
-                                            <asp:CheckBox runat="server" ID="chkIsScience" />
+                                            <asp:Label ID="lblIsScience" Font-Bold="true" Visible="false" runat="server" Text='<%# Eval("IsScience")%>'></asp:Label>
+                                            <asp:CheckBox runat="server" ID="chkIsScience"/>
                                         </ItemTemplate>
-                                        <ItemStyle HorizontalAlign="Left" Width="1%" />
+                                        <ItemStyle HorizontalAlign="Left" Width="2%" />
                                     </asp:TemplateField>
                                     <asp:TemplateField>
                                         <HeaderTemplate>
                                             Sc.Science Comb?
                                         </HeaderTemplate>
                                         <ItemTemplate>
-                                            <asp:Label ID="lblIsSocialScience" Visible="false" runat="server" Text='<%# Eval("IsSocialScience")%>'></asp:Label>
-                                            <asp:CheckBox runat="server" ID="chkIsScocialScience" />
+                                            <asp:Label ID="lblIsSocialScience" Font-Bold="true" Visible="false" runat="server" Text='<%# Eval("IsSocialScience")%>'></asp:Label>
+                                            <asp:CheckBox runat="server" ID="chkIsScocialScience"/>
                                         </ItemTemplate>
-                                        <ItemStyle HorizontalAlign="Left" Width="1%" />
+                                        <ItemStyle HorizontalAlign="Left" Width="2%" />
                                     </asp:TemplateField>
                                     <asp:TemplateField>
                                         <HeaderTemplate>
-                                            Subject in TM?
+                                            Grade Subject?
+                                        </HeaderTemplate>
+                                        <ItemTemplate>
+                                            <asp:Label ID="lblIsGrade" Font-Bold="true" Visible="false" runat="server" Text='<%# Eval("IsGradeSubject")%>'></asp:Label>
+                                            <asp:CheckBox runat="server" ID="chkIsGrade"/>
+                                        </ItemTemplate>
+                                        <ItemStyle HorizontalAlign="Left" Width="2%" />
+                                    </asp:TemplateField>
+                                    <asp:TemplateField>
+                                        <HeaderTemplate>
+                                            Subject in Total Mark?
                                         </HeaderTemplate>
                                         <ItemTemplate>
                                             <asp:Label ID="lblchkmarkcount" Visible="false" runat="server" Text='<%# Eval("IsMarkCount")%>'></asp:Label>
                                             <asp:CheckBox runat="server" ID="chkmarkcount" />
                                         </ItemTemplate>
-                                        <ItemStyle HorizontalAlign="Left" Width="1%" />
+                                        <ItemStyle HorizontalAlign="Left" Width="2%" />
                                     </asp:TemplateField>
-                                    <asp:TemplateField HeaderText="WA FM">
+                                    <asp:TemplateField HeaderText="Theory Full Mark">
                                         <ItemTemplate>
                                             <asp:TextBox ID="txtutmark" Height="20px" Width="50px" autocomplete="off" onfocus="this.select();" class="form-control custextbox" runat="server" Text='<%# Eval("UTmark")%>'></asp:TextBox>
                                             <asp:FilteredTextBoxExtender TargetControlID="txtutmark" ID="FilteredTextBoxExtender1" runat="server" ValidChars="1234567890">
                                             </asp:FilteredTextBoxExtender>
                                         </ItemTemplate>
-                                        <ItemStyle HorizontalAlign="Left" Width="1%" />
+                                        <ItemStyle HorizontalAlign="Left" Width="2%" />
                                     </asp:TemplateField>
-                                    <asp:TemplateField HeaderText="WA PM">
+                                    <asp:TemplateField HeaderText="Theory Pass Mark">
                                         <ItemTemplate>
                                             <asp:TextBox ID="txtutpmark" class="form-control custextbox" Height="20px" Width="50px" autocomplete="off" onfocus="this.select();" runat="server" Text='<%# Eval("UTpassmark")%>'></asp:TextBox>
                                             <asp:FilteredTextBoxExtender TargetControlID="txtutpmark" ID="FilteredTextBoxExtender2" runat="server" ValidChars="1234567890">
                                             </asp:FilteredTextBoxExtender>
                                         </ItemTemplate>
-                                        <ItemStyle HorizontalAlign="Left" Width="1%" />
+                                        <ItemStyle HorizontalAlign="Left" Width="2%" />
                                     </asp:TemplateField>
-                                    <asp:TemplateField HeaderText="CA FM">
+                                    <asp:TemplateField HeaderText="CA FM" Visible="false">
                                         <ItemTemplate>
                                             <asp:TextBox ID="txtpwmark" class="form-control custextbox" Height="20px" Width="50px" autocomplete="off" onfocus="this.select();" runat="server" Text='<%# Eval("PWmark")%>'></asp:TextBox>
                                             <asp:FilteredTextBoxExtender TargetControlID="txtpwmark" ID="FilteredTextBoxExtender3" runat="server" ValidChars="1234567890">
                                             </asp:FilteredTextBoxExtender>
                                         </ItemTemplate>
-                                        <ItemStyle HorizontalAlign="Left" Width="1%" />
+                                        <ItemStyle HorizontalAlign="Left" Width="2%" />
                                     </asp:TemplateField>
-                                    <asp:TemplateField HeaderText="CA PM">
+                                    <asp:TemplateField HeaderText="CA PM" Visible="false">
                                         <ItemTemplate>
                                             <asp:TextBox ID="txtpwpmark" class="form-control custextbox" Height="20px" Width="50px" autocomplete="off" onfocus="this.select();" runat="server" Text='<%# Eval("PWpassmark")%>'></asp:TextBox>
                                             <asp:FilteredTextBoxExtender TargetControlID="txtpwpmark" ID="FilteredTextBoxExtender4" runat="server" ValidChars="1234567890">
                                             </asp:FilteredTextBoxExtender>
                                         </ItemTemplate>
-                                        <ItemStyle HorizontalAlign="Left" Width="1%" />
+                                        <ItemStyle HorizontalAlign="Left" Width="2%" />
                                     </asp:TemplateField>
                                     <asp:TemplateField Visible="false" HeaderText="HA Fmark">
                                         <ItemTemplate>
@@ -180,7 +191,7 @@
                                             <asp:FilteredTextBoxExtender TargetControlID="txthamark" ID="FilteredTextBoxExtender5" runat="server" ValidChars="1234567890">
                                             </asp:FilteredTextBoxExtender>
                                         </ItemTemplate>
-                                        <ItemStyle HorizontalAlign="Left" Width="1%" />
+                                        <ItemStyle HorizontalAlign="Left" Width="2%" />
                                     </asp:TemplateField>
                                     <asp:TemplateField Visible="false" HeaderText="HA Pmark">
                                         <ItemTemplate>
@@ -188,7 +199,7 @@
                                             <asp:FilteredTextBoxExtender TargetControlID="txthapmark" ID="FilteredTextBoxExtender6" runat="server" ValidChars="1234567890">
                                             </asp:FilteredTextBoxExtender>
                                         </ItemTemplate>
-                                        <ItemStyle HorizontalAlign="Left" Width="1%" />
+                                        <ItemStyle HorizontalAlign="Left" Width="2%" />
                                     </asp:TemplateField>
                                     <asp:TemplateField HeaderText="Priority Value" Visible="false">
                                         <ItemTemplate>
@@ -197,19 +208,9 @@
                                                 runat="server" ValidChars="1234567890">
                                             </asp:FilteredTextBoxExtender>
                                         </ItemTemplate>
-                                        <ItemStyle HorizontalAlign="Left" Width="1%" />
+                                        <ItemStyle HorizontalAlign="Left" Width="2%" />
                                     </asp:TemplateField>
-                                    <asp:TemplateField>
-                                        <HeaderTemplate>
-                                            Grade Subject?
-                                        </HeaderTemplate>
-                                        <ItemTemplate>
-                                            <asp:Label ID="lblIsGrade" Visible="false" runat="server" Text='<%# Eval("IsGradeSubject")%>'></asp:Label>
-                                            <asp:CheckBox runat="server" ID="chkIsGrade" />
-                                        </ItemTemplate>
-                                        <ItemStyle HorizontalAlign="Left" Width="1%" />
-                                    </asp:TemplateField>
-                                    <asp:TemplateField>
+                                    <asp:TemplateField Visible="false">
                                         <HeaderTemplate>
                                             Minor Subject?
                                         </HeaderTemplate>
@@ -217,7 +218,7 @@
                                             <asp:Label ID="lblIsMinor" Visible="false" runat="server" Text='<%# Eval("IsMinorSubject")%>'></asp:Label>
                                             <asp:CheckBox runat="server" ID="chkIsMinor" />
                                         </ItemTemplate>
-                                        <ItemStyle HorizontalAlign="Left" Width="1%" />
+                                        <ItemStyle HorizontalAlign="Left" Width="2%" />
                                     </asp:TemplateField>
                                     <asp:TemplateField>
                                         <HeaderTemplate>
@@ -227,7 +228,7 @@
                                             <asp:Label ID="lblActivate" Visible="false" runat="server" Text='<%# Eval("Isactivate")%>'></asp:Label>
                                             <asp:CheckBox runat="server" ID="chklActivate" />
                                         </ItemTemplate>
-                                        <ItemStyle HorizontalAlign="Left" Width="1%" />
+                                        <ItemStyle HorizontalAlign="Left" Width="2%" />
                                     </asp:TemplateField>
                                 </Columns>
                                 <PagerSettings Mode="NumericFirstLast" PageButtonCount="5" FirstPageText="<" LastPageText=">" />

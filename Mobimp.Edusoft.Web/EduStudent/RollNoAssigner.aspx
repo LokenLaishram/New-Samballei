@@ -52,7 +52,7 @@
                                             </asp:FilteredTextBoxExtender>
                                         </div>
                                     </div>
-                                    <div class="col-md-2 customRow">
+                                    <div class="col-md-2 customRow" style="visibility:hidden">
                                         <div class="form-group">
                                             <asp:Label ID="Label5" runat="server" Text="Admission Status"></asp:Label>
                                             <asp:DropDownList ID="ddl_admissionstatus" AutoPostBack="true" OnSelectedIndexChanged="ddl_admissionstatus_SelectedIndexChanged" runat="server" class="form-control ">

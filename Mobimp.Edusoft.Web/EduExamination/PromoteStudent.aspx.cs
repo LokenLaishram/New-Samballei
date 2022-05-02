@@ -51,11 +51,11 @@ namespace Mobimp.Edusoft.Web.EduExamination
         }
         private void bindgrid(int index)
         {
+            divsearch.Visible = true;
             int pagesize = Convert.ToInt32(ddl_show.SelectedValue == "10000" ? lbl_totalrecords.Text : ddl_show.SelectedValue);
             List<Examdata> lstclass = getStudentdetails(index, pagesize);
             if (lstclass.Count > 0)
             {
-                divsearch.Visible = true;
                 GvExamdetails.PageSize = pagesize;
                 string record = lstclass.Count.ToString() == "1" ? " record found. " : " records found. ";
                 lblresult.Text = "Total : " + lstclass.Count.ToString() + " " + record;

@@ -1078,8 +1078,8 @@ namespace Mobimp.Campusoft.Web.EduExamination
                 EcxeclStd.StudentID = studentdetails[i].StudentID;
                 EcxeclStd.StudentName = studentdetails[i].StudentName;
                 EcxeclStd.RollNo = studentdetails[i].Roll;
-                EcxeclStd.WA_Mark = Convert.ToString(studentdetails[i].UT_SM);
-                EcxeclStd.CA_Mark = Convert.ToString(studentdetails[i].PW_SM);
+                EcxeclStd.Scored_Marks = Convert.ToString(studentdetails[i].UT_SM);
+                //EcxeclStd.CA_Mark = Convert.ToString(studentdetails[i].PW_SM);
                 listecelstd.Add(EcxeclStd);
                 i++;
             }
@@ -1207,10 +1207,10 @@ namespace Mobimp.Campusoft.Web.EduExamination
 
                     if (StudentID.Equals(ExStdID.ToString().Trim()))
                     {
-                        string SUTMark = table.Rows[index]["WA_MARK"].ToString().Trim();
-                        string SPWMark = table.Rows[index]["CA_MARK"].ToString().Trim();
+                        string SUTMark = table.Rows[index]["Scored_Marks"].ToString().Trim();
+                        //string SPWMark = table.Rows[index]["CA_MARK"].ToString().Trim();
                         UT.Text = SUTMark;
-                        PW.Text = SPWMark;
+                        //PW.Text = SPWMark;
                         lbl_errormessage.Visible = false;
                     }
                     else

@@ -37,6 +37,8 @@ namespace Mobimp.Campusoft.Web.EduUtility
             Commonfunction.PopulateDdl(ddlSessionID, mstlookup.GetLookupsList(LookupNames.Academicsession));
             ddlSessionID.SelectedIndex = 1;
             Commonfunction.PopulateDdl(ddlSubjectID, mstlookup.GetLookupsList(LookupNames.Subject));
+            Commonfunction.PopulateDdl(ddl_category, mstlookup.GetLookupsList(LookupNames.SubjectCategory));
+            ddl_category.SelectedIndex = 1;
         }
 
         protected void btnsave_Click(object sender, EventArgs e)
@@ -61,11 +63,18 @@ namespace Mobimp.Campusoft.Web.EduUtility
                     ddlSubjectID.Focus();
                     return;
                 }
+                if (ddl_category.SelectedIndex == 0)
+                {
+                    System.Web.UI.ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "AlertBox", "failalert('" + Messagealert_.Alertmessage("Please select Subject Category.") + "')", true);
+                    ddl_category.Focus();
+                    return;
+                }
                 ClasswiseSubjectData objsubj = new ClasswiseSubjectData();
                 ClasswiseSubjectBO objsubjBO = new ClasswiseSubjectBO();
                 objsubj.AcademicSessionID = Convert.ToInt32(ddlSessionID.SelectedValue == "" ? "0" : ddlSessionID.SelectedValue);
                 objsubj.ClassID = Convert.ToInt32(ddlclass.SelectedValue == "" ? "0" : ddlclass.SelectedValue);
                 objsubj.SubjectID = Convert.ToInt32(ddlSubjectID.SelectedValue == "" ? "0" : ddlSubjectID.SelectedValue);
+                objsubj.SubjectCategoryID = Convert.ToInt32(ddl_category.SelectedValue == "" ? "0" : ddl_category.SelectedValue);
                 objsubj.IsActive = ddlStatus.SelectedIndex == 0 ? true : false;
                 objsubj.AddedBy = LoginToken.LoginId;
                 objsubj.UserId = LoginToken.UserLoginId;
@@ -177,7 +186,7 @@ namespace Mobimp.Campusoft.Web.EduUtility
                     {
                         lbl_classid.Text = GetResult[0].ClassID.ToString();
                         lbl_subjectid.Text = GetResult[0].SubjectID.ToString();
-                        txt_sub_subject.Text= GetResult[0].Descriptions.ToString();
+                        txt_sub_subject.Text = GetResult[0].Descriptions.ToString();
                         ViewState["SID"] = GetResult[0].ID;
                         btn_addsub.Text = "Update";
                         ModalPopupExtender2.Show();
@@ -199,7 +208,7 @@ namespace Mobimp.Campusoft.Web.EduUtility
                     {
                         System.Web.UI.ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "AlertBox", "successalert('" + Messagealert_.Alertmessage("delete") + "')", true);
                         bindsubsubject();
-                     
+
                     }
                     else
                     {
@@ -216,10 +225,6 @@ namespace Mobimp.Campusoft.Web.EduUtility
                 System.Web.UI.ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "AlertBox", "failalert('" + ExceptionMessage.GetMessage(ex) + "')", true);
             }
         }
-        protected void ddlclass_OnSelectedIndexChanged(object sender, EventArgs e)
-        {
-            bindgrid(1);
-        }
         protected void btnsearch_Click(object sender, EventArgs e)
         {
             bindgrid(1);
@@ -235,7 +240,7 @@ namespace Mobimp.Campusoft.Web.EduUtility
                 string record = lstsubject[0].MaximumRows.ToString() == "1" ? " record found. " : " records found. ";
                 lblresult.Text = "Total : " + lstsubject[0].MaximumRows.ToString() + " " + record;
                 lbl_totalrecords.Text = lstsubject[0].MaximumRows.ToString(); ;
-                //lblresult.Visible = true;
+                lblresult.Visible = true;
                 divsearch.Visible = true;
                 GvSubjectdetails.VirtualItemCount = lstsubject[0].MaximumRows;//total item is required for custom paging
                 GvSubjectdetails.PageIndex = index - 1;
@@ -267,6 +272,7 @@ namespace Mobimp.Campusoft.Web.EduUtility
 
             objsubj.ClassID = Convert.ToInt32(ddlclass.SelectedValue == "" ? "0" : ddlclass.SelectedValue);
             objsubj.SubjectID = Convert.ToInt32(ddlSubjectID.SelectedValue == "" ? "0" : ddlSubjectID.SelectedValue);
+            objsubj.SubjectCategoryID = Convert.ToInt32(ddl_category.SelectedValue == "" ? "0" : ddl_category.SelectedValue);
             objsubj.ActionType = EnumActionType.Select;
             objsubj.PageSize = pagesize;
             objsubj.CurrentIndex = curIndex;
@@ -477,61 +483,52 @@ namespace Mobimp.Campusoft.Web.EduUtility
                 System.Web.UI.ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "AlertBox", "failalert('" + ExceptionMessage.GetMessage(ex) + "')", true);
             }
         }
-        protected void btnupdate_Click(object sender, EventArgs e)
-        {
-            List<ClasswiseSubjectData> lststudentlist = new List<ClasswiseSubjectData>();
-            ClasswiseSubjectData objsubject = new ClasswiseSubjectData();
-            ClasswiseSubjectBO objstdBO = new ClasswiseSubjectBO();
+        //protected void btnupdate_Click(object sender, EventArgs e)
+        //{
+        //    List<ClasswiseSubjectData> lststudentlist = new List<ClasswiseSubjectData>();
+        //    ClasswiseSubjectData objsubject = new ClasswiseSubjectData();
+        //    ClasswiseSubjectBO objstdBO = new ClasswiseSubjectBO();
 
-            try
-            {
-                // get all the record from the gridview
-                foreach (GridViewRow row in GvSubjectdetails.Rows)
-                {
-                    IFormatProvider provider = new System.Globalization.CultureInfo("en-GB", true);
-                    CheckBox ChkGrade = (CheckBox)GvSubjectdetails.Rows[row.RowIndex].Cells[0].FindControl("chkgrade");
-                    CheckBox chkOptional = (CheckBox)GvSubjectdetails.Rows[row.RowIndex].Cells[0].FindControl("chkOptional");
-                    CheckBox chkAlternative = (CheckBox)GvSubjectdetails.Rows[row.RowIndex].Cells[0].FindControl("chkAlternative");
-                    Label SubjectID = (Label)GvSubjectdetails.Rows[row.RowIndex].Cells[1].FindControl("lblID");
-                    DropDownList SubjectCategory = (DropDownList)GvSubjectdetails.Rows[row.RowIndex].Cells[6].FindControl("ddlcategory");
+        //    try
+        //    {
+        //        // get all the record from the gridview
+        //        foreach (GridViewRow row in GvSubjectdetails.Rows)
+        //        {
+        //            IFormatProvider provider = new System.Globalization.CultureInfo("en-GB", true);
+        //            CheckBox ChkGrade = (CheckBox)GvSubjectdetails.Rows[row.RowIndex].Cells[0].FindControl("chkgrade");
+        //            CheckBox chkOptional = (CheckBox)GvSubjectdetails.Rows[row.RowIndex].Cells[0].FindControl("chkOptional");
+        //            CheckBox chkAlternative = (CheckBox)GvSubjectdetails.Rows[row.RowIndex].Cells[0].FindControl("chkAlternative");
+        //            Label SubjectID = (Label)GvSubjectdetails.Rows[row.RowIndex].Cells[1].FindControl("lblID");
+        //            DropDownList SubjectCategory = (DropDownList)GvSubjectdetails.Rows[row.RowIndex].Cells[6].FindControl("ddlcategory");
 
-                    ClasswiseSubjectData ObjDetails = new ClasswiseSubjectData();
-                    ObjDetails.SubjectID = Convert.ToInt32(SubjectID.Text);
-                    ObjDetails.IsGrade = Convert.ToInt32(ChkGrade.Checked ? 1 : 0);
-                    ObjDetails.IsOptional = Convert.ToInt32(chkOptional.Checked ? 1 : 0);
-                    ObjDetails.IsAlternative = Convert.ToInt32(chkAlternative.Checked ? 1 : 0);
-                    ObjDetails.SubjectCategoryID = Convert.ToInt32(SubjectCategory.SelectedValue == "" ? "0" : SubjectCategory.SelectedValue);
-                    lststudentlist.Add(ObjDetails);
-                }
-                objsubject.SubjectlistXML = XmlConvertor.ClasswiseSubjectListtoXML(lststudentlist).ToString();
-                objsubject.AcademicSessionID = LoginToken.AcademicSessionID;
-                int results = objstdBO.UpdateSubjectList(objsubject);
-                if (results == 1)
-                {
-                    bindgrid(1);
+        //            ClasswiseSubjectData ObjDetails = new ClasswiseSubjectData();
+        //            ObjDetails.SubjectID = Convert.ToInt32(SubjectID.Text);
+        //            ObjDetails.IsGrade = Convert.ToInt32(ChkGrade.Checked ? 1 : 0);
+        //            ObjDetails.IsOptional = Convert.ToInt32(chkOptional.Checked ? 1 : 0);
+        //            ObjDetails.IsAlternative = Convert.ToInt32(chkAlternative.Checked ? 1 : 0);
+        //            ObjDetails.SubjectCategoryID = Convert.ToInt32(SubjectCategory.SelectedValue == "" ? "0" : SubjectCategory.SelectedValue);
+        //            lststudentlist.Add(ObjDetails);
+        //        }
+        //        objsubject.SubjectlistXML = XmlConvertor.ClasswiseSubjectListtoXML(lststudentlist).ToString();
+        //        objsubject.AcademicSessionID = LoginToken.AcademicSessionID;
+        //        int results = objstdBO.UpdateSubjectList(objsubject);
+        //        if (results == 1)
+        //        {
+        //            bindgrid(1);
 
-                }
-                else
-                {
+        //        }
+        //        else
+        //        {
 
-                }
-            }
-            catch (Exception ex)
-            {
-                PolicyBasedExceptionHandler.HandleException(PolicyBasedExceptionHandler.PolicyName.UIExceptionPolicy, ex, "1000001");
-                LogManager.UpdateCmsErrorDetails(ex, EnumErrorLogSourceTier.Web);
-                System.Web.UI.ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "AlertBox", "failalert('" + ExceptionMessage.GetMessage(ex) + "')", true);
-            }
-        }
-        protected void ddlclass_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            bindgrid(1);
-        }
-        protected void ddlSubjectID_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            bindgrid(1);
-        }
-
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        PolicyBasedExceptionHandler.HandleException(PolicyBasedExceptionHandler.PolicyName.UIExceptionPolicy, ex, "1000001");
+        //        LogManager.UpdateCmsErrorDetails(ex, EnumErrorLogSourceTier.Web);
+        //        System.Web.UI.ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "AlertBox", "failalert('" + ExceptionMessage.GetMessage(ex) + "')", true);
+        //    }
+        //}
         protected void btn_add_Click(object sender, EventArgs e)
         {
             GridViewRow row = ((LinkButton)sender).Parent.Parent as GridViewRow;
@@ -555,17 +552,20 @@ namespace Mobimp.Campusoft.Web.EduUtility
             {
                 if (txt_sub_subject.Text.Trim() == "")
                 {
-                    System.Web.UI.ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "AlertBox", "failalert('" + Messagealert_.Alertmessage("Please enter sub subject.") + "')", true);
+                    System.Web.UI.ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "AlertBox", "failalert('" + Messagealert_.Alertmessage("Please enter Sub Subject.") + "')", true);
                     txt_sub_subject.Focus();
                     ModalPopupExtender2.Show();
                     return;
                 }
+                lbl_subsubjectID.Text = Commonfunction.SemicolonSeparation_String_64(txt_sub_subject.Text).ToString();
+
                 ClasswiseSubjectData objsubj = new ClasswiseSubjectData();
                 ClasswiseSubjectBO objsubjBO = new ClasswiseSubjectBO();
                 objsubj.AcademicSessionID = Convert.ToInt32(ddlSessionID.SelectedValue == "" ? "0" : ddlSessionID.SelectedValue);
                 objsubj.ClassID = Convert.ToInt32(lbl_classid.Text == "" ? "0" : lbl_classid.Text);
                 objsubj.SubjectID = Convert.ToInt32(lbl_subjectid.Text == "" ? "0" : lbl_subjectid.Text);
-                objsubj.Descriptions = txt_sub_subject.Text.Trim();
+                objsubj.SubSubjectID = Convert.ToInt32(lbl_subsubjectID.Text == "" ? "0" : lbl_subsubjectID.Text);
+                //objsubj.Descriptions = txt_sub_subject.Text.Trim();
                 objsubj.IsActive = ddl_substatus.SelectedIndex == 0 ? true : false;
                 objsubj.AddedBy = LoginToken.LoginId;
                 objsubj.UserId = LoginToken.UserLoginId;
@@ -581,7 +581,7 @@ namespace Mobimp.Campusoft.Web.EduUtility
                 {
                     System.Web.UI.ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "AlertBox", "successalert('" + Messagealert_.Alertmessage(result == 1 ? "save" : "update") + "')", true);
                     ViewState["SID"] = null;
-                     btn_addsub.Text = "Add";
+                    btn_addsub.Text = "Add";
                 }
                 if (result == 5)
                 {
@@ -611,7 +611,7 @@ namespace Mobimp.Campusoft.Web.EduUtility
         private void bindsubsubject()
         {
             btn_addsub.Text = "Add";
-         
+
             List<ClasswiseSubjectData> lstsubject = Getsubsubjectlist();
             if (lstsubject.Count > 0)
             {
@@ -635,6 +635,21 @@ namespace Mobimp.Campusoft.Web.EduUtility
         {
             bindsubsubject();
             ModalPopupExtender2.Show();
+        }
+
+        protected void ddlSubjectID_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            bindgrid(1);
+        }
+
+        protected void ddlclass_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            bindgrid(1);
+        }
+
+        protected void ddl_category_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            bindgrid(1);
         }
     }
 }

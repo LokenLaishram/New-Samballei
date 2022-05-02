@@ -26,8 +26,7 @@ namespace Mobimp.EduUtility.Web
             if (!IsPostBack)
             {
                 bindddl();
-                //bindgrid(1);
-
+                bindgrid(1);
             }
         }
         private void bindddl()
@@ -67,6 +66,7 @@ namespace Mobimp.EduUtility.Web
             }
             else
             {
+                lblresult.Visible = false;
                 GvemployeeList.DataSource = null;
                 GvemployeeList.DataBind();
             }
@@ -295,6 +295,21 @@ namespace Mobimp.EduUtility.Web
             {
                 ViewState["dirState"] = value;
             }
-        }      
+        }
+
+        protected void ddlempcategories_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            bindgrid(1);
+        }
+
+        protected void ddlstfftypes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            bindgrid(1);
+        }
+
+        protected void ddlstatus_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            bindgrid(1);
+        }
     }
 }

@@ -92,6 +92,7 @@ namespace Mobimp.Edusoft.Web.EduReports
                 lblresult.Visible = false;
                 GvCertificateDetails.DataSource = null;
                 GvCertificateDetails.DataBind();
+                divSearch.Visible = true;
             }
         }
         public List<Examdata> getStudentdetails(int curIndex, int pagesize)
@@ -182,6 +183,8 @@ namespace Mobimp.Edusoft.Web.EduReports
                     //{
                     //    txtRegistrationNos.Enabled = true;
                     //}
+                    MasterLookupBO mstlookup = new MasterLookupBO();
+                    Commonfunction.PopulateDdl(ddlYearPass, mstlookup.GetLookupsList(LookupNames.Academicsession));
                     if (lblYearPass.Text != "")
                     {
                         ddlYearPass.Visible = false;

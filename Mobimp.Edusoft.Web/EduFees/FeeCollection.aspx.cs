@@ -29,6 +29,7 @@ namespace Mobimp.Campusoft.Web.EduFees
                 BindDlls();
                 //bindgrid(1);
             }
+            AutoCompleteExtender2.ContextKey = Convert.ToString(ddlacademicsession.SelectedValue == "" ? "0" : ddlacademicsession.SelectedValue);
         }
         protected void BindDlls()
         {
@@ -507,15 +508,16 @@ namespace Mobimp.Campusoft.Web.EduFees
                     if (paymenttype.Text == "1")
                     {
                         GvFeedetails.Columns[4].Visible = true;
-                        fineamount.Visible = false;
                         GvFeedetails.Columns[5].Visible = false;
                         if (paymentstatus.Text == "Paid")
                         {
                             btnpay.Attributes["disabled"] = "disabled";
+                            fineamount.Visible = true;
                         }
                         else
                         {
                             btnpay.Attributes.Remove("disabled");
+                            fineamount.Visible = false;
                         }
                     }
                     if (paymenttype.Text == "2" || paymenttype.Text == "3")

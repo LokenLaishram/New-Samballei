@@ -6,7 +6,8 @@
     <div class="container-fluid" id="page_wrapper">
         <ol class="breadcrumb">
             <li>Exam Utility&nbsp;&nbsp;<i class="fa fa-chevron-right" style="font-size: xx-small;" aria-hidden="true"></i></li>
-            <li><a class="active" runat="server" id="a10" href="../EduUtility/ClasswiseSubjectMst.aspx">Add classwise subject </a></li>
+            <li><a runat="server" id="a1" href="../EduUtility/SubjectMST.aspx">Add subject </a></li>&nbsp;<i class="fa fa-chevron-right" style="font-size: xx-small;" aria-hidden="true"></i>
+            <li><a class="active" runat="server" id="a10" href="../EduUtility/ClasswiseSubjectMst.aspx">Add Classwise Subject</a></li>
         </ol>
         <asp:UpdatePanel ID="upMains" runat="server" UpdateMode="Conditional">
             <ContentTemplate>
@@ -25,7 +26,7 @@
                                 <asp:Label ID="lblclass" runat="server" Text="Class"></asp:Label>
                                 <span class="mandatory_field">*</span><span style="color: #ff0000"></span>
                                 <asp:DropDownList ID="ddlclass" runat="server" class="form-control custextbox"
-                                    AutoPostBack="true" OnSelectedIndexChanged="ddlclass_OnSelectedIndexChanged">
+                                    AutoPostBack="true" OnSelectedIndexChanged="ddlclass_SelectedIndexChanged">
                                 </asp:DropDownList>
                             </div>
                         </div>
@@ -39,6 +40,14 @@
                         </div>
                         <div class="col-md-2 customRow">
                             <div class="form-group">
+                                <asp:Label ID="Label1" runat="server" Text="Subject Category"></asp:Label>
+                                <span class="mandatory_field">*</span><span style="color: #ff0000"></span>
+                                <asp:DropDownList ID="ddl_category" AutoPostBack="true" OnSelectedIndexChanged="ddl_category_SelectedIndexChanged" runat="server"  CssClass="form-control custextbox">
+                                </asp:DropDownList>
+                            </div>
+                        </div>
+                        <div class="col-md-2 customRow">
+                            <div class="form-group">
                                 <asp:Label ID="Label2" runat="server" Text="Status"></asp:Label>
                                 <asp:DropDownList ID="ddlStatus" runat="server" class="form-control custextbox">
                                     <asp:ListItem Value="1" Text="Active"></asp:ListItem>
@@ -46,7 +55,7 @@
                                 </asp:DropDownList>
                             </div>
                         </div>
-                        <div class="col-md-3 customRow">
+                        <div class="col-md-2 customRow">
                             <div class="form-group pull-right" style="margin-top: 1.8em;">
                                 <asp:Button ID="btnsave" runat="server" class="btn btn-sm btn-green button" Text="Add" OnClick="btnsave_Click" />
                                 <asp:Button ID="btnsearch" Visible="false" class="btn btn-sm btn-info button" runat="server" OnClientClick="return  Validate1();" Text="Search" OnClick="btnsearch_Click" />
@@ -112,9 +121,10 @@
                                     <asp:BoundField DataField="ClassName" ItemStyle-Width="2%" SortExpression="ClassName" HeaderText="Class" />
                                     <asp:BoundField DataField="CODE" ItemStyle-Width="2%" SortExpression="CODE" HeaderText="Code" />
                                     <asp:BoundField DataField="Descriptions" ItemStyle-Width="2%" SortExpression="Descriptions" HeaderText="Subject" />
+                                    <asp:BoundField DataField="SubjectCategory" ItemStyle-Width="2%" SortExpression="SubjectCategory" HeaderText="SubjectCategory" />
                                     <asp:TemplateField Visible="false">
                                         <HeaderTemplate>
-                                            <%--      Subject Type--%>
+                                            <%--Subject Type--%>
                                         </HeaderTemplate>
                                         <ItemTemplate>
                                             <asp:DropDownList ID="ddloptionalsubject" Class="form-control gridtextbox" runat="server">
@@ -189,7 +199,7 @@
                 <asp:ModalPopupExtender ID="ModalPopupExtender2" BehaviorID="modalbehavior2" runat="server" TargetControlID="btnopen2" PopupControlID="Popupwindow2"
                     BackgroundCssClass="modalBackground" Enabled="True">
                 </asp:ModalPopupExtender>
-                <asp:Panel runat="server" ID="Popupwindow2" BackColor="White" Style="display: none; width: 500px">
+                <asp:Panel runat="server" ID="Popupwindow2" BackColor="White" Style="display: none; width: 800px; height:300px">
                     <div class="row">
                         <div class="col-sm-11">
                             <h5>Add Sub Subject</h5>
@@ -213,14 +223,19 @@
                                         <asp:Label ID="lbl_subject" runat="server" Text="Subject"></asp:Label>
                                         <asp:Label ID="lbl_subjectname" class="form-control custextbox" runat="server"></asp:Label>
                                         <asp:Label ID="lbl_subjectid" Visible="false" runat="server"></asp:Label>
+                                        <asp:Label ID="lbl_subsubjectID" Visible="false" runat="server"></asp:Label>
                                     </div>
                                 </div>
                                 <div class="col-md-6 customRow">
                                     <div class="form-group">
                                         <asp:Label ID="lbl_subsubject" runat="server" Text="Sub Subject"></asp:Label>
                                         <span class="mandatory_field">*</span><span style="color: #ff0000"></span>
-                                        <asp:TextBox ID="txt_sub_subject" runat="server" class="form-control custextbox">
-                                        </asp:TextBox>
+                                        <asp:TextBox ID="txt_sub_subject" runat="server" class="form-control custextbox"></asp:TextBox>
+                                        <asp:AutoCompleteExtender ID="AutoCompleteExtender1" runat="server"
+                                            ServiceMethod="GetAutoSubjectName" MinimumPrefixLength="1"
+                                            CompletionInterval="100" CompletionSetCount="1" TargetControlID="txt_sub_subject"
+                                            UseContextKey="True" DelimiterCharacters="" Enabled="True" ServicePath="~/webservices/AutocompleteLinks.asmx">
+                                        </asp:AutoCompleteExtender>
                                     </div>
                                 </div>
                             </div>
@@ -234,7 +249,7 @@
                                         </asp:DropDownList>
                                     </div>
                                 </div>
-                                <div class="col-md-5 customRow">
+                                <div class="col-md-9 customRow">
                                     <div class="form-group pull-right" style="margin-top: 1.8em;">
                                         <asp:Button ID="btn_addsub" runat="server" class="btn btn-sm btn-green button" Text="Add" OnClick="btn_addsub_Click" />
                                     </div>
