@@ -92,6 +92,41 @@ namespace Mobimp.Campusoft.Web.webservices
         }
         [WebMethod]
         [ScriptMethod()]
+        public string[] GetAutoStudentList_Fee(string prefixText, int count, string contextKey)
+        {
+            if (count == 0)
+            {
+                count = 10;
+            }
+            DataTable dt = GetStudentRecords_Fee(prefixText, prefixText, contextKey);
+            List<string> items = new List<string>(count);
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                string strName = dt.Rows[i][0].ToString();
+                items.Add(strName);
+            }
+            return items.ToArray();
+        }
+        public DataTable GetStudentRecords_Fee(string Links, String names, string contextKey)
+        {
+            string strConn = ConfigurationManager.ConnectionStrings["SqlConnectionString11"].ConnectionString;
+            SqlConnection con = new SqlConnection(strConn);
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = con;
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.Parameters.Add("@StudentName", SqlDbType.VarChar).Value = names;
+            cmd.Parameters.Add("@AcademicSessionID", SqlDbType.Int).Value = Convert.ToInt32(contextKey);
+            cmd.CommandText = "usp_CMS_Fees_autocompleteStudentDetails";
+            DataSet objDs = new DataSet();
+            SqlDataAdapter dAdapter = new SqlDataAdapter();
+            dAdapter.SelectCommand = cmd;
+            con.Open();
+            dAdapter.Fill(objDs);
+            con.Close();
+            return objDs.Tables[0];
+        }
+        [WebMethod]
+        [ScriptMethod()]
         public string[] GetautosRegistrationlist(string prefixText, int count, string contextKey)
         {
             if (count == 0)
@@ -187,6 +222,40 @@ namespace Mobimp.Campusoft.Web.webservices
             cmd.Parameters.Add("@EmpID", SqlDbType.Int).Value = EmpID;
             //cmd.Parameters.Add("@RoleID", SqlDbType.Int).Value = BehaviorID;
             cmd.CommandText = "usp_CMS_Emp_AutoCompleteTeachingStaff";
+            DataSet objDs = new DataSet();
+            SqlDataAdapter dAdapter = new SqlDataAdapter();
+            dAdapter.SelectCommand = cmd;
+            con.Open();
+            dAdapter.Fill(objDs);
+            con.Close();
+            return objDs.Tables[0];
+        }
+        [WebMethod]
+        [ScriptMethod()]
+        public string[] GetAutoSubjectName(string prefixText, int count)
+        {
+            if (count == 0)
+            {
+                count = 10;
+            }
+            DataTable dt = GetSubjectRecords(prefixText, prefixText);
+            List<string> items = new List<string>(count);
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                string strName = dt.Rows[i][0].ToString();
+                items.Add(strName);
+            }
+            return items.ToArray();
+        }
+        public DataTable GetSubjectRecords(string Links, String names)
+        {
+            string strConn = ConfigurationManager.ConnectionStrings["SqlConnectionString11"].ConnectionString;
+            SqlConnection con = new SqlConnection(strConn);
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = con;
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.Parameters.Add("@SubjectName", SqlDbType.VarChar).Value = names;
+            cmd.CommandText = "usp_CMS_Util_autocompleteSubjectDetails";
             DataSet objDs = new DataSet();
             SqlDataAdapter dAdapter = new SqlDataAdapter();
             dAdapter.SelectCommand = cmd;

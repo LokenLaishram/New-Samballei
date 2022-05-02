@@ -591,10 +591,10 @@ namespace Mobimp.Edusoft.Data.EduUtility
         public string StudentName { get; set; }
         [DataMember]
         public int RollNo { get; set; }
+        //[DataMember]
+        //public string CA_Mark { get; set; }
         [DataMember]
-        public string CA_Mark { get; set; }
-        [DataMember]
-        public string WA_Mark { get; set; }
+        public string Scored_Marks { get; set; }
     }
     public class AttendanceData : BaseData
     {

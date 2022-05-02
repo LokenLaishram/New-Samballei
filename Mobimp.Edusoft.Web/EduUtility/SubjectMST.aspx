@@ -5,8 +5,9 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="CampusoftPlaceholder" runat="server">
     <div class="container-fluid" id="page_wrapper">
         <ol class="breadcrumb">
-            <li>Exam Utility<i class="fa fa-chevron-right" style="font-size: xx-small;" aria-hidden="true"></i></li>
-            <li><a class="active" runat="server" id="a1" href="../EduUtility/SubjectMST.aspx">Add subject </a></li>
+            <li>Exam Utility&nbsp;&nbsp;<i class="fa fa-chevron-right" style="font-size: xx-small;" aria-hidden="true"></i></li>
+            <li><a class="active" runat="server" id="a1" href="../EduUtility/SubjectMST.aspx">Add subject </a></li>&nbsp;<i class="fa fa-chevron-right" style="font-size: xx-small;" aria-hidden="true"></i>
+            <li><a runat="server" id="a5" href="../EduUtility/ClasswiseSubjectMst.aspx">Add Classwise Subject </a></li>
         </ol>
         <asp:UpdatePanel ID="upMains" runat="server" UpdateMode="Conditional">
             <ContentTemplate>
@@ -27,7 +28,16 @@
                                 <asp:TextBox ID="txtdescription" MaxLength="100" runat="server" class="form-control custextbox"></asp:TextBox>
                             </div>
                         </div>
-                        <div class="col-md-3 customRow">
+                        <div class="col-md-2 customRow">
+                            <div class="form-group">
+                                <asp:Label ID="lblclass" runat="server" Text="Status"></asp:Label>
+                                <asp:DropDownList ID="ddlStatusID" runat="server" CssClass="form-control custextbox" AutoPostBack="true" OnSelectedIndexChanged="ddlStatusID_SelectedIndexChanged">
+                                    <asp:ListItem Value="1" Text="Active"></asp:ListItem>
+                                    <asp:ListItem Value="0" Text="InActive"></asp:ListItem>
+                                </asp:DropDownList>
+                            </div>
+                        </div>
+                        <div class="col-md-1 customRow" style="visibility:hidden">
                             <div class="form-group">
                                 <asp:Label ID="Label1" runat="server" Text="Subject Category"></asp:Label>
                                 <span class="mandatory_field">*</span><span style="color: #ff0000"></span>
@@ -41,21 +51,9 @@
                             </div>
                         </div>
                         <div class="col-md-3 customRow">
-                            <div class="form-group">
-                                <asp:Label ID="lblclass" runat="server" Text="Status"></asp:Label>
-                                <asp:DropDownList ID="ddlStatusID" runat="server" CssClass="form-control custextbox">
-                                    <asp:ListItem Value="1" Text="Active"></asp:ListItem>
-                                    <asp:ListItem Value="0" Text="InActive"></asp:ListItem>
-                                </asp:DropDownList>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="row mt10">
-                        <div class="col-md-12 customRow">
                             <div class="form-group pull-right" style="margin-top: 1.8em;">
                                 <asp:Button ID="btnsave" runat="server" class="btn btn-sm btn-green button" OnClientClick="return Validate();" Text="Add" OnClick="btnsave_Click" />
-                                <asp:Button ID="btnsearch" Visible="false" class="btn btn-sm btn-info button" runat="server" OnClientClick="return  Validate1();" Text="Search" OnClick="btnsearch_Click" />
+                                <asp:Button ID="btnsearch" class="btn btn-sm btn-info button" runat="server" OnClientClick="return  Validate1();" Text="Search" OnClick="btnsearch_Click" />
                                 <asp:Button ID="btncancel" class="btn btn-sm btn-danger button" runat="server" Text="Reset" OnClick="btncancel_Click" />
                             </div>
                         </div>
@@ -114,7 +112,7 @@
                                     <asp:BoundField DataField="SubjectID" ControlStyle-Width="1%" SortExpression="SubjectID" HeaderText="ID" />
                                     <asp:BoundField DataField="CODE" ControlStyle-Width="2%" SortExpression="CODE" HeaderText="Code" />
                                     <asp:BoundField DataField="Descriptions" ControlStyle-Width="4%" SortExpression="Descriptions" HeaderText="Subject" />
-                                    <asp:BoundField DataField="SubjectCategory" ControlStyle-Width="4%" SortExpression="SubjectCategory" HeaderText="Category" />
+                                    <asp:BoundField DataField="SubjectCategory" ControlStyle-Width="4%" SortExpression="SubjectCategory" HeaderText="Category" Visible="false"/>
                                     <asp:BoundField DataField="AddedBy" ControlStyle-Width="2%" SortExpression="AddedBy" HeaderText="Added By" />
                                     <asp:BoundField DataField="AddedDate" ControlStyle-Width="1%" SortExpression="AddedDate" HeaderText="Added Date" DataFormatString="{0:dd/MM/yyyy}" />
                                     <asp:TemplateField>
@@ -188,12 +186,12 @@
                 i++;
 
             }
-            if (document.getElementById("<%=ddl_category.ClientID%>").selectedIndex == "0") {
+            <%--if (document.getElementById("<%=ddl_category.ClientID%>").selectedIndex == "0") {
                 str = str + "\n Please enter category.";
                 document.getElementById("<%=ddl_category.ClientID %>").focus();
                 i++;
 
-            }
+            }--%>
             if (str.length > 0) {
                 swal({
                     title: "Please check the following required fileds.",

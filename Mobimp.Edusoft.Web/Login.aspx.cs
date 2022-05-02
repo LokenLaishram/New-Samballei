@@ -76,7 +76,7 @@ namespace Mobimp.Campusoft.Web
                     objCreateUser.ActionType = EnumActionType.Insert;
                     UserCE result = new UserCE();
                     DateTime Today = DateTime.Today;
-                    DateTime ExpiryDate = Convert.ToDateTime("02/02/2023");
+                    DateTime ExpiryDate = Convert.ToDateTime("15/04/2023");
                     if ((ExpiryDate - Today).TotalDays <= 0)
                     {
                         lblmessage.Visible = true;
@@ -119,7 +119,7 @@ namespace Mobimp.Campusoft.Web
         {
 
             DateTime Today = DateTime.Today;
-            DateTime ExpiryDate = Convert.ToDateTime("02/02/2023");
+            DateTime ExpiryDate = Convert.ToDateTime("15/04/2023");
             if ((ExpiryDate - Today).TotalDays <= 15)
             {
                 lblmessage.Visible = true;

@@ -246,7 +246,14 @@ namespace Mobimp.Edusoft.Web.EduFeeUtility
                     Label lblActivate = (Label)e.Row.FindControl("lblactivate");
                     CheckBox ChkActivate = (CheckBox)e.Row.FindControl("chkactivate");
 
+                    //TextBox txt_FeeAmountOld = (TextBox)e.Row.FindControl("txtfeeamount_oldstudent");
+                    //TextBox txt_FeeAmountNew = (TextBox)e.Row.FindControl("txtfeeamount_newstudent");
+
+                    //Int64 FeeAmountOld = Convert.ToInt64(txt_FeeAmountOld.Text);
+                    //Int64 FeeAmountNew = Convert.ToInt64(txt_FeeAmountNew.Text);
+
                     Commonfunction.PopulateDdl(ddlPayment, lookpayment);
+
                     if (PaymentType.Text != "")
                     {
                         ddlPayment.Items.FindByValue(PaymentType.Text).Selected = true;
@@ -301,6 +308,8 @@ namespace Mobimp.Edusoft.Web.EduFeeUtility
                     if (PaymentType.Text == "2" || PaymentType.Text == "3")
                     {
                         lnlInclusive.Visible = false;
+                        //txt_FeeAmountOld.Text = Convert.ToString(Commonfunction.Getrounding(Convert.ToString(Convert.ToInt64(FeeAmountOld) / 12)));
+                        //txt_FeeAmountNew.Text = Convert.ToString(Commonfunction.Getrounding(Convert.ToString(Convert.ToInt64(FeeAmountNew) / 12)));
                     }
                     else
                     {

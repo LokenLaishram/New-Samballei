@@ -190,7 +190,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card_wrapper" id="divoverall" runat="server">
+                <div class="card_wrapper" id="divoverall" runat="server" visible="false">
                     <div class="row mt10">
                         <div class="col-md-2 customRow">
                             <div class="form-group">

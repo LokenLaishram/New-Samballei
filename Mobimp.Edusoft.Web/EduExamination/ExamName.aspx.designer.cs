@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Mobimp.Campusoft.Web.EduExamination {
-    
-    
-    public partial class ExamName {
-        
+namespace Mobimp.Campusoft.Web.EduExamination
+{
+
+
+    public partial class ExamName
+    {
+
         /// <summary>
         /// a1 control.
         /// </summary>
@@ -20,7 +22,16 @@ namespace Mobimp.Campusoft.Web.EduExamination {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlAnchor a1;
-        
+
+        /// <summary>
+        /// a2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor a2;
+
         /// <summary>
         /// upMains control.
         /// </summary>
@@ -29,7 +40,7 @@ namespace Mobimp.Campusoft.Web.EduExamination {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel upMains;
-        
+
         /// <summary>
         /// lblmessage control.
         /// </summary>
@@ -38,7 +49,7 @@ namespace Mobimp.Campusoft.Web.EduExamination {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblmessage;
-        
+
         /// <summary>
         /// lblcodes control.
         /// </summary>
@@ -47,7 +58,7 @@ namespace Mobimp.Campusoft.Web.EduExamination {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblcodes;
-        
+
         /// <summary>
         /// txtcode control.
         /// </summary>
@@ -56,7 +67,7 @@ namespace Mobimp.Campusoft.Web.EduExamination {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtcode;
-        
+
         /// <summary>
         /// FilteredTextBoxExtender1 control.
         /// </summary>
@@ -65,7 +76,7 @@ namespace Mobimp.Campusoft.Web.EduExamination {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::AjaxControlToolkit.FilteredTextBoxExtender FilteredTextBoxExtender1;
-        
+
         /// <summary>
         /// lbldescription control.
         /// </summary>
@@ -74,7 +85,7 @@ namespace Mobimp.Campusoft.Web.EduExamination {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbldescription;
-        
+
         /// <summary>
         /// txtdescription control.
         /// </summary>
@@ -83,7 +94,7 @@ namespace Mobimp.Campusoft.Web.EduExamination {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtdescription;
-        
+
         /// <summary>
         /// FilteredTextBoxExtender2 control.
         /// </summary>
@@ -92,7 +103,7 @@ namespace Mobimp.Campusoft.Web.EduExamination {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::AjaxControlToolkit.FilteredTextBoxExtender FilteredTextBoxExtender2;
-        
+
         /// <summary>
         /// lblstatus control.
         /// </summary>
@@ -101,7 +112,7 @@ namespace Mobimp.Campusoft.Web.EduExamination {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblstatus;
-        
+
         /// <summary>
         /// ddlstatus control.
         /// </summary>
@@ -110,7 +121,7 @@ namespace Mobimp.Campusoft.Web.EduExamination {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlstatus;
-        
+
         /// <summary>
         /// btnsave control.
         /// </summary>
@@ -119,7 +130,7 @@ namespace Mobimp.Campusoft.Web.EduExamination {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnsave;
-        
+
         /// <summary>
         /// btnsearch control.
         /// </summary>
@@ -128,7 +139,7 @@ namespace Mobimp.Campusoft.Web.EduExamination {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnsearch;
-        
+
         /// <summary>
         /// btncancel control.
         /// </summary>
@@ -137,7 +148,7 @@ namespace Mobimp.Campusoft.Web.EduExamination {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btncancel;
-        
+
         /// <summary>
         /// lblresult control.
         /// </summary>
@@ -146,7 +157,7 @@ namespace Mobimp.Campusoft.Web.EduExamination {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblresult;
-        
+
         /// <summary>
         /// lbl_totalrecords control.
         /// </summary>
@@ -155,7 +166,7 @@ namespace Mobimp.Campusoft.Web.EduExamination {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_totalrecords;
-        
+
         /// <summary>
         /// UpdatePanel1 control.
         /// </summary>
@@ -164,7 +175,7 @@ namespace Mobimp.Campusoft.Web.EduExamination {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel UpdatePanel1;
-        
+
         /// <summary>
         /// btn_export control.
         /// </summary>
@@ -173,7 +184,7 @@ namespace Mobimp.Campusoft.Web.EduExamination {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton btn_export;
-        
+
         /// <summary>
         /// lbl_show control.
         /// </summary>
@@ -182,7 +193,7 @@ namespace Mobimp.Campusoft.Web.EduExamination {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_show;
-        
+
         /// <summary>
         /// ddl_show control.
         /// </summary>
@@ -191,7 +202,7 @@ namespace Mobimp.Campusoft.Web.EduExamination {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddl_show;
-        
+
         /// <summary>
         /// updateProgress1 control.
         /// </summary>
@@ -200,7 +211,7 @@ namespace Mobimp.Campusoft.Web.EduExamination {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.UpdateProgress updateProgress1;
-        
+
         /// <summary>
         /// GvExamDetails control.
         /// </summary>

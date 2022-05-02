@@ -8,7 +8,8 @@
     <div class="container-fluid" id="page_wrapper">
         <ol class="breadcrumb">
             <li><a>Exam Utility &nbsp;&nbsp;<i class="fa fa-chevron-right" style="font-size: xx-small;" aria-hidden="true"></i></a></li>
-            <li><a class="active" runat="server" id="a1" href="../EduExamination/ExamName.aspx">Exam Name</a></li>
+            <li><a class="active" runat="server" id="a1" href="../EduExamination/ExamName.aspx">Exam Name </a></li>&nbsp;<i class="fa fa-chevron-right" style="font-size: xx-small;" aria-hidden="true"></i>
+            <li><a runat="server" id="a2" href="../EduUtility/ExamDetail.aspx">Exam Mark Detail</a></li>
         </ol>
         <asp:UpdatePanel ID="upMains" runat="server" UpdateMode="Conditional">
             <ContentTemplate>
@@ -109,13 +110,13 @@
                                         </ItemTemplate>
                                         <ItemStyle HorizontalAlign="Left" Width="1%" />
                                     </asp:TemplateField>
-                                    <asp:TemplateField HeaderText="Code">
+                                    <asp:TemplateField HeaderText="Exam Code">
                                         <ItemTemplate>
                                             <asp:Label ID="lblcode" runat="server" Text='<%# Eval("CODE") %>'></asp:Label>
                                         </ItemTemplate>
                                         <ItemStyle HorizontalAlign="Left" Width="2%" />
                                     </asp:TemplateField>
-                                    <asp:TemplateField HeaderText="name">
+                                    <asp:TemplateField HeaderText="Exam Name">
                                         <ItemTemplate>
                                             <asp:Label ID="lbldescription" runat="server" Text='<%# Eval("ExamName")%>'></asp:Label>
                                         </ItemTemplate>

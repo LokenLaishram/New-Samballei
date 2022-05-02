@@ -7,20 +7,31 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Mobimp.Campusoft.Web.EduUtility {
-    
-    
-    public partial class ExamDetail {
-        
+namespace Mobimp.Campusoft.Web.EduUtility
+{
+
+
+    public partial class ExamDetail
+    {
+
         /// <summary>
-        /// activepage control.
+        /// a1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor activepage;
-        
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor a1;
+
+        /// <summary>
+        /// a2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor a2;
+
         /// <summary>
         /// upMains control.
         /// </summary>
@@ -29,7 +40,7 @@ namespace Mobimp.Campusoft.Web.EduUtility {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel upMains;
-        
+
         /// <summary>
         /// lblmessage control.
         /// </summary>
@@ -38,7 +49,7 @@ namespace Mobimp.Campusoft.Web.EduUtility {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblmessage;
-        
+
         /// <summary>
         /// lblacademic control.
         /// </summary>
@@ -47,7 +58,7 @@ namespace Mobimp.Campusoft.Web.EduUtility {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblacademic;
-        
+
         /// <summary>
         /// ddlacademic control.
         /// </summary>
@@ -56,7 +67,7 @@ namespace Mobimp.Campusoft.Web.EduUtility {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlacademic;
-        
+
         /// <summary>
         /// lblclass control.
         /// </summary>
@@ -65,7 +76,7 @@ namespace Mobimp.Campusoft.Web.EduUtility {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblclass;
-        
+
         /// <summary>
         /// ddlclass control.
         /// </summary>
@@ -74,7 +85,7 @@ namespace Mobimp.Campusoft.Web.EduUtility {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlclass;
-        
+
         /// <summary>
         /// lblexamtype control.
         /// </summary>
@@ -83,7 +94,7 @@ namespace Mobimp.Campusoft.Web.EduUtility {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblexamtype;
-        
+
         /// <summary>
         /// ddlexamtype control.
         /// </summary>
@@ -92,7 +103,7 @@ namespace Mobimp.Campusoft.Web.EduUtility {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlexamtype;
-        
+
         /// <summary>
         /// btnsearch control.
         /// </summary>
@@ -101,7 +112,7 @@ namespace Mobimp.Campusoft.Web.EduUtility {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnsearch;
-        
+
         /// <summary>
         /// btncancel control.
         /// </summary>
@@ -110,7 +121,7 @@ namespace Mobimp.Campusoft.Web.EduUtility {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btncancel;
-        
+
         /// <summary>
         /// divsearch control.
         /// </summary>
@@ -119,7 +130,7 @@ namespace Mobimp.Campusoft.Web.EduUtility {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl divsearch;
-        
+
         /// <summary>
         /// lblresult control.
         /// </summary>
@@ -128,7 +139,7 @@ namespace Mobimp.Campusoft.Web.EduUtility {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblresult;
-        
+
         /// <summary>
         /// lbl_totalrecords control.
         /// </summary>
@@ -137,7 +148,7 @@ namespace Mobimp.Campusoft.Web.EduUtility {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_totalrecords;
-        
+
         /// <summary>
         /// UpdatePanel1 control.
         /// </summary>
@@ -146,7 +157,7 @@ namespace Mobimp.Campusoft.Web.EduUtility {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel UpdatePanel1;
-        
+
         /// <summary>
         /// btn_export control.
         /// </summary>
@@ -155,7 +166,7 @@ namespace Mobimp.Campusoft.Web.EduUtility {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton btn_export;
-        
+
         /// <summary>
         /// updateProgress1 control.
         /// </summary>
@@ -164,7 +175,7 @@ namespace Mobimp.Campusoft.Web.EduUtility {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.UpdateProgress updateProgress1;
-        
+
         /// <summary>
         /// GvExamdetails control.
         /// </summary>
@@ -173,7 +184,7 @@ namespace Mobimp.Campusoft.Web.EduUtility {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView GvExamdetails;
-        
+
         /// <summary>
         /// LabelTotal control.
         /// </summary>
@@ -182,7 +193,7 @@ namespace Mobimp.Campusoft.Web.EduUtility {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label LabelTotal;
-        
+
         /// <summary>
         /// lbltotalmark control.
         /// </summary>
@@ -191,7 +202,7 @@ namespace Mobimp.Campusoft.Web.EduUtility {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbltotalmark;
-        
+
         /// <summary>
         /// LabelPass control.
         /// </summary>
@@ -200,7 +211,7 @@ namespace Mobimp.Campusoft.Web.EduUtility {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label LabelPass;
-        
+
         /// <summary>
         /// lblpassmark control.
         /// </summary>
@@ -209,7 +220,7 @@ namespace Mobimp.Campusoft.Web.EduUtility {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblpassmark;
-        
+
         /// <summary>
         /// btnUpdate control.
         /// </summary>

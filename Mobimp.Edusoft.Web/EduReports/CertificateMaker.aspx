@@ -118,7 +118,7 @@
                         <div id="ClassList" class="col-md-12 customRow " style="overflow: auto">
                             <asp:GridView ID="GvCertificateDetails" EmptyDataText="No record found..." OnRowDataBound="GvCertificateDetails_RowDataBound"
                                 OnPageIndexChanging="GvCertificateDetails_PageIndexChanging" OnSorting="GvCertificateDetails_Sorting" CssClass="footable table-striped"
-                                AllowSorting="true" runat="server" AutoGenerateColumns="false" Style="width: 100%" AllowPaging="true" AllowCustomPaging="true">
+                                AllowSorting="true" runat="server" AutoGenerateColumns="false" Style="width: 100%" AllowPaging="true" AllowCustomPaging="true" GridLines="None">
                                 <Columns>
                                     <asp:TemplateField>
                                         <HeaderTemplate>
@@ -215,12 +215,6 @@
                                         <ItemTemplate>
                                             <asp:Label ID="lblYearP" runat="server" Text='<%# Eval("YearPass")%>'></asp:Label>
                                             <asp:DropDownList ID="ddlYearP" Class="form-control" runat="server" Width="80px">
-                                                <asp:ListItem Value="0">--Select--</asp:ListItem>
-                                                <asp:ListItem Value="10">2019</asp:ListItem>
-                                                <asp:ListItem Value="11">2020</asp:ListItem>
-                                                <asp:ListItem Value="12">2021</asp:ListItem>
-                                                <asp:ListItem Value="13">2022</asp:ListItem>
-                                                <asp:ListItem Value="14">2023</asp:ListItem>
                                             </asp:DropDownList>
                                         </ItemTemplate>
                                         <ItemStyle HorizontalAlign="Left" Width="1%" />

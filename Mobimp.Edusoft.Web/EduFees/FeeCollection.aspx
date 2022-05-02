@@ -13,7 +13,7 @@
                     <ContentTemplate>
                         <div class="card_wrapper">
                             <div class="row">
-                                <div class="col-md-2 customRow">
+                                <div class="col-md-1 customRow">
                                     <div class="form-group">
                                         <asp:Label ID="lblsession" runat="server" Text="Year"></asp:Label>
                                         <span class="mandatory_field">*</span><span style="color: #ff0000"></span>
@@ -34,13 +34,13 @@
                                         </asp:FilteredTextBoxExtender>
                                     </div>
                                 </div>
-                                <div class="col-md-6 customRow">
+                                <div class="col-md-7 customRow">
                                     <div class="form-group">
                                         <asp:Label ID="lblstudentdetail" runat="server" Text="Student Details"></asp:Label>
                                         <asp:TextBox runat="server" AutoPostBack="true" TextMode="MultiLine"
                                             ID="txtstudentanme" OnTextChanged="txtstudentanme_TextChanged" class="form-control"></asp:TextBox>
                                         <asp:AutoCompleteExtender ID="AutoCompleteExtender2" runat="server"
-                                            ServiceMethod="Getautostudentlist" MinimumPrefixLength="1"
+                                            ServiceMethod="GetAutoStudentList_Fee" MinimumPrefixLength="1"
                                             CompletionInterval="100" CompletionSetCount="1" TargetControlID="txtstudentanme"
                                             UseContextKey="True" DelimiterCharacters="" Enabled="True" ServicePath="~/webservices/AutocompleteLinks.asmx">
                                         </asp:AutoCompleteExtender>
@@ -120,7 +120,7 @@
                                             <ItemTemplate>
                                                 <asp:Label ID="lbl_prepaidDuedate" Visible="false" Text='<%# Eval("PrepaidDueDate")%>' runat="server"></asp:Label>
                                                 <asp:Label ID="lbl_postpaidDuedate" Visible="false" Text='<%# Eval("PostpaidDueDate")%>' runat="server"></asp:Label>
-                                                <asp:Label ID="lblactualfineamount" Visible="false" Text='<%# Eval("FineAmount", "{0:0#.##}")%>' runat="server"></asp:Label>
+                                                <asp:Label ID="lblactualfineamount" Visible="true" Text='<%# Eval("FineAmount", "{0:0#.##}")%>' runat="server"></asp:Label>
                                                 <asp:Label ID="lbl_exemptedamount" Visible="false" Text='<%# Eval("ExemptionAmount", "{0:0#.##}")%>' runat="server"></asp:Label>
                                                 <asp:Label ID="lbl_discountamount" Visible="false" Text='<%# Eval("DiscountAmount", "{0:0#.##}")%>' runat="server"></asp:Label>
                                                 <asp:Label ID="lblcalcfineamount" runat="server"></asp:Label>

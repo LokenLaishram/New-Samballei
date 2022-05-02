@@ -354,46 +354,73 @@ namespace Mobimp.Campusoft.Web.EduUtility
             {
                 try
                 {
-                    CheckBox chkmarkcount = (CheckBox)GvExamdetails.Rows[row.RowIndex].Cells[0].FindControl("chkmarkcount");
-                    Label lmarkcount = (Label)GvExamdetails.Rows[row.RowIndex].Cells[0].FindControl("lblchkmarkcount");
-                    if (lmarkcount.Text == "1")
+                    CheckBox chk_altsubject = (CheckBox)GvExamdetails.Rows[row.RowIndex].Cells[0].FindControl("chk_altsubject");
+                    Label alt_ID = (Label)GvExamdetails.Rows[row.RowIndex].Cells[0].FindControl("lbl_altsubject");
+                    if (alt_ID.Text == "1")
                     {
-                        chkmarkcount.Checked = true;
+                        chk_altsubject.Checked = true;
                     }
+                    else
+                    {
+                        chk_altsubject.Checked = false;
+                    }
+
+                    CheckBox chk_opt = (CheckBox)GvExamdetails.Rows[row.RowIndex].Cells[0].FindControl("Chk_optional");
+                    Label opt_ID = (Label)GvExamdetails.Rows[row.RowIndex].Cells[0].FindControl("lbl_optional");
+                    if (opt_ID.Text == "1")
+                    {
+                        chk_opt.Checked = true;
+                    }
+                    else
+                    {
+                        chk_opt.Checked = false;
+                    }
+
+                    CheckBox chk_grade = (CheckBox)GvExamdetails.Rows[row.RowIndex].Cells[0].FindControl("chkIsGrade");
+                    Label grade_ID = (Label)GvExamdetails.Rows[row.RowIndex].Cells[0].FindControl("lblIsGrade");
+                    if (grade_ID.Text == "1")
+                    {
+                        chk_grade.Checked = true;
+                    }
+                    else
+                    {
+                        chk_grade.Checked = false;
+                    }
+
                     CheckBox chkIsScience = (CheckBox)GvExamdetails.Rows[row.RowIndex].Cells[0].FindControl("chkIsScience");
                     Label lIsSience = (Label)GvExamdetails.Rows[row.RowIndex].Cells[0].FindControl("lblIsScience");
                     if (lIsSience.Text == "1")
                     {
                         chkIsScience.Checked = true;
                     }
+                    else
+                    {
+                        chkIsScience.Checked = false;
+                    }
+
                     CheckBox chkIsScocialScience = (CheckBox)GvExamdetails.Rows[row.RowIndex].Cells[0].FindControl("chkIsScocialScience");
                     Label lIsSocialScience = (Label)GvExamdetails.Rows[row.RowIndex].Cells[0].FindControl("lblIsSocialScience");
                     if (lIsSocialScience.Text == "1")
                     {
                         chkIsScocialScience.Checked = true;
                     }
-                    CheckBox chk_altsubject = (CheckBox)GvExamdetails.Rows[row.RowIndex].Cells[0].FindControl("chk_altsubject");
-                    Label alt_ID = (Label)GvExamdetails.Rows[row.RowIndex].Cells[0].FindControl("lbl_altsubject");
-                    CheckBox chk_opt = (CheckBox)GvExamdetails.Rows[row.RowIndex].Cells[0].FindControl("Chk_optional");
-                    Label opt_ID = (Label)GvExamdetails.Rows[row.RowIndex].Cells[0].FindControl("lbl_optional");
-                    CheckBox chk_grade = (CheckBox)GvExamdetails.Rows[row.RowIndex].Cells[0].FindControl("chkIsGrade");
-                    Label grade_ID = (Label)GvExamdetails.Rows[row.RowIndex].Cells[0].FindControl("lblIsGrade");
+                    else
+                    {
+                        chkIsScocialScience.Checked = false;
+                    }
+
+                    CheckBox chkmarkcount = (CheckBox)GvExamdetails.Rows[row.RowIndex].Cells[0].FindControl("chkmarkcount");
+                    Label lmarkcount = (Label)GvExamdetails.Rows[row.RowIndex].Cells[0].FindControl("lblchkmarkcount");
+                    if (lmarkcount.Text == "1")
+                    {
+                        chkmarkcount.Checked = true;
+                    }
+
                     CheckBox chk_minor = (CheckBox)GvExamdetails.Rows[row.RowIndex].Cells[0].FindControl("chkIsMinor");
                     Label minor_ID = (Label)GvExamdetails.Rows[row.RowIndex].Cells[0].FindControl("lblIsMinor");
                     CheckBox chk_activate = (CheckBox)GvExamdetails.Rows[row.RowIndex].Cells[0].FindControl("chklActivate");
                     Label acivate_ID = (Label)GvExamdetails.Rows[row.RowIndex].Cells[0].FindControl("lblActivate");
-                    if (alt_ID.Text == "1")
-                    {
-                        chk_altsubject.Checked = true;
-                    }
-                    if (opt_ID.Text == "1")
-                    {
-                        chk_opt.Checked = true;
-                    }
-                    if (grade_ID.Text == "1")
-                    {
-                        chk_grade.Checked = true;
-                    }
+
                     if (minor_ID.Text == "1")
                     {
                         chk_minor.Checked = true;

@@ -71,7 +71,7 @@ namespace Mobimp.Campusoft.Web.EduExamination
                 Gv_resultlist.DataBind();
                 Gv_resultlist.Visible = true;
                 divresultlist.Visible = true;
-                divoverall.Visible = true;
+                divoverall.Visible = false;
                 btn_publishoverall.Text = "Publish Overall";
                 btn_publishoverall.CssClass = "btn btn-sm btn-info button";
                 btn_printbroadsheet.Attributes["disabled"] = "disabled";
@@ -168,7 +168,7 @@ namespace Mobimp.Campusoft.Web.EduExamination
                     lbl_declaredon.Text = "";
                     btn_print.Attributes.Remove("disabled");
                     btn_print.Attributes["disabled"] = "disabled";
-                    btn_publish.Text = "publish";
+                    btn_publish.Text = "Publish";
                     btn_publish.CssClass = "btn btn-info cus_btn";
                 }
                 if (publishstatus.Text == "1")
@@ -255,11 +255,7 @@ namespace Mobimp.Campusoft.Web.EduExamination
                     DropDownList ddl_rank = (DropDownList)gr.Cells[0].FindControl("ddl_rankshow");
                     DropDownList ddl_feestatus = (DropDownList)gr.Cells[0].FindControl("ddl_feestatus");
                     TextBox Rollno = (TextBox)gr.Cells[0].FindControl("txt_roll");
-                    //if (ddl_section.SelectedIndex == 0)
-                    //{
-                    //    System.Web.UI.ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "AlertBox", "failalert('" + Messagealert_.Alertmessage("section") + "')", true);
-                    //    return;
-                    //}
+
                     string classid = lbl_classid.Text;
                     string examid = lbl_examid.Text;
                     string sectionid = ddl_section.SelectedValue;
@@ -279,6 +275,23 @@ namespace Mobimp.Campusoft.Web.EduExamination
                     GridViewRow gr = Gv_resultlist.Rows[i];
                     Label lbl_classid = (Label)gr.Cells[0].FindControl("lbl_classID");
                     Label lbl_examid = (Label)gr.Cells[0].FindControl("lbl_examid");
+                    DropDownList ddl_section = (DropDownList)gr.Cells[0].FindControl("ddl_section");
+                    DropDownList ddl_rank = (DropDownList)gr.Cells[0].FindControl("ddl_rankshow");
+                    DropDownList ddl_feestatus = (DropDownList)gr.Cells[0].FindControl("ddl_feestatus");
+                    TextBox Rollno = (TextBox)gr.Cells[0].FindControl("txt_roll");
+
+                    string classid = lbl_classid.Text;
+                    string examid = lbl_examid.Text;
+                    string sectionid = ddl_section.SelectedValue;
+                    string sessionid = ddlacademicseesions.SelectedValue;
+                    string roll = Rollno.Text == "" ? "0" : Rollno.Text;
+                    string rankshow = ddl_rank.SelectedValue;
+                    string feestatus = ddl_feestatus.SelectedValue;
+                    String Year = ddlacademicseesions.SelectedItem.Text;
+                    string url = "../EduReports/Reports/ReportViewer.aspx?option=PrintMarksheet&Session=" + sessionid + "&ClassID=" + classid + "&SectionID=" + sectionid + "&Roll=" + roll + "&ExamID=" + examid + "&Rankshow=" + rankshow + "&Year=" + Year + "&FeeStatus=" + feestatus;
+                    string fullURL = "window.open('" + url + "', '_blank');";
+
+                    ScriptManager.RegisterStartupScript(this, typeof(string), "OPEN_New_Tab", fullURL, true);
                 }
                 if (e.CommandName == "RS")
                 {

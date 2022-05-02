@@ -164,7 +164,7 @@
                                         </asp:TemplateField>
                                         <asp:TemplateField>
                                             <HeaderTemplate>
-                                                Fee  Payment Type 
+                                                Fee Payment Type 
                                             </HeaderTemplate>
                                             <ItemTemplate>
                                                 <asp:Label ID="lblpaymenttype" runat="server" Visible="false" Text='<%# Eval("PaymentTypeID")%>'></asp:Label>
@@ -306,23 +306,21 @@
                                         </asp:Label>
                                     </div>
                                 </div>
-                                <div class="col-md-2 customRow">
-                                    <div class="form-group pull-right" style="margin-top: 1.6em;">
-                                        <asp:Button ID="btnOneTimepayment" Visible="false" runat="server" class="btn btn-sm btn-yellow button" Text="Preview" OnClick="btnOneTimepayment_Click" />
-                                    </div>
-                                </div>
-                                <div class="col-md-1 customRow">
-                                    <div class="form-group pull-right" style="margin-top: 1.6em;">
-                                        <asp:Button ID="btnaddrowpop1" runat="server" class="btn btn-sm btn-info button" Text="Add" OnClick="btnaddrowpop1_Click" />
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row" style="text-align: center;">
-                                <div class="col-md-12 customRow">
+                                <div class="col-md-2 customRow" style="margin-top:2em">
                                     <div class="form-group">
                                         <asp:CheckBox runat="server" ID="chkOneTimeLabel" Checked="true" Enabled="false"></asp:CheckBox>
                                         <asp:Label ID="lvlOneTimeLabel" runat="server" Text="One Time">
                                         </asp:Label>
+                                    </div>
+                                </div>
+                                <div class="col-md-1 customRow">
+                                    <div class="form-group pull-left" style="margin-top: 1.6em;">
+                                        <asp:Button ID="btnaddrowpop1" runat="server" class="btn btn-sm btn-info button" Text="Add" OnClick="btnaddrowpop1_Click" />
+                                    </div>
+                                </div>
+                                <div class="col-md-1 customRow">
+                                    <div class="form-group pull-right" style="margin-top: 1.6em;">
+                                        <asp:Button ID="btnOneTimepayment" Visible="false" runat="server" class="btn btn-sm btn-yellow button" Text="Preview" OnClick="btnOneTimepayment_Click" />
                                     </div>
                                 </div>
                             </div>
@@ -349,7 +347,7 @@
                                                     <asp:TextBox ID="txtParticulars" runat="server" Height="20px" Width="250px" class="form-control" Text='<%# Eval("Particulars")%>'></asp:TextBox>
                                                 </ItemTemplate>
                                                 <FooterTemplate>
-                                                    <asp:Label ID="lbl_total" runat="server" Text="Total" Style="margin-left: 220px;"></asp:Label>
+                                                    <asp:Label ID="lbl_total" runat="server" Text="Total" Style="margin-left: 220px;" Font-Bold="true"></asp:Label>
                                                 </FooterTemplate>
                                                 <ItemStyle HorizontalAlign="Left" Width="1%" />
                                             </asp:TemplateField>
@@ -365,7 +363,7 @@
                                                     <asp:Label ID="lbl_totalnew" Visible="false" Text='<%# Eval("TotalNewFeeAmount","{0:0#.##}")%>' runat="server"></asp:Label>
                                                 </ItemTemplate>
                                                 <FooterTemplate>
-                                                    <asp:Label ID="lbl_totalfee_new_fotter" runat="server"></asp:Label>
+                                                    <asp:Label ID="lbl_totalfee_new_fotter" runat="server" Font-Bold="true"></asp:Label>
                                                 </FooterTemplate>
                                                 <ItemStyle HorizontalAlign="Left" Width="1%" />
                                             </asp:TemplateField>
@@ -381,7 +379,7 @@
                                                     <asp:Label ID="lbl_totalold" Visible="false" Text='<%# Eval("TotalOldFeeAmount","{0:0#.##}")%>' runat="server"></asp:Label>
                                                 </ItemTemplate>
                                                 <FooterTemplate>
-                                                    <asp:Label ID="lbl_totalfee_old_fotter" runat="server"></asp:Label>
+                                                    <asp:Label ID="lbl_totalfee_old_fotter" runat="server" Font-Bold="true"></asp:Label>
                                                 </FooterTemplate>
                                                 <ItemStyle HorizontalAlign="Left" Width="1%" />
                                             </asp:TemplateField>
@@ -652,9 +650,7 @@
                                         <asp:Button ID="btnMonthlyPayment" runat="server" Visible="false" class="btn btn-sm btn-yellow button" Text="Preview" OnClick="btnMonthlyPayment_Click" />
                                     </div>
                                 </div>
-                            </div>
-                            <div class="row" style="text-align: center;">
-                                <div class="col-md-12 customRow">
+                                <div class="col-md-2 customRow" style="margin-top:2em">
                                     <div class="form-group">
                                         <asp:CheckBox runat="server" ID="chkMonthlyPaymentLabel" Checked="true" Enabled="false"></asp:CheckBox>
                                         <asp:Label ID="lblMonthlyPaymentLabel" runat="server" Text="Monthly">
@@ -663,7 +659,7 @@
                                 </div>
                             </div>
                             <div class="card_wrapper">
-                                <div style="width: 100%; overflow: hidden; overflow-y: hidden; min-height: 199px; max-height: 200px; overflow-y: auto;">
+                                <div style="width: 100%; overflow: hidden; overflow-y: hidden; min-height: 300px; max-height: 400px; overflow-y: auto;">
                                     <asp:GridView ID="GvMonthlyPayment" EmptyDataText="No record found..." AutoGenerateColumns="false" CssClass="table-striped table-hover" runat="server"
                                         Style="width: 100%" GridLines="None" OnRowDataBound="GvMonthlyPayment_RowDataBound" ShowFooter="true">
 
@@ -685,7 +681,7 @@
                                                     <asp:Label ID="lblMonthlyIDpop3" Visible="false" runat="server" Text='<%# Eval("MonthlyID")%>'></asp:Label>
                                                     <asp:Label ID="txtParticularspop3" runat="server" Text='<%# Eval("Particulars")%>'></asp:Label>
                                                 </ItemTemplate>
-                                                <ItemStyle HorizontalAlign="Left" Width="5%" />
+                                                <ItemStyle HorizontalAlign="Left" Width="2%" />
                                             </asp:TemplateField>
                                             <asp:TemplateField>
                                                 <HeaderTemplate>
@@ -710,6 +706,9 @@
                                                         runat="server" ValidChars="1234567890." Enabled="True">
                                                     </asp:FilteredTextBoxExtender>
                                                 </ItemTemplate>
+                                                <FooterTemplate>
+                                                    <asp:Label ID="lbl_totalpop3" runat="server" Text="Total" Style="margin-left: 30px;" Font-Bold="true"></asp:Label>
+                                                </FooterTemplate>
                                                 <ItemStyle HorizontalAlign="Left" Width="1%" />
                                             </asp:TemplateField>
                                             <asp:TemplateField Visible="false">
@@ -722,9 +721,6 @@
                                                         runat="server" ValidChars="1234567890." Enabled="True">
                                                     </asp:FilteredTextBoxExtender>
                                                 </ItemTemplate>
-                                                <FooterTemplate>
-                                                    <asp:Label ID="lbl_totalpop3" runat="server" Text="Total"></asp:Label>
-                                                </FooterTemplate>
                                                 <ItemStyle HorizontalAlign="Left" Width="1%" />
                                             </asp:TemplateField>
                                             <asp:TemplateField>
@@ -736,7 +732,7 @@
                                                     <asp:Label ID="lblamountnewfeepop3" Visible="false" Text='<%# Eval("NetFeeAmount_New","{0:0#.##}")%>' runat="server"></asp:Label>
                                                 </ItemTemplate>
                                                 <FooterTemplate>
-                                                    <asp:Label ID="lblamountnewfeepop31" runat="server"></asp:Label>
+                                                    <asp:Label ID="lblamountnewfeepop31" runat="server" Font-Bold="true"></asp:Label>
                                                 </FooterTemplate>
                                                 <ItemStyle HorizontalAlign="Left" Width="1%" />
                                             </asp:TemplateField>
@@ -749,7 +745,7 @@
                                                     <asp:Label ID="lblamountoldfeepop3" Visible="false" Text='<%# Eval("NetFeeAmount_Old","{0:0#.##}")%>' runat="server"></asp:Label>
                                                 </ItemTemplate>
                                                 <FooterTemplate>
-                                                    <asp:Label ID="lblamountoldfeepop31" runat="server"></asp:Label>
+                                                    <asp:Label ID="lblamountoldfeepop31" runat="server" Font-Bold="true"></asp:Label>
                                                 </FooterTemplate>
                                                 <ItemStyle HorizontalAlign="Left" Width="1%" />
                                             </asp:TemplateField>
@@ -785,6 +781,15 @@
                                         <asp:DropDownList ID="ddlprepaidpop3" Width="50px" runat="server"></asp:DropDownList>
                                     </div>
                                 </div>
+                                <div class="col-md-2 customRow">
+                                    <div class="form-group">
+                                        <asp:Label runat="server" ID="lblfinepop3" Text="Fine"></asp:Label>
+                                        <asp:TextBox ForeColor="Black" ID="txtfinepop3" Style="border: 1px solid #2e3192;color:#000000; height: 20px; width: 83px; padding: 5px; margin-left: 10px;" runat="server"></asp:TextBox>
+                                        <asp:FilteredTextBoxExtender TargetControlID="txtfinepop3" ID="FilteredTextBoxExtendertxtoldfeeamount28"
+                                            runat="server" ValidChars="1234567890." Enabled="True">
+                                        </asp:FilteredTextBoxExtender>
+                                    </div>
+                                </div>
                                 <div class="col-md-1 customRow" style="visibility: hidden">
                                     <div class="form-group">
                                         <asp:Label runat="server" ID="lblpostpaidpop3" Text="PostPaid"></asp:Label>
@@ -797,14 +802,9 @@
                                         <asp:DropDownList ID="ddlpostpaidpop3" Width="50px" runat="server"></asp:DropDownList>
                                     </div>
                                 </div>
-                                <div class="col-md-2 customRow">
+                                <div class="col-md-2 customRow pull-right" style="margin-right:50px">
                                     <div class="form-group">
-                                        <asp:Label runat="server" ID="lblfinepop3" Text="Fine"></asp:Label>
-                                        <asp:TextBox ForeColor="Black" ID="txtfinepop3" Style="border: 1px solid #2e3192;color:#000000; height: 20px; width: 83px; padding: 5px; margin-left: 10px;" runat="server"></asp:TextBox>
-                                        <asp:FilteredTextBoxExtender TargetControlID="txtfinepop3" ID="FilteredTextBoxExtendertxtoldfeeamount28"
-                                            runat="server" ValidChars="1234567890." Enabled="True">
-                                        </asp:FilteredTextBoxExtender>
-
+                                        <asp:Button ID="btnsavepop3" runat="server" Text="Save" class="btn btn-sm btn-success button" OnClick="btnsavepop3_Click" Style="float: right;" />
                                     </div>
                                 </div>
                             </div>
@@ -842,11 +842,6 @@
                                 <div class="col-md-3 customRow">
                                     <div class="form-group">
                                         <asp:LinkButton ID="lblextrarulepop3" Visible="false" runat="server" Text="Extra Rule" OnClick="lnlextrarulepop3_Click" EnableTheming="True" Style="margin-left: 90px; color: red;"></asp:LinkButton>
-                                    </div>
-                                </div>
-                                <div class="col-md-9 customRow">
-                                    <div class="form-group">
-                                        <asp:Button ID="btnsavepop3" runat="server" Text="Save" class="btn btn-sm btn-success button" OnClick="btnsavepop3_Click" Style="float: right;" />
                                     </div>
                                 </div>
                             </div>
@@ -1129,17 +1124,14 @@
                                 </div>
                                 <div class="col-md-2 customRow">
                                     <div class="form-group">
-
                                         <div class="form-group pull-right" style="margin-top: 1.6em;">
                                             <asp:Button ID="btnExemptionRule" runat="server" Visible="false" Text="Preview" class="btn btn-sm btn-yellow button" OnClick="btnExemptionRule_Click"></asp:Button>
                                         </div>
-
-
                                     </div>
                                 </div>
                             </div>
                             <div class="card_wrapper">
-                                <div style="width: 100%; overflow: hidden; overflow-y: hidden; min-height: 199px; max-height: 200px; overflow-y: auto;">
+                                <div style="width: 100%; overflow: hidden; overflow-y: hidden; min-height: 300px; max-height: 400px; overflow-y: auto;">
                                     <asp:GridView ID="Gv_Exemption" EmptyDataText="No record found..." AutoGenerateColumns="false" CssClass="table-striped table-hover" runat="server"
                                         Style="width: 100%" GridLines="None" OnRowDataBound="Gv_Exemption_RowDataBound">
                                         <Columns>
@@ -1161,7 +1153,7 @@
                                                     <asp:Label ID="lblStudentTypeIDpop5" Visible="false" runat="server" Text='<%# Eval("StudentTypeID")%>'></asp:Label>
                                                     <asp:Label ID="lblStudentTypepop5" runat="server" Font-Size="Small" Text='<%# Eval("StudentType")%>'></asp:Label>
                                                 </ItemTemplate>
-                                                <ItemStyle HorizontalAlign="Left" Width="1%" />
+                                                <ItemStyle HorizontalAlign="Left" Width="2%" />
                                             </asp:TemplateField>
                                             <asp:TemplateField>
                                                 <HeaderTemplate>
@@ -1315,8 +1307,8 @@
                             <div class="row" style="text-align: center;">
                                 <div class="col-md-12 customRow">
                                     <div class="form-group">
-                                        <asp:Label ID="lblInclusiveOtherFeeTypes" runat="server" Text="Other Mothly Fee Types"></asp:Label>
                                         <asp:CheckBox ID="chkInclusiveOtherFeeTypes" runat="server" Checked="true" Enabled="false" />
+                                        <asp:Label ID="lblInclusiveOtherFeeTypes" runat="server" Text="Other Monthly Fee Types"></asp:Label>
                                     </div>
                                 </div>
                             </div>
@@ -1384,8 +1376,13 @@
                             <div style="text-align: right;">
                                 <asp:LinkButton ID="lnbclosedpop63" runat="server" OnClick="lnbclosedpop63_Click" Style="padding: 0px 15px;"><i class="fa fa-close" style="color: #ff011c;" > </i></asp:LinkButton>
                             </div>
-                            <div class="row">
-                                <div style="text-align: right;">
+                            <div class="row mt-">
+                                <div class="col-md-8 customRow" style="margin-left:2em">
+                                    <div class="form-group">
+                                        <asp:Label ID="Label1" runat="server" Text="Select the Months to be included in the Admission Fee"></asp:Label>
+                                    </div>
+                                </div>
+                                <div class="col-md-2 customRow" style="text-align: right;margin-bottom:1em">
                                     <asp:Button ID="btnInclusiveMonth" runat="server" Text="Save" Style="margin-right: 13px;" class="btn btn-sm btn-success button" OnClick="btnInclusiveMonth_Click"></asp:Button>
                                 </div>
                             </div>

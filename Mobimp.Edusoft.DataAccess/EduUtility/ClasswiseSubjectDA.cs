@@ -22,7 +22,7 @@ namespace Mobimp.Campusoft.DataAccess.EduUtility
             try
             {
                 {
-                    SqlParameter[] arParms = new SqlParameter[11];
+                    SqlParameter[] arParms = new SqlParameter[12];
 
                     arParms[0] = new SqlParameter("@ID", SqlDbType.Int);
                     arParms[0].Value = objsubject.ID;
@@ -55,7 +55,10 @@ namespace Mobimp.Campusoft.DataAccess.EduUtility
                     arParms[9].Value = objsubject.ActionType;
 
                     arParms[10] = new SqlParameter("@Output", SqlDbType.SmallInt);
-                    arParms[10].Direction = ParameterDirection.Output;                  
+                    arParms[10].Direction = ParameterDirection.Output;
+
+                    arParms[11] = new SqlParameter("@SubjectCategoryID", SqlDbType.Int);
+                    arParms[11].Value = objsubject.SubjectCategoryID;
 
                     int result_ = SqlHelper.ExecuteNonQuery(GlobalConstant.ConnectionString, CommandType.StoredProcedure, "usp_CMS_Util_UpdateClasswiseSubjectMST", arParms);
                     if (result_ > 0 || result_ == -1)
@@ -87,8 +90,8 @@ namespace Mobimp.Campusoft.DataAccess.EduUtility
                     arParms[2] = new SqlParameter("@ClassID", SqlDbType.Int);
                     arParms[2].Value = objsubject.ClassID;
 
-                    arParms[3] = new SqlParameter("@SubjectName", SqlDbType.VarChar);
-                    arParms[3].Value = objsubject.Descriptions;
+                    arParms[3] = new SqlParameter("@SubSubjectID", SqlDbType.Int);
+                    arParms[3].Value = objsubject.SubSubjectID;
 
                     arParms[4] = new SqlParameter("@IsActive", SqlDbType.Bit);
                     arParms[4].Value = objsubject.IsActive;
@@ -252,7 +255,7 @@ namespace Mobimp.Campusoft.DataAccess.EduUtility
             try
             {
                 {
-                    SqlParameter[] arParms = new SqlParameter[10];
+                    SqlParameter[] arParms = new SqlParameter[11];
 
                     arParms[0] = new SqlParameter("@Code", SqlDbType.VarChar);
                     arParms[0].Value = objsubject.Code;
@@ -283,6 +286,10 @@ namespace Mobimp.Campusoft.DataAccess.EduUtility
 
                     arParms[9] = new SqlParameter("@IsActive", SqlDbType.Int);
                     arParms[9].Value = objsubject.IsActive;
+
+                    arParms[10] = new SqlParameter("@SubjectCategoryID", SqlDbType.Int);
+                    arParms[10].Value = objsubject.SubjectCategoryID;
+
                     SqlDataReader sqlReader = null;
                     sqlReader = SqlHelper.ExecuteReader(GlobalConstant.ConnectionString, CommandType.StoredProcedure, "usp_CMS_Util_SearchClasswiseSubjectDetailMST", arParms);
                     List<ClasswiseSubjectData> lstSubjectDetails = ORHelper<ClasswiseSubjectData>.FromDataReaderToList(sqlReader);

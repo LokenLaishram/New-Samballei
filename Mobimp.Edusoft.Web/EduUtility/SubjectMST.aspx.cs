@@ -513,5 +513,10 @@ namespace Mobimp.Edusoft.Web.EduUtility
         {
             bindgrid(1);
         }
+
+        protected void ddlStatusID_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            bindgrid(1);
+        }
     }
 }

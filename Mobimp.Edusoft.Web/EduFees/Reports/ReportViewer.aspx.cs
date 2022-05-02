@@ -59,7 +59,7 @@ namespace Mobimp.Edusoft.Web.EduFees.Reports
                         }
                         reportDocument.SetDataSource(dt1);
                         CrystalReportViewer1.ReportSource = reportDocument;
-                        reportDocument.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, false, "FeeCollectionlist");
+                        reportDocument.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, false, "FeeReciept_" + Convert.ToString(Request["StudentID"].ToString() == "" ? "0" : Request["StudentID"].ToString()));
                         break;
 
                     case "Paymenthistory":

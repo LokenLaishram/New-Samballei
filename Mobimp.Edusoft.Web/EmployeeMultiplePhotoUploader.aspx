@@ -17,7 +17,7 @@
                         <ContentTemplate>
                             <div class="card_wrapper">
                                 <div class="row">
-                                    <div class="col-md-3 customRow">
+                                    <div class="col-md-2 customRow">
                                         <div class="form-group">
                                             <asp:Label ID="lblmessage" Visible="true" runat="server"></asp:Label>
                                             <asp:Label ID="lblemployeeNo" runat="server" Text="Employee No"></asp:Label>
@@ -27,33 +27,30 @@
                                             </asp:FilteredTextBoxExtender>
                                         </div>
                                     </div>
-                                    <div class="col-md-3 customRow">
+                                    <div class="col-md-2 customRow">
                                         <div class="form-group">
                                             <asp:Label ID="lblempcaategorys" runat="server" Text="Employee Category"></asp:Label>
-                                            <asp:DropDownList ID="ddlempcategories" runat="server" class="form-control">
+                                            <asp:DropDownList ID="ddlempcategories" runat="server" class="form-control" OnSelectedIndexChanged="ddlempcategories_SelectedIndexChanged" AutoPostBack="true">
                                             </asp:DropDownList>
                                         </div>
                                     </div>
-                                    <div class="col-md-3 customRow">
+                                    <div class="col-md-2 customRow">
                                         <div class="form-group">
                                             <asp:Label ID="lblstafftypess" runat="server" Text="Staff Type"></asp:Label>
-                                            <asp:DropDownList ID="ddlstfftypes" runat="server" class="form-control">
+                                            <asp:DropDownList ID="ddlstfftypes" runat="server" class="form-control" AutoPostBack="true" OnSelectedIndexChanged="ddlstfftypes_SelectedIndexChanged">
                                             </asp:DropDownList>
                                         </div>
                                     </div>
-                                    <div class="col-md-3 customRow">
+                                    <div class="col-md-2 customRow">
                                         <div class="form-group">
                                             <asp:Label ID="lblstatus" runat="server" Text="Status"></asp:Label>
-                                            <asp:DropDownList ID="ddlstatus" runat="server" class="form-control">
+                                            <asp:DropDownList ID="ddlstatus" runat="server" class="form-control" AutoPostBack="true" OnSelectedIndexChanged="ddlstatus_SelectedIndexChanged">
                                                 <asp:ListItem Value="1">Uploaded</asp:ListItem>
                                                 <asp:ListItem Value="2">Not Uploaded</asp:ListItem>
                                             </asp:DropDownList>
                                         </div>
                                     </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-md-12 customRow">
+                                    <div class="col-md-4 customRow">
                                         <div class="form-group pull-right" style="margin-top: 1.8em;">
                                             <asp:Button ID="btnsearch" runat="server" class="btn btn-sm btn-info button" Text="Search" OnClick="btnsearch_Click" />
                                             <asp:Button ID="btnreset" class="btn btn-sm btn-danger button" runat="server" Text="Reset" OnClick="btnreset_Click" />
