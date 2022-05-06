@@ -600,6 +600,12 @@ namespace Mobimp.Campusoft.Web.EduFees
                 Label exemptamount = (Label)(gvr.FindControl("lbl_exemptedamount"));
                 Label discountamount = (Label)(gvr.FindControl("lbl_discountamount"));
 
+                int x = MonthID.Text.Length;
+                if (x == 5)
+                {
+                    MonthID.Text = '0' + MonthID.Text;
+                }
+
                 string CMonth = DateTime.Now.ToString("MM");
                 string CYear = DateTime.Now.ToString("yyyy");
                 string CDate = DateTime.Now.ToString("dd");

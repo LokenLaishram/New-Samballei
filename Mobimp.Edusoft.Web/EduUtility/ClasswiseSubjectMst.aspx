@@ -232,7 +232,7 @@
                                         <span class="mandatory_field">*</span><span style="color: #ff0000"></span>
                                         <asp:TextBox ID="txt_sub_subject" runat="server" class="form-control custextbox"></asp:TextBox>
                                         <asp:AutoCompleteExtender ID="AutoCompleteExtender1" runat="server"
-                                            ServiceMethod="GetAutoSubjectName" MinimumPrefixLength="1"
+                                            ServiceMethod="GetAutoSubSubjectName" MinimumPrefixLength="1"
                                             CompletionInterval="100" CompletionSetCount="1" TargetControlID="txt_sub_subject"
                                             UseContextKey="True" DelimiterCharacters="" Enabled="True" ServicePath="~/webservices/AutocompleteLinks.asmx">
                                         </asp:AutoCompleteExtender>

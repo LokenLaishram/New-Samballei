@@ -168,6 +168,8 @@ namespace Mobimp.Campusoft.Web.EduExamination
                     lbl_declaredon.Text = "";
                     btn_print.Attributes.Remove("disabled");
                     btn_print.Attributes["disabled"] = "disabled";
+                    btn_printmark.Attributes.Remove("disabled");
+                    btn_printmark.Attributes["disabled"] = "disabled";
                     btn_publish.Text = "Publish";
                     btn_publish.CssClass = "btn btn-info cus_btn";
                 }
@@ -176,6 +178,7 @@ namespace Mobimp.Campusoft.Web.EduExamination
                     lbl_declaredon.Visible = true;
                     lbl_pc.Visible = true;
                     btn_print.Attributes.Remove("disabled");
+                    btn_printmark.Attributes.Remove("disabled");
                     btn_publish.Text = "Published";
                     btn_publish.CssClass = "btn btn-success cus_btn";
                 }
@@ -187,6 +190,8 @@ namespace Mobimp.Campusoft.Web.EduExamination
                     lbl_declaredon.Text = "";
                     btn_print.Attributes.Remove("disabled");
                     btn_print.Attributes["disabled"] = "disabled";
+                    btn_printmark.Attributes.Remove("disabled");
+                    btn_printmark.Attributes["disabled"] = "disabled";
                     btn_publish.Text = "Republish";
                     btn_publish.CssClass = "btn btn-info cus_btn";
                 }

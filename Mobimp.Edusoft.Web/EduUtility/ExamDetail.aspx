@@ -103,7 +103,7 @@
                                         </ItemTemplate>
                                         <ItemStyle HorizontalAlign="Left" Width="2%" />
                                     </asp:TemplateField>
-                                    <asp:TemplateField>
+                                    <asp:TemplateField Visible="false">
                                         <HeaderTemplate>
                                             Optional Subject?
                                         </HeaderTemplate>
@@ -156,7 +156,7 @@
                                     <asp:TemplateField HeaderText="Theory Full Mark">
                                         <ItemTemplate>
                                             <asp:TextBox ID="txtutmark" Height="20px" Width="50px" autocomplete="off" onfocus="this.select();" class="form-control custextbox" runat="server" Text='<%# Eval("UTmark")%>'></asp:TextBox>
-                                            <asp:FilteredTextBoxExtender TargetControlID="txtutmark" ID="FilteredTextBoxExtender1" runat="server" ValidChars="1234567890">
+                                            <asp:FilteredTextBoxExtender TargetControlID="txtutmark" ID="FilteredTextBoxExtender1" runat="server" ValidChars="1234567890.">
                                             </asp:FilteredTextBoxExtender>
                                         </ItemTemplate>
                                         <ItemStyle HorizontalAlign="Left" Width="2%" />
@@ -164,7 +164,7 @@
                                     <asp:TemplateField HeaderText="Theory Pass Mark">
                                         <ItemTemplate>
                                             <asp:TextBox ID="txtutpmark" class="form-control custextbox" Height="20px" Width="50px" autocomplete="off" onfocus="this.select();" runat="server" Text='<%# Eval("UTpassmark")%>'></asp:TextBox>
-                                            <asp:FilteredTextBoxExtender TargetControlID="txtutpmark" ID="FilteredTextBoxExtender2" runat="server" ValidChars="1234567890">
+                                            <asp:FilteredTextBoxExtender TargetControlID="txtutpmark" ID="FilteredTextBoxExtender2" runat="server" ValidChars="1234567890.">
                                             </asp:FilteredTextBoxExtender>
                                         </ItemTemplate>
                                         <ItemStyle HorizontalAlign="Left" Width="2%" />

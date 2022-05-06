@@ -85,7 +85,7 @@
                                             <asp:Label ID="lbl_examid" Visible="false" runat="server" Text='<%# Eval("ExamID")%>'></asp:Label>
                                             <asp:Label ID="lbl_exam" runat="server" Text='<%# Eval("ExamName")%>'></asp:Label>
                                         </ItemTemplate>
-                                        <ItemStyle HorizontalAlign="Left" Width="2%" />
+                                        <ItemStyle HorizontalAlign="Left" Width="5%" />
                                     </asp:TemplateField>
                                     <asp:TemplateField HeaderText="Mark Entry">
                                         <ItemTemplate>

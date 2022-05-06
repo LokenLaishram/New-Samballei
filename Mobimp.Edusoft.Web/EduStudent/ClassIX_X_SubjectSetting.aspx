@@ -51,15 +51,15 @@
                                     </div>
                                     <div class="col-md-2 customRow">
                                         <div class="form-group">
-                                            <asp:Label ID="Label9" runat="server" Text="Optional"></asp:Label>
-                                            <asp:DropDownList ID="ddlOptSubject" runat="server" AutoPostBack="true" OnSelectedIndexChanged="ddlOptSubject_SelectedIndexChanged" class="form-control custextbox">
+                                            <asp:Label ID="Label10" runat="server" Text="Alternative"></asp:Label>
+                                            <asp:DropDownList ID="ddlAltSubject" runat="server" AutoPostBack="true" OnSelectedIndexChanged="ddlAltSubject_SelectedIndexChanged" class="form-control custextbox">
                                             </asp:DropDownList>
                                         </div>
                                     </div>
-                                    <div class="col-md-2 customRow">
+                                    <div class="col-md-2 customRow" style="visibility:hidden">
                                         <div class="form-group">
-                                            <asp:Label ID="Label10" runat="server" Text="Alternative"></asp:Label>
-                                            <asp:DropDownList ID="ddlAltSubject" runat="server" AutoPostBack="true" OnSelectedIndexChanged="ddlAltSubject_SelectedIndexChanged" class="form-control custextbox">
+                                            <asp:Label ID="Label9" runat="server" Text="Optional"></asp:Label>
+                                            <asp:DropDownList ID="ddlOptSubject" runat="server" AutoPostBack="true" OnSelectedIndexChanged="ddlOptSubject_SelectedIndexChanged" class="form-control custextbox">
                                             </asp:DropDownList>
                                         </div>
                                     </div>
@@ -132,6 +132,17 @@
                                                 <asp:BoundField DataField="RollNo" ItemStyle-Width="1%" SortExpression="RollNo" HeaderText="Roll No" />
                                                 <asp:TemplateField>
                                                     <HeaderTemplate>
+                                                        Alternative
+                                                    </HeaderTemplate>
+                                                    <ItemTemplate>
+                                                        <asp:Label ID="lblaltsubject" Visible="false" runat="server" Text='<%# Eval("AltSubjectID")%>'></asp:Label>
+                                                        <asp:DropDownList ID="ddlaltsubject" Class="form-control gridtextbox" runat="server">
+                                                        </asp:DropDownList>
+                                                    </ItemTemplate>
+                                                    <ItemStyle HorizontalAlign="Left" Width="1%" />
+                                                </asp:TemplateField>
+                                                <asp:TemplateField Visible="false">
+                                                    <HeaderTemplate>
                                                         Optional
                                                     </HeaderTemplate>
                                                     <ItemTemplate>
@@ -139,17 +150,6 @@
                                                         <asp:Label ID="lblSectionID" Visible="false" runat="server" Text='<%# Eval("SectionID")%>'></asp:Label>
                                                         <asp:Label ID="lbloptional" Visible="false" runat="server" Text='<%# Eval("OptSubjectID")%>'></asp:Label>
                                                         <asp:DropDownList ID="ddloptionalsubject" Class="form-control gridtextbox" runat="server">
-                                                        </asp:DropDownList>
-                                                    </ItemTemplate>
-                                                    <ItemStyle HorizontalAlign="Left" Width="2%" />
-                                                </asp:TemplateField>
-                                                <asp:TemplateField>
-                                                    <HeaderTemplate>
-                                                        Alternative
-                                                    </HeaderTemplate>
-                                                    <ItemTemplate>
-                                                        <asp:Label ID="lblaltsubject" Visible="false" runat="server" Text='<%# Eval("AltSubjectID")%>'></asp:Label>
-                                                        <asp:DropDownList ID="ddlaltsubject" Class="form-control gridtextbox" runat="server">
                                                         </asp:DropDownList>
                                                     </ItemTemplate>
                                                     <ItemStyle HorizontalAlign="Left" Width="2%" />
