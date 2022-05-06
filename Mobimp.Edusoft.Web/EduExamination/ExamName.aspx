@@ -22,7 +22,7 @@
                                 <span class="mandatory_field">*</span><span style="color: #ff0000"></span>
                                 <asp:TextBox ID="txtcode" MaxLength="30" runat="server" class="form-control custextbox"></asp:TextBox>
                                 <asp:FilteredTextBoxExtender ID="FilteredTextBoxExtender1" runat="server" Enabled="True"
-                                    TargetControlID="txtcode" FilterType="LowercaseLetters,UppercaseLetters,Custom" ValidChars=" -">
+                                    TargetControlID="txtcode" FilterType="LowercaseLetters,UppercaseLetters,Numbers,Custom" ValidChars=" -">
                                 </asp:FilteredTextBoxExtender>
                             </div>
                         </div>
@@ -32,7 +32,7 @@
                                 <span class="mandatory_field">*</span><span style="color: #ff0000"></span>
                                 <asp:TextBox ID="txtdescription" MaxLength="30" runat="server" class="form-control custextbox"></asp:TextBox>
                                 <asp:FilteredTextBoxExtender ID="FilteredTextBoxExtender2" runat="server" Enabled="True"
-                                    TargetControlID="txtdescription" FilterType="LowercaseLetters,UppercaseLetters,Custom" ValidChars=" -">
+                                    TargetControlID="txtdescription" FilterType="LowercaseLetters,UppercaseLetters,Numbers,Custom" ValidChars=" -">
                                 </asp:FilteredTextBoxExtender>
                             </div>
                         </div>

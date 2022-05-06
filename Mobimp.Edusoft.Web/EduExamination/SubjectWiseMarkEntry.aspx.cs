@@ -755,10 +755,9 @@ namespace Mobimp.Campusoft.Web.EduExamination
                     Label TWD = (Label)Gv_subjectwiseStudentlist.Rows[index].Cells[0].FindControl("lblTWD");
                     Label Attendance = (Label)Gv_subjectwiseStudentlist.Rows[index].Cells[0].FindControl("lblAttendance");
 
-
                     ExammarkentryData objexamdata = new ExammarkentryData();
 
-                    ////start WA ot UT
+                    ////start WA or UT
                     TextBox UT = (TextBox)Gv_subjectwiseStudentlist.Rows[row.RowIndex].Cells[0].FindControl("txt_WA");
                     if (UT.Text.Trim() == "." || UT.Text.Trim() == ".." || UT.Text.Trim() == "..." || UT.Text.Trim() == "...." || UT.Text.Trim() == ".....")
                     {
@@ -805,8 +804,8 @@ namespace Mobimp.Campusoft.Web.EduExamination
                         UT.BackColor = System.Drawing.Color.White;
                     }
                     //  end WA or UT
-                    ////start PW ot CA
 
+                    //start PW or CA
                     TextBox PW = (TextBox)Gv_subjectwiseStudentlist.Rows[row.RowIndex].Cells[0].FindControl("txt_CA");
                     if (PW.Text.Trim() == "." || PW.Text.Trim() == ".." || PW.Text.Trim() == "..." || PW.Text.Trim() == "...." || PW.Text.Trim() == ".....")
                     {
@@ -853,6 +852,7 @@ namespace Mobimp.Campusoft.Web.EduExamination
                     {
                         PW.BackColor = System.Drawing.Color.White;
                     }
+                    //End PW or CA
 
                     //Start Grade
                     TextBox Grade = (TextBox)Gv_subjectwiseStudentlist.Rows[row.RowIndex].Cells[0].FindControl("txt_GRADE");

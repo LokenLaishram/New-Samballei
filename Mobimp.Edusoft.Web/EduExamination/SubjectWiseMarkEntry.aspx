@@ -59,7 +59,7 @@
                                     </asp:DropDownList>
                                 </div>
                             </div>
-                            <div class="col-md-2 customRow">
+                            <div class="col-md-2 customRow" style="visibility:hidden">
                                 <div class="form-group">
                                     <asp:Label ID="lbl_enter" runat="server" Text="Enter By"></asp:Label>
                                     <asp:DropDownList ID="ddl_enterby" runat="server" AutoPostBack="true" class="form-control custextbox">

@@ -232,7 +232,7 @@ namespace Mobimp.Campusoft.Web.webservices
         }
         [WebMethod]
         [ScriptMethod()]
-        public string[] GetAutoSubjectName(string prefixText, int count)
+        public string[] GetAutoSubSubjectName(string prefixText, int count)
         {
             if (count == 0)
             {

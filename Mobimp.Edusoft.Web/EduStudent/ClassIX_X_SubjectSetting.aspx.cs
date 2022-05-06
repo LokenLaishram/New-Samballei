@@ -136,6 +136,7 @@ namespace Mobimp.Edusoft.Web.EduStudent
                 GvStudentSubjectDetails.Visible = true;
                 lblresult.Visible = false;
                 divsearch.Visible = true;
+                btnUpdate.Visible = false;
             }
         }
         public List<StudentData> GetStudentList(int curIndex, int pagesize)
