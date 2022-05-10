@@ -185,6 +185,7 @@ namespace Mobimp.Edusoft.Web.EduReports
                     //}
                     MasterLookupBO mstlookup = new MasterLookupBO();
                     Commonfunction.PopulateDdl(ddlYearPass, mstlookup.GetLookupsList(LookupNames.Academicsession));
+                    ddlYearPass.SelectedIndex = 1;
                     if (lblYearPass.Text != "")
                     {
                         ddlYearPass.Visible = false;
@@ -223,14 +224,24 @@ namespace Mobimp.Edusoft.Web.EduReports
                         txtDateLeft.Text = "";
                     }
 
-                    //if (ddlCertificateType.SelectedValue == "2")
-                    //{
-                    //    GvCertificateDetails.Columns[8].Visible = true;
-                    //}
-                    //else
-                    //{
-                    //    GvCertificateDetails.Columns[8].Visible = false;
-                    //}
+                    if (ddlCertificateType.SelectedValue == "1")
+                    {
+                        GvCertificateDetails.Columns[6].Visible = false;
+                        GvCertificateDetails.Columns[7].Visible = false;
+                        GvCertificateDetails.Columns[8].Visible = false;
+                    }
+                    else if (ddlCertificateType.SelectedValue == "2")
+                    {
+                        GvCertificateDetails.Columns[6].Visible = false;
+                        GvCertificateDetails.Columns[7].Visible = true;
+                        GvCertificateDetails.Columns[8].Visible = false;
+                    }
+                    else if (ddlCertificateType.SelectedValue == "3")
+                    {
+                        GvCertificateDetails.Columns[6].Visible = true;
+                        GvCertificateDetails.Columns[7].Visible = false;
+                        GvCertificateDetails.Columns[8].Visible = true;
+                    }
                     //if (ddlCertificateType.SelectedValue == "2" || ddlCertificateType.SelectedValue == "1")
                     //{
                     //    GvCertificateDetails.Columns[5].Visible = true;
@@ -379,7 +390,7 @@ namespace Mobimp.Edusoft.Web.EduReports
                         count = count + 1;
                         ObjDetails.StudentID = Convert.ToInt32(StudentID.Text == "" ? "0" : StudentID.Text);
                         ObjDetails.IsPass = 1;
-                        ObjDetails.BRollNo = Convert.ToInt32(BRollNo.Text);
+                        ObjDetails.BRollNo = Convert.ToInt32(BRollNo.Text == "" ? "0" : BRollNo.Text);
                         ObjDetails.BAttendance = "0";// Convert.ToString(ddlAttendance.Text == "" ? "0" : ddlAttendance.SelectedItem.Text);
                         ObjDetails.BDivision = Convert.ToString(ddlBDiv.Text == "" ? "0" : ddlBDiv.SelectedItem.Text);
                         // DateTime DateLefts = txtDateLeft.Text.Trim() == "" ? GlobalConstant.MinSQLDateTime : DateTime.Parse(txtDateLeft.Text.Trim(), option, System.Globalization.DateTimeStyles.NoCurrentDateDefault); 
