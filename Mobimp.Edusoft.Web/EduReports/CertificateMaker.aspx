@@ -157,7 +157,7 @@
                                         </ItemTemplate>
                                         <ItemStyle HorizontalAlign="Left" Width="1%" />
                                     </asp:TemplateField>
-                                    <asp:TemplateField>
+                                    <asp:TemplateField Visible="false">
                                         <HeaderTemplate>
                                             Sub Division
                                         </HeaderTemplate>
@@ -166,7 +166,7 @@
                                         </ItemTemplate>
                                         <ItemStyle HorizontalAlign="Left" Width="1%" />
                                     </asp:TemplateField>
-                                    <asp:TemplateField>
+                                    <asp:TemplateField Visible="false">
                                         <HeaderTemplate>
                                             Board Roll No
                                         </HeaderTemplate>
@@ -219,7 +219,7 @@
                                         </ItemTemplate>
                                         <ItemStyle HorizontalAlign="Left" Width="1%" />
                                     </asp:TemplateField>
-                                    <asp:TemplateField>
+                                    <asp:TemplateField Visible="false">
                                         <HeaderTemplate>
                                             Regist.No
                                         </HeaderTemplate>
