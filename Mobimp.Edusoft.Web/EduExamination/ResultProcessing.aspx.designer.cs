@@ -114,6 +114,24 @@ namespace Mobimp.Campusoft.Web.EduExamination
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl divresultlist;
 
         /// <summary>
+        /// UpdatePanel1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
+
+        /// <summary>
+        /// timerGridview control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.Timer timerGridview;
+
+        /// <summary>
         /// updateProgress1 control.
         /// </summary>
         /// <remarks>

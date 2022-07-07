@@ -154,6 +154,12 @@ namespace Mobimp.Edusoft.Data.EduUtility
         public int TWD { get; set; }
         [DataMember]
         public int Attendance { get; set; }
+        [DataMember]
+        public int TotalSubjectCount { get; set; }
+        [DataMember]
+        public int PW_FM_ZeroCount { get; set; }
+        [DataMember]
+        public int UT_FM_ZeroCount { get; set; }
     }
     public class ExammarkentryData : BaseData
     {

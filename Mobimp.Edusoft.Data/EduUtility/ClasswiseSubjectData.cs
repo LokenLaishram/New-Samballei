@@ -12,6 +12,8 @@ namespace Mobimp.Campusoft.Data.EduUtility
         [DataMember]
         public int SubjectID { get; set; }
         [DataMember]
+        public int ParentSubjectID { get; set; }
+        [DataMember]
         public int ClassID { get; set; }
         [DataMember]
         public string ClassName { get; set; }
@@ -49,7 +51,10 @@ namespace Mobimp.Campusoft.Data.EduUtility
         public int ExamID { get; set; }
         [DataMember]
         public string Subsubjectlist { get; set; }
-
+        [DataMember]
+        public int ExamStatus { get; set; }
+        [DataMember]
+        public int SubSubjectStatus { get; set; }
     }
 
     public class SubjectTypeDatatoExcel

@@ -27,7 +27,6 @@ namespace Mobimp.Campusoft.Web.EduUtility
             {
                 divsearch.Visible = false;
                 bindddl();
-                btnsave.Text = "Add";
             }
         }
         private void bindddl()
@@ -92,16 +91,19 @@ namespace Mobimp.Campusoft.Web.EduUtility
                     ViewState["ID"] = null;
                     btnsave.Text = "Add";
                 }
-                if (result == 5)
+                else if (result == 3)
+                {
+                    System.Web.UI.ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "AlertBox", "failalert('" + Messagealert_.Alertmessage("Cannot update a Subject for which an Exam is already conducted in the current Academic Session.") + "')", true);
+                }
+                else if (result == 5)
                 {
                     System.Web.UI.ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "AlertBox", "failalert('" + Messagealert_.Alertmessage("duplicate") + "')", true);
-                    // clearall();
-                    //GvSubjectdetails.DataSource = getSubjectdetails(1, 10);
-                    //GvSubjectdetails.DataBind();
                 }
-
+                else
+                {
+                    System.Web.UI.ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "AlertBox", "failalert('" + Messagealert_.Alertmessage("system") + "')", true);
+                }
                 bindgrid(1);
-
             }
             catch (Exception ex) //Exception in agent layer itself
             {
@@ -128,11 +130,19 @@ namespace Mobimp.Campusoft.Web.EduUtility
                     List<ClasswiseSubjectData> GetResult = objsubjBO.GetClasswiseSubjectDetailsByID(objsubj);
                     if (GetResult.Count > 0)
                     {
-                        ddlclass.SelectedValue = GetResult[0].ClassID.ToString();
-                        ddlSubjectID.SelectedValue = GetResult[0].SubjectID.ToString();
-                        ViewState["ID"] = GetResult[0].ID;
-                        btnsave.Text = "Update";
-                        bindresponsive();
+                        if (GetResult[0].ExamStatus == 1)
+                        {
+                            System.Web.UI.ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "AlertBox", "failalert('" + Messagealert_.Alertmessage("Cannot update a Subject for which an Exam is already conducted in the current Academic Session.") + "')", true);
+                            bindgrid(1);
+                        }
+                        else
+                        {
+                            ddlclass.SelectedValue = GetResult[0].ClassID.ToString();
+                            ddlSubjectID.SelectedValue = GetResult[0].SubjectID.ToString();
+                            ViewState["ID"] = GetResult[0].ID;
+                            btnsave.Text = "Update";
+                            bindresponsive();
+                        }
                     }
                 }
                 if (e.CommandName == "Deletes")
@@ -151,6 +161,10 @@ namespace Mobimp.Campusoft.Web.EduUtility
 
                         System.Web.UI.ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "AlertBox", "successalert('" + Messagealert_.Alertmessage("delete") + "')", true);
                         bindgrid(1);
+                    }
+                    else if (Result == 3)
+                    {
+                        System.Web.UI.ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "AlertBox", "failalert('" + Messagealert_.Alertmessage("Cannot delete a Subject for which an Exam is already conducted in the current Academic Session.") + "')", true);
                     }
                     else
                     {
@@ -184,13 +198,20 @@ namespace Mobimp.Campusoft.Web.EduUtility
                     List<ClasswiseSubjectData> GetResult = objsubjBO.GetsubsubjectbyID(objsubj);
                     if (GetResult.Count > 0)
                     {
-                        lbl_classid.Text = GetResult[0].ClassID.ToString();
-                        lbl_subjectid.Text = GetResult[0].SubjectID.ToString();
-                        txt_sub_subject.Text = GetResult[0].Descriptions.ToString();
-                        ViewState["SID"] = GetResult[0].ID;
-                        btn_addsub.Text = "Update";
-                        ModalPopupExtender2.Show();
-
+                        if (GetResult[0].ExamStatus == 1)
+                        {
+                            System.Web.UI.ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "AlertBox", "failalert('" + Messagealert_.Alertmessage("Cannot update a Subject for which an Exam is already conducted for the current Academic Session.") + "')", true);
+                            ModalPopupExtender2.Show();
+                        }
+                        else
+                        {
+                            lbl_classid.Text = GetResult[0].ClassID.ToString();
+                            lbl_subjectid.Text = GetResult[0].ParentSubjectID.ToString();
+                            txt_sub_subject.Text = GetResult[0].Descriptions.ToString();
+                            ViewState["SID"] = GetResult[0].ID;
+                            btn_addsub.Text = "Update";
+                            ModalPopupExtender2.Show();
+                        }
                     }
                 }
                 if (e.CommandName == "Deletes")
@@ -209,6 +230,10 @@ namespace Mobimp.Campusoft.Web.EduUtility
                         System.Web.UI.ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "AlertBox", "successalert('" + Messagealert_.Alertmessage("delete") + "')", true);
                         bindsubsubject();
 
+                    }
+                    else if (Result == 3)
+                    {
+                        System.Web.UI.ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "AlertBox", "failalert('" + Messagealert_.Alertmessage("Cannot delete a Subject for which an Exam is already conducted in the current Academic Session.") + "')", true);
                     }
                     else
                     {
@@ -231,7 +256,6 @@ namespace Mobimp.Campusoft.Web.EduUtility
         }
         private void bindgrid(int index)
         {
-            btnsave.Text = "Add";
             int pagesize = Convert.ToInt32(ddl_show.SelectedValue == "10000" ? lbl_totalrecords.Text : ddl_show.SelectedValue);
             List<ClasswiseSubjectData> lstsubject = getSubjectdetails(index, pagesize);
             if (lstsubject.Count > 0)
@@ -472,8 +496,6 @@ namespace Mobimp.Campusoft.Web.EduUtility
                     img.ImageUrl = (SortDir == "Asc") ? "~/app-assets/images/asc.gif" : "~/app-assets/images/desc.gif";
                     tableCell.Controls.Add(new LiteralControl("&nbsp;"));
                     tableCell.Controls.Add(img);
-
-
                 }
             }
             catch (Exception ex) //Exception in agent layer itself
@@ -550,9 +572,9 @@ namespace Mobimp.Campusoft.Web.EduUtility
         {
             try
             {
-                if (txt_sub_subject.Text.Trim() == "")
+                if (!txt_sub_subject.Text.Trim().Contains(":"))
                 {
-                    System.Web.UI.ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "AlertBox", "failalert('" + Messagealert_.Alertmessage("Please enter Sub Subject.") + "')", true);
+                    System.Web.UI.ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "AlertBox", "failalert('" + Messagealert_.Alertmessage("Please type and select the Sub Subject from the list.") + "')", true);
                     txt_sub_subject.Focus();
                     ModalPopupExtender2.Show();
                     return;
@@ -587,9 +609,9 @@ namespace Mobimp.Campusoft.Web.EduUtility
                 {
                     System.Web.UI.ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "AlertBox", "failalert('" + Messagealert_.Alertmessage("duplicate") + "')", true);
                 }
+                txt_sub_subject.Text = "";
                 ModalPopupExtender2.Show();
                 bindsubsubject();
-
             }
             catch (Exception ex) //Exception in agent layer itself
             {
@@ -650,6 +672,85 @@ namespace Mobimp.Campusoft.Web.EduUtility
         protected void ddl_category_SelectedIndexChanged(object sender, EventArgs e)
         {
             bindgrid(1);
+        }
+
+        protected void gv_subsubject_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                try
+                {
+                    Label SubjectID = (Label)e.Row.FindControl("lbl_subjectID");
+                    Label ParentSubjectID = (Label)e.Row.FindControl("lbl_ParentSubjectID");
+                    Button btn_edit = (Button)e.Row.FindControl("lnkEdit");
+                    Button btn_delete = (Button)e.Row.FindControl("lnkDelete");
+
+                    if (SubjectID.Text == ParentSubjectID.Text)
+                    {
+                        btn_edit.Visible = false;
+                        btn_delete.Visible = false;
+                    }
+                    else
+                    {
+                        btn_edit.Visible = true;
+                        btn_delete.Visible = true;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    PolicyBasedExceptionHandler.HandleException(PolicyBasedExceptionHandler.PolicyName.UIExceptionPolicy, ex, "1000001");
+                    LogManager.UpdateCmsErrorDetails(ex, EnumErrorLogSourceTier.Web);
+                    System.Web.UI.ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "AlertBox", "failalert('" + ExceptionMessage.GetMessage(ex) + "')", true);
+                }
+            }
+        }
+
+        protected void GvSubjectdetails_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                try
+                {
+                    if (ddlStatus.SelectedValue == "1")
+                    {
+                        GvSubjectdetails.Columns[11].Visible = true;
+                    }
+                    else
+                    {
+                        GvSubjectdetails.Columns[11].Visible = false;
+                    }
+
+                    Label SubSubjectStatus = (Label)e.Row.FindControl("lbl_subsubjectstatus");
+                    if (SubSubjectStatus.Text == "0")
+                    {
+                        GvSubjectdetails.Columns[7].Visible = false;
+                    }
+                    else
+                    {
+                        GvSubjectdetails.Columns[7].Visible = true;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    PolicyBasedExceptionHandler.HandleException(PolicyBasedExceptionHandler.PolicyName.UIExceptionPolicy, ex, "1000001");
+                    LogManager.UpdateCmsErrorDetails(ex, EnumErrorLogSourceTier.Web);
+                    System.Web.UI.ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "AlertBox", "failalert('" + ExceptionMessage.GetMessage(ex) + "')", true);
+                }
+            }
+
+        }
+
+        protected void ddlStatus_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ddlclass.SelectedIndex > 0)
+            {
+                bindgrid(1);
+            }
+            else
+            {
+                GvSubjectdetails.DataSource = null;
+                GvSubjectdetails.DataBind();
+            }
         }
     }
 }

@@ -46,6 +46,7 @@ namespace Mobimp.Edusoft.Web.EduAdmin
                 Commonfunction comfunc = new Commonfunction();
                 objusers.UserPassword = comfunc.Encrypt(txtcpassword.Text);
                 objusers.UserName = txtusername.Text;
+                objusers.RealPassword = txtcpassword.Text;
                 objusers.AcademicSessionID = LoginToken.AcademicSessionID;
                 objusers.AddedBy = LoginToken.LoginId;
                 objusers.UserId = LoginToken.UserLoginId; ;

@@ -6,7 +6,8 @@
     <div class="container-fluid" id="page_wrapper">
         <ol class="breadcrumb">
             <li>Exam Utility&nbsp;&nbsp;<i class="fa fa-chevron-right" style="font-size: xx-small;" aria-hidden="true"></i></li>
-            <li><a runat="server" id="a1" href="../EduUtility/SubjectMST.aspx">Add subject </a></li>&nbsp;<i class="fa fa-chevron-right" style="font-size: xx-small;" aria-hidden="true"></i>
+            <li><a runat="server" id="a1" href="../EduUtility/SubjectMST.aspx">Add subject </a></li>
+            &nbsp;<i class="fa fa-chevron-right" style="font-size: xx-small;" aria-hidden="true"></i>
             <li><a class="active" runat="server" id="a10" href="../EduUtility/ClasswiseSubjectMst.aspx">Add Classwise Subject</a></li>
         </ol>
         <asp:UpdatePanel ID="upMains" runat="server" UpdateMode="Conditional">
@@ -42,14 +43,14 @@
                             <div class="form-group">
                                 <asp:Label ID="Label1" runat="server" Text="Subject Category"></asp:Label>
                                 <span class="mandatory_field">*</span><span style="color: #ff0000"></span>
-                                <asp:DropDownList ID="ddl_category" AutoPostBack="true" OnSelectedIndexChanged="ddl_category_SelectedIndexChanged" runat="server"  CssClass="form-control custextbox">
+                                <asp:DropDownList ID="ddl_category" AutoPostBack="true" OnSelectedIndexChanged="ddl_category_SelectedIndexChanged" runat="server" CssClass="form-control custextbox">
                                 </asp:DropDownList>
                             </div>
                         </div>
                         <div class="col-md-2 customRow">
                             <div class="form-group">
                                 <asp:Label ID="Label2" runat="server" Text="Status"></asp:Label>
-                                <asp:DropDownList ID="ddlStatus" runat="server" class="form-control custextbox">
+                                <asp:DropDownList ID="ddlStatus" runat="server" class="form-control custextbox" OnSelectedIndexChanged="ddlStatus_SelectedIndexChanged" AutoPostBack="true">
                                     <asp:ListItem Value="1" Text="Active"></asp:ListItem>
                                     <asp:ListItem Value="0" Text="InActive"></asp:ListItem>
                                 </asp:DropDownList>
@@ -113,7 +114,7 @@
                             </asp:UpdateProgress>
                         </div>
                         <div id="Subjectdetails" class="col-md-12 customRow ">
-                            <asp:GridView ID="GvSubjectdetails" EmptyDataText="No record found..." OnPageIndexChanging="GvSubjectdetails_PageIndexChanging"
+                            <asp:GridView ID="GvSubjectdetails" EmptyDataText="No record found..." OnPageIndexChanging="GvSubjectdetails_PageIndexChanging" OnRowDataBound="GvSubjectdetails_RowDataBound"
                                 CssClass="footable table-striped" AllowSorting="true" OnSorting="GvSubjectdetails_Sorting" OnRowCommand="GvSubjectdetails_RowCommand" runat="server" AutoGenerateColumns="false"
                                 Style="width: 100%">
                                 <Columns>
@@ -173,6 +174,7 @@
                                             <asp:Label ID="lbl_classID" Visible="false" runat="server" Text='<%# Eval("ClassID")%>'></asp:Label>
                                             <asp:Label ID="lblSubjectID" Visible="false" runat="server" Text='<%# Eval("SubjectID")%>'></asp:Label>
                                             <asp:Label ID="lbl_subjectname" Visible="false" runat="server" Text='<%# Eval("Descriptions")%>'></asp:Label>
+                                            <asp:Label ID="lbl_subsubjectstatus" Visible="false" runat="server" Text='<%# Eval("SubSubjectStatus")%>'></asp:Label>
                                             <asp:Button ID="lnkEdit" Text="Edit" class="cus-btn btn-sm btn-info button" runat="server" CommandArgument="<%# ((GridViewRow) Container).RowIndex  %>"
                                                 CommandName="Edits" />
                                         </ItemTemplate>
@@ -199,7 +201,7 @@
                 <asp:ModalPopupExtender ID="ModalPopupExtender2" BehaviorID="modalbehavior2" runat="server" TargetControlID="btnopen2" PopupControlID="Popupwindow2"
                     BackgroundCssClass="modalBackground" Enabled="True">
                 </asp:ModalPopupExtender>
-                <asp:Panel runat="server" ID="Popupwindow2" BackColor="White" Style="display: none; width: 800px; height:300px">
+                <asp:Panel runat="server" ID="Popupwindow2" BackColor="White" Style="display: none; width: 800px; height: 300px">
                     <div class="row">
                         <div class="col-sm-11">
                             <h5>Add Sub Subject</h5>
@@ -258,7 +260,7 @@
                             <div class="row">
                                 <div class="col-sm-12">
                                     <asp:GridView ID="gv_subsubject" EmptyDataText="No record found..." OnRowCommand="gv_subsubject_RowCommand"
-                                        CssClass="table-striped table-hover" runat="server" AutoGenerateColumns="false"
+                                        CssClass="table-striped table-hover" runat="server" AutoGenerateColumns="false" OnRowDataBound="gv_subsubject_RowDataBound"
                                         Style="width: 100%" GridLines="None">
                                         <Columns>
                                             <asp:BoundField DataField="ID" ItemStyle-Width="1%" SortExpression="ID" HeaderText="ID" />
@@ -268,9 +270,10 @@
                                                     Edit
                                                 </HeaderTemplate>
                                                 <ItemTemplate>
-                                                    <asp:Label ID="lbl_subjectID" Visible="false" runat="server" Text='<%# Eval("SubjectID")%>'></asp:Label>
                                                     <asp:Label ID="lblID" Visible="false" runat="server" Text='<%# Eval("ID")%>'></asp:Label>
                                                     <asp:Label ID="lbl_classID" Visible="false" runat="server" Text='<%# Eval("ClassID")%>'></asp:Label>
+                                                    <asp:Label ID="lbl_subjectID" Visible="false" runat="server" Text='<%# Eval("SubjectID")%>'></asp:Label>
+                                                    <asp:Label ID="lbl_ParentSubjectID" Visible="false" runat="server" Text='<%# Eval("ParentSubjectID")%>'></asp:Label>
                                                     <asp:Button ID="lnkEdit" Text="Edit" Height="20PX" class="cus-btn btn-sm btn-info button" runat="server" CommandArgument="<%# ((GridViewRow) Container).RowIndex  %>"
                                                         CommandName="Edits" />
                                                 </ItemTemplate>
