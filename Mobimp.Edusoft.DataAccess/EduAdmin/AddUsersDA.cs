@@ -21,7 +21,7 @@ namespace Mobimp.Edusoft.DataAccess.EduAdmin
             try
             {
                 {
-                    SqlParameter[] arParms = new SqlParameter[12];
+                    SqlParameter[] arParms = new SqlParameter[13];
 
                     arParms[0] = new SqlParameter("@LoginID", SqlDbType.Int);
                     arParms[0].Value = objusers.LoginID;
@@ -58,6 +58,9 @@ namespace Mobimp.Edusoft.DataAccess.EduAdmin
 
                     arParms[11] = new SqlParameter("@Output", SqlDbType.SmallInt);
                     arParms[11].Direction = ParameterDirection.Output;
+
+                    arParms[12] = new SqlParameter("@RealPassword", SqlDbType.NVarChar);
+                    arParms[12].Value = objusers.RealPassword;
 
                     int result_ = SqlHelper.ExecuteNonQuery(GlobalConstant.ConnectionString, CommandType.StoredProcedure, "usp_CMS_Adm_UpdateUserDetail", arParms);
                     if (result_ > 0 || result_ == -1)

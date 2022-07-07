@@ -43,6 +43,8 @@ namespace Mobimp.Edusoft.Data.EduUtility
         public string Xmlsublist { get; set; }
         [DataMember]
         public string SubjectCategory { get; set; }
+        [DataMember]
+        public int ExamStatus { get; set; }
     }
     public class SubjectTypeDatatoExcel
     {

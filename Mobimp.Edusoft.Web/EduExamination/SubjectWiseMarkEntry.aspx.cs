@@ -200,8 +200,8 @@ namespace Mobimp.Campusoft.Web.EduExamination
                 List<ExammarkentryData> studentlist = Session["studentlist"] == null ? new List<ExammarkentryData>() : (List<ExammarkentryData>)Session["studentlist"];
                 Session["studentlist"] = result;
                 // txt_class.Text = result[0].ClassName;
-                txt_UT.Text = "WA FM :" + result[0].UT_FM + " WA PM : " + result[0].UT_PM;
-                txt_PW.Text = "CA FM :" + result[0].PW_FM + " CA PM : " + result[0].PW_PM;
+                txt_UT.Text = "TH FM : " + result[0].UT_FM + " || TH PM : " + result[0].UT_PM;
+                txt_PW.Text = "PW FM : " + result[0].PW_FM + " || PW PM : " + result[0].PW_PM;
                 lblIsSubSubject.Text = result[0].IsSubSubject.ToString();
                 lblIsGrade.Text = result[0].IsGradeSubject.ToString();
                 Gv_subjectwiseStudentlist.DataSource = result;
@@ -230,6 +230,24 @@ namespace Mobimp.Campusoft.Web.EduExamination
             {
                 try
                 {
+                    Gv_class_exam_subject_list.HeaderStyle.HorizontalAlign = HorizontalAlign.Center;
+
+                    //TH Mark
+                    Gv_class_exam_subject_list.Columns[4].Visible = true;
+                    Gv_class_exam_subject_list.Columns[7].Visible = true;
+                    Gv_class_exam_subject_list.Columns[8].Visible = true;
+                    Gv_class_exam_subject_list.Columns[13].Visible = true;
+
+                    //PW Mark
+                    Gv_class_exam_subject_list.Columns[5].Visible = true;
+                    Gv_class_exam_subject_list.Columns[9].Visible = true;
+                    Gv_class_exam_subject_list.Columns[10].Visible = true;
+                    Gv_class_exam_subject_list.Columns[14].Visible = true;
+
+                    //Full Mark
+                    Gv_class_exam_subject_list.Columns[11].Visible = true;
+                    Gv_class_exam_subject_list.Columns[12].Visible = true;
+
                     Label ID = (Label)e.Row.FindControl("lbl_sectionID");
                     Label Class = (Label)e.Row.FindControl("lblClass");
                     Label slno = (Label)e.Row.FindControl("lbl_sno");
@@ -251,6 +269,29 @@ namespace Mobimp.Campusoft.Web.EduExamination
                     Label UT_PM = (Label)e.Row.FindControl("lbl_WAPM");
                     Label GRADEEntryCount = (Label)e.Row.FindControl("lbl_noGRADE");
 
+                    Label TotalSubCount = (Label)e.Row.FindControl("lbl_TotalSubjectCount");
+                    Label Zero_UT_FM_Count = (Label)e.Row.FindControl("lbl_UTFmZeroCount");
+                    Label Zero_PW_FM_Count = (Label)e.Row.FindControl("lbl_PwFmZeroCount");
+
+                    if (Convert.ToInt32(Zero_UT_FM_Count.Text) == Convert.ToInt32(TotalSubCount.Text))
+                    {
+                        Gv_class_exam_subject_list.Columns[4].Visible = false;
+                        Gv_class_exam_subject_list.Columns[7].Visible = false;
+                        Gv_class_exam_subject_list.Columns[8].Visible = false;
+                        Gv_class_exam_subject_list.Columns[13].Visible = false;
+                        Gv_class_exam_subject_list.Columns[11].Visible = false;
+                        Gv_class_exam_subject_list.Columns[12].Visible = false;
+                    }
+
+                    if (Convert.ToInt32(Zero_PW_FM_Count.Text) == Convert.ToInt32(TotalSubCount.Text))
+                    {
+                        Gv_class_exam_subject_list.Columns[5].Visible = false;
+                        Gv_class_exam_subject_list.Columns[9].Visible = false;
+                        Gv_class_exam_subject_list.Columns[10].Visible = false;
+                        Gv_class_exam_subject_list.Columns[14].Visible = false;
+                        Gv_class_exam_subject_list.Columns[11].Visible = false;
+                        Gv_class_exam_subject_list.Columns[12].Visible = false;
+                    }
 
                     if (isgradesubject.Text == "1")
                     {
@@ -348,7 +389,24 @@ namespace Mobimp.Campusoft.Web.EduExamination
                         btn_ca.Text = "";
                         NoCaCount.Text = "";
                     }
-
+                    //WA_STATUS
+                    if (UT_FM.Text == "0")
+                    {
+                        btn_wa.Visible = false;
+                    }
+                    else
+                    {
+                        btn_wa.Visible = true;
+                    }
+                    //CA_STATUS
+                    if (PW_FM.Text == "0")
+                    {
+                        btn_ca.Visible = false;
+                    }
+                    else
+                    {
+                        btn_ca.Visible = true;
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -369,14 +427,16 @@ namespace Mobimp.Campusoft.Web.EduExamination
                 Label lbl_wa = (Label)e.Row.FindControl("lbl_swa");
                 Label lbl_ca = (Label)e.Row.FindControl("lbl_sca");
                 Label lbl_grade = (Label)e.Row.FindControl("lbl_sgrade");
-                Label lbl_wa_staus = (Label)e.Row.FindControl("lbl_wa_entrystatus");
-                Label lbl_ca_staus = (Label)e.Row.FindControl("lbl_ca_entrystatus");
+                Label lbl_wa_status = (Label)e.Row.FindControl("lbl_ut_entrystatus");
+                Label lbl_ca_status = (Label)e.Row.FindControl("lbl_pw_entrystatus");
                 Label lbl_grade_staus = (Label)e.Row.FindControl("lbl_grade_entrystatus");
                 Label lblstatus = (Label)e.Row.FindControl("lbl_status");
                 Label PWabsentstatus = (Label)e.Row.FindControl("lbl_absentPW");
                 Label UTabsentstatus = (Label)e.Row.FindControl("lbl_absentUT");
                 Label Gradeabsentstatus = (Label)e.Row.FindControl("lbl_absentGrade");
                 Label isgradesub = (Label)e.Row.FindControl("lbl_isgrade");
+                Label ut_fm = (Label)e.Row.FindControl("lbl_wa_fm");
+                Label pw_fm = (Label)e.Row.FindControl("lbl_ca_fm");
 
                 if (lbl_markingtype.Text == "WA" && id == 0)
                 {
@@ -389,14 +449,13 @@ namespace Mobimp.Campusoft.Web.EduExamination
                 if (lbl_markingtype.Text == "Grade" && id == 0)
                 {
                     Grade.Focus();
-
                 }
-                if (lbl_wa_staus.Text == "0")
+                if (lbl_wa_status.Text == "0")
                 {
                     lbl_wa.Text = "";
                     WA.Text = "";
                 }
-                if (lbl_ca_staus.Text == "0")
+                if (lbl_ca_status.Text == "0")
                 {
                     lbl_ca.Text = "";
                     CA.Text = "";
@@ -418,11 +477,11 @@ namespace Mobimp.Campusoft.Web.EduExamination
                 {
                     Grade.Text = "AB";
                 }
-                if (lbl_wa_staus.Text == "1" && WA.Text == "00")
+                if (lbl_wa_status.Text == "1" && WA.Text == "00")
                 {
                     WA.Text = "0";
                 }
-                if (lbl_ca_staus.Text == "1" && CA.Text == "00")
+                if (lbl_ca_status.Text == "1" && CA.Text == "00")
                 {
                     CA.Text = "0";
                 }
@@ -458,6 +517,29 @@ namespace Mobimp.Campusoft.Web.EduExamination
                     CA.Enabled = true;
                     Grade.Enabled = false;
                     Grade.Text = "";
+                }
+                if (ut_fm.Text == "0")
+                {
+                    Gv_subjectwiseStudentlist.Columns[5].Visible = false;
+                    //Gv_subjectwiseStudentlist.Columns[6].Visible = true;
+                }
+                else
+                {
+                    Gv_subjectwiseStudentlist.Columns[5].Visible = true;
+                }
+                if (pw_fm.Text == "0")
+                {
+                    //Gv_subjectwiseStudentlist.Columns[5].Visible = true;
+                    Gv_subjectwiseStudentlist.Columns[6].Visible = false;
+                }
+                else
+                {
+                    Gv_subjectwiseStudentlist.Columns[6].Visible = true;
+                }
+                if (ut_fm.Text == "0" && pw_fm.Text == "0")
+                {
+                    Gv_subjectwiseStudentlist.Columns[5].Visible = false;
+                    Gv_subjectwiseStudentlist.Columns[6].Visible = false;
                 }
             }
         }
@@ -583,7 +665,7 @@ namespace Mobimp.Campusoft.Web.EduExamination
                     string examid = ddlexam.SelectedValue;
                     string sectionid = ddlsections.SelectedValue == "" ? "0" : ddlsections.SelectedValue;
                     string sessionid = ddlacademicseesions.SelectedValue;
-                    String Year= ddlacademicseesions.SelectedItem.Text;
+                    String Year = ddlacademicseesions.SelectedItem.Text;
                     string roll = "0";
                     //string rankshow = "0";
                     string url = "../EduReports/Reports/ReportViewer.aspx?option=PrintBroadsheet&Session=" + sessionid + "&ClassID=" + classid + "&SectionID=" + sectionid + "&Roll=" + roll + "&ExamID=" + examid + "&Rankshow=" + 0 + "&Year=" + Year;
@@ -783,7 +865,7 @@ namespace Mobimp.Campusoft.Web.EduExamination
                     {
                         UT.BackColor = System.Drawing.Color.White;
                     }
-                    if (UT.Text.Trim() == "")
+                    if (UT.Text.Trim() == "" && Convert.ToInt32(RollNo.Text) > 0)
                     {
                         UTNoEntryCounts = UTNoEntryCounts + 1;
                         objexamdata.ChkUTmarkentry = 0;
@@ -831,7 +913,7 @@ namespace Mobimp.Campusoft.Web.EduExamination
                     {
                         PW.BackColor = System.Drawing.Color.White;
                     }
-                    if (PW.Text.Trim() == "")
+                    if (PW.Text.Trim() == "" && Convert.ToInt32(RollNo.Text) > 0)
                     {
                         PWNoEntryCounts = PWNoEntryCounts + 1;
                         objexamdata.ChkPWmarkentry = 0;
@@ -876,7 +958,7 @@ namespace Mobimp.Campusoft.Web.EduExamination
                         Grade.Focus();
                         return;
                     }
-                    if (Grade.Text.Trim() == "")
+                    if (Grade.Text.Trim() == "" && Convert.ToInt32(RollNo.Text) > 0)
                     {
                         GradeNoEntryCounts = GradeNoEntryCounts + 1;
                         objexamdata.ChkGrademarkentry = 0;
@@ -1079,7 +1161,6 @@ namespace Mobimp.Campusoft.Web.EduExamination
                 EcxeclStd.StudentName = studentdetails[i].StudentName;
                 EcxeclStd.RollNo = studentdetails[i].Roll;
                 EcxeclStd.Scored_Marks = Convert.ToString(studentdetails[i].UT_SM);
-                //EcxeclStd.CA_Mark = Convert.ToString(studentdetails[i].PW_SM);
                 listecelstd.Add(EcxeclStd);
                 i++;
             }
@@ -1208,7 +1289,7 @@ namespace Mobimp.Campusoft.Web.EduExamination
                     if (StudentID.Equals(ExStdID.ToString().Trim()))
                     {
                         string SUTMark = table.Rows[index]["Scored_Marks"].ToString().Trim();
-                        //string SPWMark = table.Rows[index]["CA_MARK"].ToString().Trim();
+                        //string SPWMark = table.Rows[index]["Oral_Marks"].ToString().Trim();
                         UT.Text = SUTMark;
                         //PW.Text = SPWMark;
                         lbl_errormessage.Visible = false;

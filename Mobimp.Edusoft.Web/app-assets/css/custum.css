@@ -370,7 +370,7 @@ input.menu-search.form-control.round {
     margin-top: -10px;
 }
 .table-striped tbody tr:nth-of-type(odd) {
-    background-color: rgb(251, 253, 252);
+    background-color: rgb(242, 244, 255);
 }
 .pad15 {
     padding-bottom: 10px;
@@ -416,8 +416,9 @@ input.input100 {
 }
 
 .footable > thead > tr > th, .footable > thead > tr > td {
-    background-color: transparent !important;
-    color: #666 !important;
+    background-color: #383b7d !important;
+    color: #ffffff !important;
+    height: 40px;
 }
 
 .footable > tbody > tr > td, .footable > thead > tr > th {
@@ -451,6 +452,15 @@ select.form-control:not([size]):not([multiple]) {
     .footable > tbody > tr:hover {
         background: #D6EEFF !important;
     }
+
+    .footable > thead > tr > th > a {
+        color: #ffffff;
+    }
+
+        .footable > thead > tr > th > a:hover {
+            text-decoration: none;
+            color: #f79b36;
+        }
 
 a:hover {
     text-decoration: none;

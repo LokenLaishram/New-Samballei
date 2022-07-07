@@ -17,6 +17,8 @@ namespace Mobimp.Edusoft.Data.EduAdmin
         [DataMember]
         public string UserPassword { get; set; }
         [DataMember]
+        public string RealPassword { get; set; }
+        [DataMember]
         public string RoleName { get; set; }
         [DataMember]
         public int UserTypeID { get; set; }

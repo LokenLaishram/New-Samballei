@@ -386,5 +386,10 @@ namespace Mobimp.Campusoft.Web.EduExamination
             ScriptManager.RegisterStartupScript(this, typeof(string), "OPEN_New_Tab", fullURL, true);
 
         }
+
+        protected void timerGridview_Tick(object sender, EventArgs e)
+        {
+            bindresults(1);
+        }
     }
 }
