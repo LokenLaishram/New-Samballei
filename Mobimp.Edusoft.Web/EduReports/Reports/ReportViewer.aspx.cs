@@ -298,21 +298,17 @@ namespace Mobimp.Edusoft.Web.EduReports.Reports
                         {
                             reportDocument.Load(Server.MapPath("~/EduReports/Reports/" + Year + "/BroadsheetResult_I_" + Year + ".rpt"));
                         }
-                        if (Request["ClassID"].ToString() == "5" || Request["ClassID"].ToString() == "6")
+                        if (Request["ClassID"].ToString() == "5" || Request["ClassID"].ToString() == "6" || Request["ClassID"].ToString() == "7" || Request["ClassID"].ToString() == "8")
                         {
-                            reportDocument.Load(Server.MapPath("~/EduReports/Reports/" + Year + "/BroadsheetResult_II_III_" + Year + ".rpt"));
+                            reportDocument.Load(Server.MapPath("~/EduReports/Reports/" + Year + "/BroadsheetResult_II_V_" + Year + ".rpt"));
                         }
-                        if (Request["ClassID"].ToString() == "7")
+                        if (Request["ClassID"].ToString() == "9")
                         {
-                            reportDocument.Load(Server.MapPath("~/EduReports/Reports/" + Year + "/BroadsheetResult_IV_" + Year + ".rpt"));
+                            reportDocument.Load(Server.MapPath("~/EduReports/Reports/" + Year + "/BroadsheetResult_VI_" + Year + ".rpt"));
                         }
-                        if (Request["ClassID"].ToString() == "8")
+                        if (Request["ClassID"].ToString() == "10")
                         {
-                            reportDocument.Load(Server.MapPath("~/EduReports/Reports/" + Year + "/BroadsheetResult_V_" + Year + ".rpt"));
-                        }
-                        if (Request["ClassID"].ToString() == "9" || Request["ClassID"].ToString() == "10")
-                        {
-                            reportDocument.Load(Server.MapPath("~/EduReports/Reports/" + Year + "/BroadsheetResult_VI_VII_" + Year + ".rpt"));
+                            reportDocument.Load(Server.MapPath("~/EduReports/Reports/" + Year + "/BroadsheetResult_VII_" + Year + ".rpt"));
                         }
                         if (Request["ClassID"].ToString() == "11")
                         {
@@ -369,21 +365,17 @@ namespace Mobimp.Edusoft.Web.EduReports.Reports
                         {
                             reportDocument.Load(Server.MapPath("~/EduReports/Reports/" + Year + "/Marksheet_I_" + Year + ".rpt"));
                         }
-                        if (Request["ClassID"].ToString() == "5" || Request["ClassID"].ToString() == "6")
+                        if (Request["ClassID"].ToString() == "5" || Request["ClassID"].ToString() == "6" || Request["ClassID"].ToString() == "7" || Request["ClassID"].ToString() == "8")
                         {
-                            reportDocument.Load(Server.MapPath("~/EduReports/Reports/" + Year + "/Marksheet_II_III_" + Year + ".rpt"));
+                            reportDocument.Load(Server.MapPath("~/EduReports/Reports/" + Year + "/Marksheet_II_V_" + Year + ".rpt"));
                         }
-                        if (Request["ClassID"].ToString() == "7")
+                        if (Request["ClassID"].ToString() == "9")
                         {
-                            reportDocument.Load(Server.MapPath("~/EduReports/Reports/" + Year + "/Marksheet_IV_" + Year + ".rpt"));
+                            reportDocument.Load(Server.MapPath("~/EduReports/Reports/" + Year + "/Marksheet_VI_" + Year + ".rpt"));
                         }
-                        if (Request["ClassID"].ToString() == "8")
+                        if (Request["ClassID"].ToString() == "10")
                         {
-                            reportDocument.Load(Server.MapPath("~/EduReports/Reports/" + Year + "/Marksheet_V_" + Year + ".rpt"));
-                        }
-                        if (Request["ClassID"].ToString() == "9" || Request["ClassID"].ToString() == "10")
-                        {
-                            reportDocument.Load(Server.MapPath("~/EduReports/Reports/" + Year + "/Marksheet_VI_VII_" + Year + ".rpt"));
+                            reportDocument.Load(Server.MapPath("~/EduReports/Reports/" + Year + "/Marksheet_VII_" + Year + ".rpt"));
                         }
                         if (Request["ClassID"].ToString() == "11")
                         {
