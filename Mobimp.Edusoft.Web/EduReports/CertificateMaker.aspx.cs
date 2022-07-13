@@ -226,18 +226,21 @@ namespace Mobimp.Edusoft.Web.EduReports
 
                     if (ddlCertificateType.SelectedValue == "1")
                     {
+                        GvCertificateDetails.Columns[5].Visible = false;
                         GvCertificateDetails.Columns[6].Visible = false;
                         GvCertificateDetails.Columns[7].Visible = false;
                         GvCertificateDetails.Columns[8].Visible = false;
                     }
                     else if (ddlCertificateType.SelectedValue == "2")
                     {
+                        GvCertificateDetails.Columns[5].Visible = false;
                         GvCertificateDetails.Columns[6].Visible = false;
                         GvCertificateDetails.Columns[7].Visible = true;
                         GvCertificateDetails.Columns[8].Visible = false;
                     }
                     else if (ddlCertificateType.SelectedValue == "3")
                     {
+                        GvCertificateDetails.Columns[5].Visible = true;
                         GvCertificateDetails.Columns[6].Visible = true;
                         GvCertificateDetails.Columns[7].Visible = false;
                         GvCertificateDetails.Columns[8].Visible = true;
@@ -387,7 +390,7 @@ namespace Mobimp.Edusoft.Web.EduReports
                         DropDownList ddlYearPass = (DropDownList)GvCertificateDetails.Rows[row.RowIndex].Cells[0].FindControl("ddlYearP");
                         TextBox txtRegistrationNos = (TextBox)GvCertificateDetails.Rows[row.RowIndex].Cells[0].FindControl("txtregistrationno");
                         Examdata ObjDetails = new Examdata();
-                        count = count + 1;
+                        //count = count + 1;
                         ObjDetails.StudentID = Convert.ToInt32(StudentID.Text == "" ? "0" : StudentID.Text);
                         ObjDetails.IsPass = 1;
                         ObjDetails.BRollNo = Convert.ToInt32(BRollNo.Text == "" ? "0" : BRollNo.Text);
@@ -421,11 +424,11 @@ namespace Mobimp.Edusoft.Web.EduReports
                 objexam.RollNo = Convert.ToInt32(txtrollNo.Text == "" ? "0" : txtrollNo.Text);
                 objexam.CompanyID = LoginToken.CompanyID;
                 objexam.AcademicSessionID = Convert.ToInt32(ddlacademicseesions.SelectedValue == "" ? "0" : ddlacademicseesions.SelectedValue);
-                if (count == 0)
-                {
-                    System.Web.UI.ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "AlertBox", "failalert('Please select atleast one student.')", true);
-                    return;
-                }
+                //if (count == 0)
+                //{
+                //    System.Web.UI.ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "AlertBox", "failalert('Please select atleast one student.')", true);
+                //    return;
+                //}
                 int results = objexamBO.CreateCTPCertificate(objexam);
                 if (results == 1)
                 {
